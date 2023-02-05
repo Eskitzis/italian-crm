@@ -152,75 +152,82 @@
             <div class="flex-container">
                 <div class="flex-item-one">
                     <span style="font-size: large;">Active Orders</span>
-                    <article class="leaderboard__profile" onclick="alert('Showing His Order')">
+                    <article class="leaderboard__profile" onclick="cust1()">
                         <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
                         <span class="leaderboard__name">Evan Spiegel</span>
                         <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
                     </article>
 
-                    <article class="leaderboard__profile" onclick="alert('Showing His Order')">
+                    <article class="leaderboard__profile" onclick="cust2()">
                         <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
                         <span class="leaderboard__name">Evan Spiegel</span>
                         <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
                     </article>
 
-                    <article class="leaderboard__profile" onclick="alert('Showing His Order')">
+                    <article class="leaderboard__profile" onclick="cust3()">
                         <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
                         <span class="leaderboard__name">Evan Spiegel</span>
                         <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
                     </article>
+
+                    <article class="leaderboard__profile" onclick="cust4()">
+                      <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
+                      <span class="leaderboard__name">Evan Spiegel</span>
+                      <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
+                    </article>
+
                 </div>
                 <div class="flex-item-two">
                     <span style="font-size: large;">Detailed Order Status</span>
                     <div class="flex-container">
                         <div class="flex-item-left">
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord1()">
                                 <img src="assets/detailed_order/pre-order.png" alt="Pre-Order" class="leaderboard__icon">
                                 <span class="leaderboard__name">Pre-Order</span>
                                 <span class="leaderboard__value">20.01.2023<span style="color: black;">A<span style="color: red;">34</span></span></span>
                   
                             </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord2()">
                                 <img src="assets/detailed_order/offering-customer.jpg" alt="Offer to Customer" class="leaderboard__icon">
                                 <span class="leaderboard__name">Offer to Customer</span>
                                 <span class="leaderboard__value">21.01.2023<span style="color: black;">B<span style="color: red;">12</span></span></span>
 
                             </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord3()">
                                 <img src="assets/detailed_order/cost.png" alt="Payment Received" class="leaderboard__icon">
                                 <span class="leaderboard__name">Payment Received</span>
                                 <span class="leaderboard__value">22.01.2023<span style="color: black;">C<span style="color: red;">31</span></span></span>
 
                             </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord4()">
                                 <img src="assets/detailed_order/factory.png" alt="Order to Factory" class="leaderboard__icon">
                                 <span class="leaderboard__name">Order to Factory</span>
                                 <span class="leaderboard__value">23.01.2023<span style="color: black;">D<span style="color: red;">24</span></span></span>
                             </article>        
                         </div>
                         <div class="flex-item-right">
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord5()">
                                 <img src="assets/detailed_order/manufacturing.png" alt="Order Received" class="leaderboard__icon">
                                 <span class="leaderboard__name">Order Received</span>
                                 <span class="leaderboard__value">24.01.2023<span style="color: black;">E<span style="color: red;">34</span></span></span>
                               </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord6()">
                                 <img src="assets/detailed_order/order-delivery.png" alt="Complete" class="leaderboard__icon">
                                 <span class="leaderboard__name">Complete</span>
                                 <span class="leaderboard__value">25.01.2023<span style="color: black;">F<span style="color: red;">0</span></span></span>
                               </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord7()">
                                 <img src="assets/detailed_order/fast.png" alt="Order to Customer" class="leaderboard__icon">
                                 <span class="leaderboard__name">Order to Customer</span>
                                 <span class="leaderboard__value">26.01.2023<span style="color: black;">G<span style="color: red;">23</span></span></span>
                               </article>
         
-                            <article class="leaderboard__profile" onclick="alert('Showing which')">
+                            <article class="leaderboard__profile" onclick="ord8()">
                                 <img src="assets/detailed_order/order.png" alt="Arrived" class="leaderboard__icon">
                                 <span class="leaderboard__name">Arrived</span>
                                 <span class="leaderboard__value">27.01.2023<span style="color: black;">H<span style="color: red;">12</span></span></span>
@@ -229,7 +236,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex-item-three">3</div>
+
+                  <div id="customerdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 1</span></div>
+                  <div id="customerdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 2</span></div>
+                  <div id="customerdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 3</span></div>
+                  <div id="customerdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 4</span></div>
+
+                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Pre-Order</span></div>
+                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Offer to Customer</span></div>
+                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">Payment Received</span></div>
+                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order to Factory</span></div>
+                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Received</span></div>
+                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">Complete</span></div>
+                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order to Customer</span></div>
+                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Arrived</span></div>
+
             </div>
         </div>
       </div>
@@ -273,6 +294,188 @@
             modeSwitch.classList.toggle('active');
         });
         //////////////////////////////////////////////////////////////////////////////////////
+        function cust1() {
+          document.getElementById("customerdiv1").style.display = "block";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+        }
+        function cust2() {
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "block";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+        }
+        function cust3() {
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "block";
+          document.getElementById("customerdiv4").style.display = "none";
+
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+        }
+        function cust4() {
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "block";
+
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+        }
+
+        function ord1() {
+          document.getElementById("orderdiv1").style.display = "block";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord2() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "block";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";          
+        }
+        function ord3() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "block";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord4() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "block";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord5() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "block";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord6() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "block";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord7() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "block";
+          document.getElementById("orderdiv8").style.display = "none";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
+        function ord8() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "block";
+
+          document.getElementById("customerdiv1").style.display = "none";
+          document.getElementById("customerdiv2").style.display = "none";
+          document.getElementById("customerdiv3").style.display = "none";
+          document.getElementById("customerdiv4").style.display = "none";
+        }
     </script>
 </body>
 </html>
