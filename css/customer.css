@@ -1,8 +1,6 @@
-*{
-  
-}
+
 body{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 p {
   margin: 0;
@@ -64,16 +62,14 @@ p {
     color: var(--app-content-main-color); /* White text */
     font-size: 25px;
     display: inline-block;
-    vertical-align:top;
-    margin-left: 10px;
   }
   .span-order-right{
     color: var(--app-content-main-color); /* White text */
     font-size: 25px;
     float: right;
-    display: inline-block;
-  }
-  @media (max-width: 600px) {
+    margin-right: 20px;
+    }
+  @media (max-width: 800px) {
     .span-order, .span-order-right   {
       font-size: 15px;
     }
@@ -111,6 +107,18 @@ p {
 @media (max-width: 600px) {
   .left, .right{
     width: 100%;
+  }
+}
+.svg-customer{
+  margin-left: 20px;
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  color: var(--app-content-secondary-color);
+}
+@media (max-width: 600px) {
+  .svg-customer{
+    margin-bottom: 5px;
   }
 }
 /*file manager css */
