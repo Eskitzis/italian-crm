@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+<style>
+.btn-group button {
+    background-color: var(--app-content-secondary-color);
+    color: var(--app-content-main-color); /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+/* Prevent double borders */
+/* 
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+*/
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+}
+  /* Add a background color on hover */
+.btn-group button:hover {
+    color: var(--action-color);
+}
+</style>
+<body>
+
+<h1>Button Group</h1>
+            <div class="btn-group">
+              <button id="factory1" onclick="factory(this.id)">Factory1</button>
+              <button id="factory2" onclick="factory(this.id)">Factory2</button>
+              <button id="factory3" onclick="factory(this.id)">Factory3</button>
+              <button id="factory4" onclick="factory(this.id)">Factory4</button>
+              <button id="factory5" onclick="factory(this.id)">Factory5</button>
+              <button id="factory6" onclick="factory(this.id)">Factory6</button>
+              <button id="factory7" onclick="factory(this.id)">Factory7</button>
+              <button id="factory8" onclick="factory(this.id)">Factory8</button>
+              <button id="factory9" onclick="factory(this.id)">Factory9</button>
+              <button id="factory10" onclick="factory(this.id)">Factory10</button>
+              <button id="factory11" onclick="factory(this.id)">Factory11</button>
+            </div>
+
+</body>
+</html>

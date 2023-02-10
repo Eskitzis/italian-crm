@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />    
     <link rel="stylesheet" href="css/admin-panel.css">
@@ -60,7 +62,7 @@
               </a>
             </li>
           </ul>          
-          <div class="account-info" onclick="alert('hi its a message');">
+          <div class="account-info" onclick="alert('MY ACCOUNT');">
             <div class="account-info-picture" >
               <img src="assets/crm.png" alt="Account">
             </div>
@@ -196,9 +198,10 @@
               <div class="product-cell price"><span class="cell-label">Archive:</span>56 Files</div>
             </div>
           </div>
-          <!--DIV FOR EACH CUSTOMER-->
-          <div class="customer-container" id="customercontainer" style="display: none;">
-            <div class="btn-group">
+          <!--DIV FOR EACH CUSTOMER style="display: none;"-->
+          <div class="overwrite">
+          <div class="customer-container" id="customercontainer">
+            <div id="btn-group" class="column full">
               <button id="factory1" onclick="factory(this.id)">Factory1</button>
               <button id="factory2" onclick="factory(this.id)">Factory2</button>
               <button id="factory3" onclick="factory(this.id)">Factory3</button>
@@ -211,6 +214,8 @@
               <button id="factory10" onclick="factory(this.id)">Factory10</button>
               <button id="factory11" onclick="factory(this.id)">Factory11</button>
             </div>
+            <div class="row">
+              <div class="column left">
             <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
             <div class="products-area-wrapper tableView2">
               <div class="products-header2">
@@ -219,7 +224,6 @@
                 </div>
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                   <img src="assets/detailed_order/pre-order.png" alt="Pre-Order" class="leaderboard__icon">
@@ -227,7 +231,6 @@
                   <p class="span-order-right">-</p> 
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/offering-customer.jpg" alt="Pre-Order" class="leaderboard__icon">                  
@@ -235,7 +238,6 @@
                   <p class="span-order-right">-</p>                    
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/cost.png" alt="Pre-Order" class="leaderboard__icon">
@@ -243,7 +245,6 @@
                 <p class="span-order-right">-</p>                   
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/factory.png" alt="Pre-Order" class="leaderboard__icon">
@@ -251,7 +252,6 @@
                 <p class="span-order-right">-</p> 
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/manufacturing.png" alt="Pre-Order" class="leaderboard__icon">
@@ -259,7 +259,6 @@
                 <p class="span-order-right">-</p> 
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/order-delivery.png" alt="Pre-Order" class="leaderboard__icon">
@@ -267,7 +266,6 @@
                 <p class="span-order-right">-</p> 
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/fast.png" alt="Pre-Order" class="leaderboard__icon">
@@ -275,7 +273,6 @@
                 <p class="span-order-right">-</p> 
               </div>
             </div>
-
             <div class="products-row2">
               <div class="product-cell2 img">
                 <img src="assets/detailed_order/complete.png" alt="Pre-Order" class="leaderboard__icon">
@@ -283,7 +280,23 @@
                 <p class="span-order-right">-</p> 
               </div>
             </div>
-            <!--END DETAILED ORDER-->      
+            <!--END DETAILED ORDER-->
+            </div>
+              <div class="column right">
+            <!--DATA ARCHIVE-->
+            <div class="products-area-wrapper tableView2">
+              <div class="products-header2">
+                <div class="product-cell2 img">
+                  <span>Data Archive</span>
+                </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!--END DATA ARCHIVE-->  
+            </div>
+            </div>
+            </div>
           </div>
           <!-- END DIV FOR EACH CUSTOMER-->
         </div>

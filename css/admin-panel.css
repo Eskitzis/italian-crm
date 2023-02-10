@@ -43,7 +43,6 @@ body, html {
 }
 
 body {
-  overflow: hidden;
   font-family: "Poppins", sans-serif;
   background-color: var(--app-bg);
   -webkit-font-smoothing: antialiased;
@@ -56,10 +55,7 @@ body {
   max-height: 100%;
   max-width: 100%;
   display: flex;
-  overflow: hidden;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 .sidebar {
@@ -212,7 +208,8 @@ body {
   background-color: var(--app-bg);
   height: 100%;
   flex: 1;
-  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -256,7 +253,6 @@ body {
 }
 @media screen and (max-width: 520px) {
   .app-content-actions {
-    
     text-align: left;
   }
   .app-content-actions .customer-input{
@@ -899,7 +895,7 @@ body {
   border-color: var(--action-color);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");}
 
-.btn-group button {
+#btn-group button {
     background-color: var(--app-content-secondary-color);
     color: var(--app-content-main-color); /* White text */
     padding: 10px 24px; /* Some padding */
@@ -916,12 +912,12 @@ body {
 }
 */
 /* Clear floats (clearfix hack) */
-.btn-group:after {
+#btn-group:after {
     content: "";
     clear: both;
 }
   /* Add a background color on hover */
-.btn-group button:hover {
+#btn-group button:hover {
     color: var(--action-color);
 }
 .customer-container{
