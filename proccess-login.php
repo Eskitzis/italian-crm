@@ -30,7 +30,6 @@
         //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
         header("Location: home.php");
-        $_SESSION['fname'] = $row['fullname'];
-        
+        $_SESSION['fname'] = $row['fullname'];  
     }
 ?>
