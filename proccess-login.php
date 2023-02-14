@@ -26,5 +26,6 @@
         session_start();
         header("Location: home.php");
         $_SESSION['fname'] = $row['fullname'];
+        
     }
 ?>
