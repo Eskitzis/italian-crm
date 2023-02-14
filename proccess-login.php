@@ -28,13 +28,13 @@
         //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
         header("Location: home.php");
-        $_SESSION['fname'] = $row['fullname'];
+        $_SESSION['un'] = $row['username'];
     }
 
     if ($row['username'] == $username && $row['password'] == $password && $row['role'] == "admin"){
         //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
         header("Location: home.php");
-        $_SESSION['fname'] = $row['fullname'];  
+        $_SESSION['un'] = $row['username']; 
     }
 ?>
