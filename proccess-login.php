@@ -7,7 +7,12 @@
     $username = stripcslashes($username);
     $password = stripcslashes($password);
 
-    $con = mysqli_connect('localhost', 'gruppocasa', 'b2tV*5e3', 'italiancrm');
+    $myServer = "localhost";
+    $myUser = "gruppocasa";
+    $myPass = "b2tV*5e3";
+    $myDB = "italiancrm";
+
+    $con = mysqli_connect($myServer, $myUser, $myPass, $myDB);
 
     //Query the database for user
     $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
