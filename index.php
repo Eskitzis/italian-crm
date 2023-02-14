@@ -11,8 +11,8 @@
 </head>
 <body>
     <form class="login" action="proccess-login.php" method="post">
-        <input type="text" name="user" placeholder="Username*" required>
-        <input type="password" name="pass" placeholder="Password*" required>
+        <input type="text" name="user" id="user" placeholder="Username*" required>
+        <input type="password" name="pass" id="pass" placeholder="Password*" required>
         <button>Login</button>
     </form>
 </body>
