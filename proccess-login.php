@@ -25,14 +25,14 @@
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
     if ($row['username'] == $username && $row['password'] == $password && $row['role'] == "employee"){
-        echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
+        //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
-        //header("Location: home.php");
+        header("Location: home.php");
     }
 
     if ($row['username'] == $username && $row['password'] == $password && $row['role'] == "admin"){
-        echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
+        //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
-        //header("Location: home.php");
+        header("Location: home.php");
     }
 ?>
