@@ -12,7 +12,7 @@
     $myPass = "b2tV*5e3";
     $myDB = "italiancrm";
 
-    $con = mysqli_connect($myServer, $myUser, $myPass, $myDB);
+    $con = new mysqli($myServer, $myUser, $myPass, $myDB);
 
     //Query the database for user
     $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
