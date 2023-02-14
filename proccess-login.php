@@ -13,7 +13,12 @@
     $myDB = "italiancrm";
 
     $con = mysqli_connect($myServer, $myUser, $myPass, $myDB);
-
+    
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+      echo "Connected successfully";
+    /*
     //Query the database for user
     $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
               or die("Failed to query database".mysql_error());
@@ -31,5 +36,5 @@
         session_start();
         header("Location: home.php");
         $_SESSION['fname'] = $row['fullname'];  
-    }
+    }*/
 ?>
