@@ -7,7 +7,7 @@
     $username = stripcslashes($username);
     $password = stripcslashes($password);
 
-    $con = mysqli_connect('server.onsight.gr:8443', 'gruppocasa', 'b2tV*5e3', 'italiancrm');
+    $con = mysqli_connect('localhost:3306', 'gruppocasa', 'b2tV*5e3', 'italiancrm');
 
     //Query the database for user
     $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
