@@ -20,7 +20,7 @@
       echo "Connected successfully";
     */
     //Query the database for user
-    $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
+    $result = mysqli_query($con, "SELECT * FROM `users` WHERE username = '$username' and password = '$password'") 
               or die("Failed to query database".mysql_error());
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
