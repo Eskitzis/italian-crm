@@ -7,24 +7,24 @@
     $username = stripcslashes($username);
     $password = stripcslashes($password);
 
-    $con = mysqli_connect('server_ip', 'username', 'password', 'db');
+    $con = mysqli_connect('server.onsight.gr', 'gruppocasa', 'b2tV*5e3', 'italiancrm');
 
     //Query the database for user
-    $result = mysqli_query($con, "select * from 'db_table' where username = '$username' and password = '$password'") 
+    $result = mysqli_query($con, "select * from 'users' where username = '$username' and password = '$password'") 
               or die("Failed to query database".mysql_error());
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
     if ($row['username'] == $username && $row['password'] == $password && $row['role'] == "employee"){
         //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
-        header("Location: employee.php");
+        header("Location: home.php");
         $_SESSION['fname'] = $row['fullname'];
     }
 
     if ($row['username'] == $username && $row['password'] == $password && $row['role'] == "admin"){
         //echo "Login Success!!! Welcome ".$row['username']." ".$row['role'];
         session_start();
-        header("Location: admin.php");
+        header("Location: home.php");
         $_SESSION['fname'] = $row['fullname'];
     }
 ?>
