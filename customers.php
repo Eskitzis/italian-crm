@@ -1,3 +1,33 @@
+<?php
+// Connect to MySQL database
+$host = 'localhost';
+$username = 'gruppocasa';
+$password = 'b2tV*5e3';
+$dbname = 'italiancrm';
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die('Connection failed: ' . $conn->connect_error);
+}
+
+// Retrieve data from table
+$sql = 'SELECT * FROM customers';
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    // Create divs based on the data
+    echo '<div>';
+    echo '<h2>' . $row['title'] . '</h2>';
+    echo '<p>' . $row['description'] . '</p>';
+    echo '</div>';
+  }
+} else {
+  echo 'No results found';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
