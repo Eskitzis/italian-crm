@@ -23,11 +23,6 @@ if (isset($_POST["submit"])) {
   $representive = $_POST['representive'];
 
   $sql = "INSERT INTO customers (firstname, lastname, company, adress, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
-  if ($db->query($sql) === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $db->error;
-  }
 }
 ?>
 <!DOCTYPE html>
