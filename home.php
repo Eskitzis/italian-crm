@@ -25,6 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
   
   $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
 }
 ?>
 <!DOCTYPE html>
