@@ -407,8 +407,7 @@ if ($conn->connect_error) {
               $sql = 'SELECT * FROM customers';
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                // Output data of each row
-                echo $customercartela;
+                // Output data of each row  
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
                     echo '<div class="products-row" id="customer1" onclick="cartela(this.id)">';
@@ -424,6 +423,7 @@ if ($conn->connect_error) {
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';                      
                     echo '</div>';
                   }
+                  echo $customercartela;
                 }
             ?>
           </div>
