@@ -14,15 +14,15 @@ if (isset($_POST["submit"])) {
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $company = $_POST['company'];
-  $address = $_POST['address'];
+  $adress = $_POST['address'];
   $zip = $_POST['zip'];
   $city = $_POST['city'];
   $country = $_POST['country'];
   $email = $_POST['email'];
   $telephone = $_POST['telephone'];
-  $rerpresentive = $_POST['rerpresentive'];
+  $representive = $_POST['representive'];
 
-  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$rerpresentive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, adress, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
   if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
   } else {
