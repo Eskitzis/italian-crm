@@ -22,7 +22,7 @@ $email = $_POST['email'];
 $telephone = $_POST['telephone'];
 $representive = $_POST['representive'];
 if (isset($_POST["submit"])) {
-  $sql = 'INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')';
+  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
