@@ -217,7 +217,7 @@ $result = $conn->query($sql);
                 // Output data of each row
                 while($row = $result->fetch_assoc()) {
                   // Create divs based on the data
-                  echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>'$row['firstname'] $row['lastname']'</span></div>';
+                  echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>'.$row['firstname'] .$row['lastname']'</span></div>';
                   echo '<div class="product-cell category"><span class="cell-label">Company:</span>Linardatos MON IKE</div>';
                   echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>Kolombou 16, 54630 Thessaloniki</span></div>';
                   echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>linard@gmail.com</div>';
