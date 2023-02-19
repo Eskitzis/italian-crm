@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $firstname = mysqli_real_escape_string($conn, $_POST["firstname"]);
 	$lastname = mysqli_real_escape_string($conn, $_POST["lastname"]);
   $company = mysqli_real_escape_string($conn, $_POST["company"]);
-	$adress = mysqli_real_escape_string($conn, $_POST["address"]);
+	$address = mysqli_real_escape_string($conn, $_POST["address"]);
   $zip = mysqli_real_escape_string($conn, $_POST["zip"]);
 	$city = mysqli_real_escape_string($conn, $_POST["city"]);
   $country = mysqli_real_escape_string($conn, $_POST["country"]);
