@@ -117,7 +117,7 @@ if (isset($_POST["submit"])) {
               <button class="app-content-headerButton customer customerjs">Add Customer</button>
               <div class="customer-menu">
                 <div class="customer-menu-buttons">
-                  <form action="add_customer.php" method="post">
+                  <form method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
