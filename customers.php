@@ -109,10 +109,34 @@ if (isset($_POST["submit"])) {
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
               </svg>
             </button>
+            <form action="" method="post">
+                    <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                    <br>
+                    <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                    <br>
+                    <input class="customer-input" type="text" name="company" id="company" placeholder="Company">
+                    <br>
+                    <input class="customer-input" type="text" name="address" id="address" placeholder="Address">
+                    <br>
+                    <input class="customer-input" type="text" name="zip" id="zip" placeholder="ZIP/Postal Code">
+                    <br>
+                    <input class="customer-input" type="text" name="city" id="city" placeholder="City">
+                    <br>
+                    <input class="customer-input" type="text" name="country" id="country" placeholder="Country">
+                    <br>
+                    <input class="customer-input" type="email" name="email" id="email" placeholder="E-Mail">
+                    <br>
+                    <input class="customer-input" type="text" name="telephone" id="telephone" placeholder="Telephone">
+                    <br>
+                    <input class="customer-input" type="text" name="representive" id="representive" placeholder="Representative/Salesman">
+                    <br>
+                    <button class="customer-button reset" type="reset">Reset</button>
+                    <br>
+                    <button class="customer-button apply" type="submit" value="submit">Apply</button>                  
+                  </form>
             <div class="customer-button-wrapper">
               <button class="app-content-headerButton customer customerjs">Add Customer</button>
-  
-              <div class="customer-menu">  
+              <div class="customer-menu">
                 <div class="customer-menu-buttons">
                   <form action="" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
