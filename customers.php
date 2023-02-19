@@ -115,7 +115,7 @@ if (isset($_POST["submit"])) {
   
               <div class="customer-menu">  
                 <div class="customer-menu-buttons">
-                  <form action="" method="post">
+                  <form action="customers.php" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
@@ -136,13 +136,9 @@ if (isset($_POST["submit"])) {
                     <br>
                     <input class="customer-input" type="text" name="representive" id="representive" placeholder="Representative/Salesman">
                     <br>
-                    <button class="customer-button reset" type="reset">
-                      Reset
-                    </button>
+                    <button class="customer-button reset" type="reset">Reset</button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="submit">
-                      Apply
-                    </button>                  
+                    <button class="customer-button apply" type="submit" value="submit">Apply</button>                  
                   </form>
                 </div>
               </div>
