@@ -411,7 +411,6 @@ if ($conn->connect_error) {
                 // Output data of each row  
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div>';
                     echo '<div class="products-row" id="customer1" onclick="cartela(this.id)">';
                     echo '<button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
@@ -424,10 +423,9 @@ if ($conn->connect_error) {
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';                      
                     echo '</div>';
-                    echo '</div>';
-                    echo '<div>';
-                    echo $customercartela;
-                    echo '</div>';
+                    while($row = $result->fetch_assoc()) {
+                      echo $customercartela;
+                    }
                   }
                 }
             ?>
