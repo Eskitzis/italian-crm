@@ -1,4 +1,5 @@
 <?php
+ session_start();
 // Connect to MySQL database
 $host = 'localhost';
 $username = 'gruppocasa';
@@ -9,19 +10,6 @@ $conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
-}
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$company = $_POST['company'];
-$adress = $_POST['address'];
-$zip = $_POST['zip'];
-$city = $_POST['city'];
-$country = $_POST['country'];
-$email = $_POST['email'];
-$telephone = $_POST['telephone'];
-$representive = $_POST['representive'];
-if (isset($_POST["submit"])) {
-  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
@@ -41,7 +29,6 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
-    
     <title>Customers</title>
 </head>
 <body>
@@ -114,7 +101,7 @@ if (isset($_POST["submit"])) {
   
               <div class="customer-menu">  
                 <div class="customer-menu-buttons">
-                  <form action="" method="post">
+                  <form action="customer_upload.php" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
