@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
 
-if (isset($_POST["submit"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $company = $_POST['company'];
@@ -117,7 +117,7 @@ if (isset($_POST["submit"])) {
               <button class="app-content-headerButton customer customerjs">Add Customer</button>
               <div class="customer-menu">
                 <div class="customer-menu-buttons">
-                  <form method="post">
+                  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
