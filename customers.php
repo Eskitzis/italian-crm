@@ -22,7 +22,7 @@ $email = $_POST['email'];
 $telephone = $_POST['telephone'];
 $representive = $_POST['representive'];
 if (isset($_POST["submit"])) {
-  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
@@ -429,7 +429,7 @@ if (isset($_POST["submit"])) {
                     echo '<button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
-                    echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>' . $row['address'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
+                    echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
                     echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representive'] .'</div>';
