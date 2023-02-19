@@ -10,20 +10,6 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
-
-// Retrieve data from table
-$sql = 'SELECT * FROM customers';
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  // Output data of each row
-  while($row = $result->fetch_assoc()) {
-    // Create divs based on the data
-    echo '<div>';
-    echo '<h2>' . $row['firstname'] . '</h2>';
-    echo '<p>' . $row['lastname'] . '</p>';
-    echo '</div>';
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -211,7 +197,20 @@ if ($result->num_rows > 0) {
 
             <div class="products-row" id="customer1" onclick="cartela(this.id)">
               <button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
-              
+              <?php
+              $sql = 'SELECT * FROM customers';
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                // Output data of each row
+                while($row = $result->fetch_assoc()) {
+                  // Create divs based on the data
+                  echo '<div>';
+                  echo '<h2>' . $row['firstname'] . '</h2>';
+                  echo '<p>' . $row['lastname'] . '</p>';
+                  echo '</div>';
+                }
+              }
+              ?>
               <div class="product-cell image"><!--IMAGE GOES HERE--><span>Giorgos Linardatos</span></div>
               <div class="product-cell category"><span class="cell-label">Company:</span>Linardatos MON IKE</div>
               <div class="product-cell status-cell"><span class="cell-label">Address:</span><span>Kolombou 16, 54630 Thessaloniki</span></div>
