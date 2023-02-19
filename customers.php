@@ -195,7 +195,6 @@ if ($conn->connect_error) {
                 </button></div>
             </div>
             <?php
-            
               //DIV FOR EACH CUSTOMER
               $customercartela = '
                         <div class="customer-container" id="customercontainer" style="display: none;">
@@ -423,9 +422,7 @@ if ($conn->connect_error) {
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';                      
                     echo '</div>';
-                    while($row = $result->fetch_assoc()) {
-                      echo $customercartela;
-                    }
+                    echo $customercartela; 
                   }
                 }
             ?>
