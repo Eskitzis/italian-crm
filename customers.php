@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <br>
                     <button class="customer-button reset" type="reset">Reset</button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="submit" onclick="location.reload();">Apply</button>                  
+                    <button class="customer-button apply" type="submit" value="submit">Apply</button>                  
                   </form>
                 </div>
               </div>
