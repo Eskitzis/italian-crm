@@ -15,16 +15,6 @@ if ($conn->connect_error) {
 $sql = 'SELECT * FROM customers';
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  // Output data of each row
-  while($row = $result->fetch_assoc()) {
-    // Create divs based on the data
-    echo '<div>';
-    echo '<h2>' . $row['title'] . '</h2>';
-    echo '<p>' . $row['description'] . '</p>';
-    echo '</div>';
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
