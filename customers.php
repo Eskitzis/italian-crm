@@ -117,7 +117,7 @@ if (isset($_POST["submit"])) {
               <button class="app-content-headerButton customer customerjs">Add Customer</button>
               <div class="customer-menu">
                 <div class="customer-menu-buttons">
-                  <form action="" method="post">
+                  <form action="add_customer.php" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
@@ -140,7 +140,7 @@ if (isset($_POST["submit"])) {
                     <br>
                     <button class="customer-button reset" type="reset">Reset</button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="submit">Apply</button>                  
+                    <button class="customer-button apply" type="submit" value="submit" onclick="location.reload();">Apply</button>                  
                   </form>
                 </div>
               </div>
