@@ -10,6 +10,25 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
+if (isset($_POST["submit"])) {
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $company = $_POST['company'];
+  $address = $_POST['address'];
+  $zip = $_POST['zip'];
+  $city = $_POST['city'];
+  $country = $_POST['country'];
+  $email = $_POST['email'];
+  $telephone = $_POST['telephone'];
+  $rerpresentive = $_POST['rerpresentive'];
+
+  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$rerpresentive')";
+  if ($db->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $db->error;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,11 +121,19 @@ if ($conn->connect_error) {
               <div class="customer-menu">  
                 <div class="customer-menu-buttons">
                   <form action="" method="post">
-                    <input class="customer-input" type="text" name="name" id="name" placeholder="Name">
+                    <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                    <br>
+                    <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
                     <br>
                     <input class="customer-input" type="text" name="company" id="company" placeholder="Company">
                     <br>
                     <input class="customer-input" type="text" name="address" id="address" placeholder="Address">
+                    <br>
+                    <input class="customer-input" type="text" name="zip" id="zip" placeholder="ZIP/Postal Code">
+                    <br>
+                    <input class="customer-input" type="text" name="city" id="city" placeholder="City">
+                    <br>
+                    <input class="customer-input" type="text" name="country" id="country" placeholder="Country">
                     <br>
                     <input class="customer-input" type="email" name="email" id="email" placeholder="E-Mail">
                     <br>
