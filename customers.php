@@ -483,7 +483,7 @@ if ($conn->connect_error) {
           } else {
             c.style.display = "none";
           }
-          alert(clicked_customer);
+          //alert(clicked_customer);
         }
         //////////////////////////////////////////////////////////////////////////////////////
         function factory(clicked_id){
