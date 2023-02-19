@@ -204,18 +204,18 @@ if ($conn->connect_error) {
                 // Output data of each row
                 while($row = $result->fetch_assoc()) {
                   // Create divs based on the data
-                  echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] . '</span></div>';
+                  echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
+                  echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
+                  echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>' . $row['address'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
+                  echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
+                  echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
+                  echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representive'] .'</div>';
+                  echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
+                  echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
+                  echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
                 }
               }
-              ?>
-              <div class="product-cell category"><span class="cell-label">Company:</span>Linardatos MON IKE</div>
-              <div class="product-cell status-cell"><span class="cell-label">Address:</span><span>Kolombou 16, 54630 Thessaloniki</span></div>
-              <div class="product-cell sales"><span class="cell-label">E-Mail:</span>linard@gmail.com</div>
-              <div class="product-cell stock"><span class="cell-label">Telephone:</span>+3-6956407432</div>
-              <div class="product-cell price"><span class="cell-label">Representative:</span>Nikos</div>
-              <div class="product-cell price"><span class="cell-label">Factorys:</span>12</div>
-              <div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">20.12.2023</span></div>
-              <div class="product-cell price"><span class="cell-label">Archive:</span>56 Files</div>
+              ?>  
             </div>
           </div>
           <!--DIV FOR EACH CUSTOMER-->
