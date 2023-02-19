@@ -408,9 +408,9 @@ if ($conn->connect_error) {
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                 // Output data of each row
+                echo $customercartela;
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo $customercartela;
                     echo '<div class="products-row" id="customer1" onclick="cartela(this.id)">';
                     echo '<button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
