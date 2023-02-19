@@ -13,20 +13,18 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
-  $company = $_POST['company'];
-  $adress = $_POST['address'];
-  $zip = $_POST['zip'];
-  $city = $_POST['city'];
-  $country = $_POST['country'];
-  $email = $_POST['email'];
-  $telephone = $_POST['telephone'];
-  $representive = $_POST['representive'];
-
-  $conn = new mysqli($host, $username, $password, $dbname);
+  $firstname = mysqli_real_escape_string($conn, $_POST["firstname"]);
+	$lastname = mysqli_real_escape_string($conn, $_POST["lastname"]);
+  $company = mysqli_real_escape_string($conn, $_POST["company"]);
+	$adress = mysqli_real_escape_string($conn, $_POST["address"]);
+  $zip = mysqli_real_escape_string($conn, $_POST["zip"]);
+	$city = mysqli_real_escape_string($conn, $_POST["city"]);
+  $country = mysqli_real_escape_string($conn, $_POST["country"]);
+	$email = mysqli_real_escape_string($conn, $_POST["email"]);
+  $telephone = mysqli_real_escape_string($conn, $_POST["telephone"]);
+	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
   
-  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
