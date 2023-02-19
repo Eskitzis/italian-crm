@@ -448,6 +448,22 @@ if (isset($_POST["submit"])) {
         </div>
       </div>
     <script>
+        $(function() {
+          $('form').on('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+            var form = $(this); // Get the form
+            var url = form.attr('action'); // Get the form action URL
+            $.ajax({
+              type: 'POST',
+              url: url,
+              data: form.serialize(), // Serialize the form data
+              success: function(data) {
+                // Do something with the response data
+                console.log(data);
+              }
+            });
+          });
+        });
         $(document).ready(function () {
             $('select').selectize({
              sortField: 'text'
