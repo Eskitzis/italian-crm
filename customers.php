@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
 
   $conn = new mysqli($host, $username, $password, $dbname);
   
-  $sql = "INSERT INTO `customers` (firstname, lastname, company, addr, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
