@@ -14,7 +14,16 @@ if ($conn->connect_error) {
 // Retrieve data from table
 $sql = 'SELECT * FROM customers';
 $result = $conn->query($sql);
-
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    // Create divs based on the data
+    echo '<div>';
+    echo '<h2>' . $row['firstname'] . '</h2>';
+    echo '<p>' . $row['lastname'] . '</p>';
+    echo '</div>';
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -202,8 +211,8 @@ $result = $conn->query($sql);
 
             <div class="products-row" id="customer1" onclick="cartela(this.id)">
               <button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
-              <!--
-              <div class="product-cell image"> IMAGE GOES HERE<span>Giorgos Linardatos</span></div>
+              
+              <div class="product-cell image"><!--IMAGE GOES HERE--><span>Giorgos Linardatos</span></div>
               <div class="product-cell category"><span class="cell-label">Company:</span>Linardatos MON IKE</div>
               <div class="product-cell status-cell"><span class="cell-label">Address:</span><span>Kolombou 16, 54630 Thessaloniki</span></div>
               <div class="product-cell sales"><span class="cell-label">E-Mail:</span>linard@gmail.com</div>
@@ -211,26 +220,8 @@ $result = $conn->query($sql);
               <div class="product-cell price"><span class="cell-label">Representative:</span>Nikos</div>
               <div class="product-cell price"><span class="cell-label">Factorys:</span>12</div>
               <div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">20.12.2023</span></div>
-              <div class="product-cell price"><span class="cell-label">Archive:</span>56 Files</div>-->
-              <?php
-              if ($result->num_rows > 0) {
-                // Output data of each row
-                while($row = $result->fetch_assoc()) {
-                  // Create divs based on the data
-                  echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>'.$row['firstname'] .$row['lastname']'</span></div>';
-                  echo '<div class="product-cell category"><span class="cell-label">Company:</span>Linardatos MON IKE</div>';
-                  echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>Kolombou 16, 54630 Thessaloniki</span></div>';
-                  echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>linard@gmail.com</div>';
-                  echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>+3-6956407432</div>';
-                  echo '<div class="product-cell price"><span class="cell-label">Representative:</span>Nikos</div>';
-                  echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>12</div>';
-                  echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">20.12.2023</span></div>';
-                  echo '<div class="product-cell price"><span class="cell-label">Archive:</span>56 Files</div>';
-                }
-              }
-            ?>
+              <div class="product-cell price"><span class="cell-label">Archive:</span>56 Files</div>
             </div>
-
           </div>
           <!--DIV FOR EACH CUSTOMER-->
           <div class="customer-container" id="customercontainer" style="display: none;">
