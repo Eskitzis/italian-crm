@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
   $telephone = $_POST['telephone'];
   $representive = $_POST['representive'];
 
-  $sql = "INSERT INTO customers (firstname, lastname, company, adress, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, address, zip, city, country, email, telephone, representive ) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
 }
 ?>
 <!DOCTYPE html>
@@ -115,7 +115,7 @@ if (isset($_POST["submit"])) {
   
               <div class="customer-menu">  
                 <div class="customer-menu-buttons">
-                  <form action="customers.php" method="post">
+                  <form action="" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
