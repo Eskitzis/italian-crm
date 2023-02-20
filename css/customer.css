@@ -217,6 +217,29 @@ p {
 a:hover {
     text-decoration:none;
 }
+/**/
+@media screen and (max-width: 6000px) {
+  .tableView .product-cell, .action-button {
+    display: none;
+  }
+  .tableView .product-cell.image, .action-button {
+    display: none;
+  }
+}
+@media screen and (max-width: 6000px) {
+  .tableView .product-cell.status-cell, .action-button {
+    display: none;
+  }
+  .tableView .product-cell.stock, .tableView .product-cell.price, .action-button {
+    display: none;
+  }
+}
+@media screen and (max-width: 6000px) {
+  .tableView .product-cell.price, .action-button {
+    display: none;
+  }
+}
+/**/
 
 
   
