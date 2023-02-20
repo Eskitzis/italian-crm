@@ -436,6 +436,9 @@ body {
   overflow: auto;
   padding: 0 4px;
 }
+.tableView{
+  display: none;
+}
 .tableView .products-header {
   display: none;
   align-items: center;
