@@ -565,7 +565,6 @@ body {
 .status.disabled:before {
   background-color: #59719d;
 }
-
 .gridView {
   display: flex;
   flex-wrap: wrap;
@@ -579,7 +578,6 @@ body {
 .gridView .products-header {
   display: none;
   overflow: auto;
-
 }
 .gridView .products-row {
   margin: 8px;
