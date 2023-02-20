@@ -575,9 +575,6 @@ body {
     margin: 0;
   }
 }
-.gridView2{
-  overflow: auto; 
-}
 .gridView .products-header {
   display: none;
   overflow: auto;
