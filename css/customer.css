@@ -23,52 +23,6 @@ p {
       flex: 100%;
     }
   }
-  .tableView2 .products-header2 {
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    background-color: var(--app-content-secondary-color);
-    position: sticky;
-    top: 0;
-  }
-  .tableView2 .products-row2 {
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-  }
-  .tableView2 .products-row2:hover {
-    box-shadow: var(--filter-shadow);
-    box-shadow: var(--customer-shadow);
-    background-color: var(--app-content-secondary-color);
-  }
-  .tableView2 .products-row2 .cell-more-button2 {
-    display: none;
-  }
-  .tableView2 .product-cell2 {
-    flex: 1;
-    padding: 8px 16px;
-    color: var(--app-content-main-color);
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-  }
-  .tableView2 .product-cell2 img {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    margin-right: 6px;  
-  }
-  .span-order{
-    color: var(--app-content-main-color); /* White text */
-    font-size: 25px;
-    display: inline-block;
-  }
-  .span-order-right{
-    color: var(--app-content-main-color); /* White text */
-    font-size: 25px;
-    float: right;
-    margin-right: 20px;
-    }
   @media (max-width: 800px) {
     .span-order, .span-order-right   {
       font-size: 15px;
@@ -314,7 +268,7 @@ a:hover {
   }
 }
 .gridView .products-header {
-  display: none;
+  display: block !important;
   overflow: auto;
 }
 .gridView .products-row {
@@ -371,7 +325,7 @@ a:hover {
   background-color: rgba(16, 24, 39, 0.7);
   color: #fff;
   cursor: pointer;
-  display: none;
+  display: block !important;
 }
 .gridView .product-cell {
   color: var(--app-content-main-color);
