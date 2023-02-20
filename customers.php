@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
     <title>Customers</title>
 </head>
-<body onload="changeview()">
+<body>
     <div class="app-container">
         <div class="sidebar">
           <div class="sidebar-header">
@@ -466,13 +466,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.querySelector(".customerjs").addEventListener("click", function () {
             document.querySelector(".customer-menu").classList.toggle("active");
         });
-        function changeview(){
+        window.onload = function() {
           document.querySelector(".list").classList.remove("active");
           document.querySelector(".grid").classList.add("active");
           document.querySelector(".products-area-wrapper").classList.add("gridView");
           document.querySelector(".products-area-wrapper").classList.remove("tableView");
-        }
-
+	    	}
         document.querySelector(".grid").addEventListener("click", function () {
             document.querySelector(".list").classList.remove("active");
             document.querySelector(".grid").classList.add("active");
