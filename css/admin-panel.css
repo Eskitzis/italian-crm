@@ -249,7 +249,7 @@ body {
   align-items: center;
   margin-left: auto;
 }
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
   .app-content-actions {
     text-align: left;
   }
@@ -470,23 +470,23 @@ body {
   border-radius: 6px;
   margin-right: 6px;
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 500px) {
   .tableView .product-cell, .action-button {
-    display: none;
+    display: none ;
   }
   .tableView .product-cell.image, .action-button {
-    display: none;
+    display: none ;
   }
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 500px) {
   .tableView .product-cell.status-cell, .action-button {
-    display: none;
+    display: none ;
   }
   .tableView .product-cell.stock, .tableView .product-cell.price, .action-button {
     display: none;
   }
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 500px) {
   .tableView .product-cell.price, .action-button {
     display: none;
   }
@@ -523,12 +523,12 @@ body {
 .tableView .cell-label {
   display: none;
 }
-@media (max-width: 6000px) {
+@media (max-width: 1200px) {
   .sort-button, .sort-button svg, .sort-button:hover{
     display: none;
   }
 }
-@media (max-width: 6000px) {
+@media (max-width: 1200px) {
   .tableView .product-cell{
     font-size: 12px;
     flex: 0.2;
@@ -569,7 +569,7 @@ body {
   flex-wrap: wrap;
   margin: 0 -8px;
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 1200px) {
   .gridView {
     margin: 0;
   }
@@ -596,17 +596,17 @@ body {
 .gridView .products-row:hover .cell-more-button {
   display: flex;
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 1200px) {
   .gridView .products-row {
     width: calc(33.3% - 16px);
   }
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 820px) {
   .gridView .products-row {
     width: calc(50% - 16px);
   }
 }
-@media (max-width: 6000px) {
+@media screen and (max-width: 520px) {
   .gridView .products-row {
     width: 100%;
     margin: 8px 0;
