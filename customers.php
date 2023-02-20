@@ -50,19 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
     <script>
-		// Execute this code when the page loads
-    $(document).ready(function() {
-			$(window).resize(function() {
-        document.querySelector(".list").classList.remove("active");
-        document.querySelector(".grid").classList.add("active");
-        document.querySelector(".products-area-wrapper").classList.add("gridView");
-        document.querySelector(".products-area-wrapper").classList.remove("tableView");
-			});
-      document.querySelector(".list").classList.remove("active");
-      document.querySelector(".grid").classList.add("active");
-      document.querySelector(".products-area-wrapper").classList.add("gridView");
-      document.querySelector(".products-area-wrapper").classList.remove("tableView");
-		});
 	</script>
     <title>Customers</title>
 </head>

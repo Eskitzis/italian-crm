@@ -121,7 +121,6 @@ body {
     display: none;
   }
 }
-
 .mode-switch {
   background-color: transparent;
   border: none;
@@ -471,23 +470,23 @@ body {
   border-radius: 6px;
   margin-right: 6px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 6000px) {
   .tableView .product-cell, .action-button {
-    display: none ;
+    display: none;
   }
   .tableView .product-cell.image, .action-button {
-    display: none ;
+    display: none;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 6000px) {
   .tableView .product-cell.status-cell, .action-button {
-    display: none ;
+    display: none;
   }
   .tableView .product-cell.stock, .tableView .product-cell.price, .action-button {
     display: none;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 6000px) {
   .tableView .product-cell.price, .action-button {
     display: none;
   }
@@ -536,7 +535,6 @@ body {
     padding: 4px 8px;
   }
 }
-
 .status {
   border-radius: 4px;
   display: flex;
@@ -570,7 +568,7 @@ body {
   flex-wrap: wrap;
   margin: 0 -8px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 6000px) {
   .gridView {
     margin: 0;
   }
@@ -597,17 +595,17 @@ body {
 .gridView .products-row:hover .cell-more-button {
   display: flex;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 6000px) {
   .gridView .products-row {
     width: calc(33.3% - 16px);
   }
 }
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 6000px) {
   .gridView .products-row {
     width: calc(50% - 16px);
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 6000px) {
   .gridView .products-row {
     width: 100%;
     margin: 8px 0;
