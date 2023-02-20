@@ -466,6 +466,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.querySelector(".customerjs").addEventListener("click", function () {
             document.querySelector(".customer-menu").classList.toggle("active");
         });
+        
+        document.querySelector(".list").classList.remove("active");
+        document.querySelector(".grid").classList.add("active");
+        document.querySelector(".products-area-wrapper").classList.add("gridView");
+        document.querySelector(".products-area-wrapper").classList.remove("tableView");
+
         document.querySelector(".grid").addEventListener("click", function () {
             document.querySelector(".list").classList.remove("active");
             document.querySelector(".grid").classList.add("active");
