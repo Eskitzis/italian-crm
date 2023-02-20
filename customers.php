@@ -51,14 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
     <script>
 		// Execute this code when the page loads
+    $(document).ready(function() {
+			$(window).resize(function() {
+        document.querySelector(".list").classList.remove("active");
+        document.querySelector(".grid").classList.add("active");
+        document.querySelector(".products-area-wrapper").classList.add("gridView");
+        document.querySelector(".products-area-wrapper").classList.remove("tableView");
+			});
+		});
 		window.onload = function() {
-      document.querySelector(".list").classList.remove("active");
-      document.querySelector(".grid").classList.add("active");
-      document.querySelector(".products-area-wrapper").classList.add("gridView");
-      document.querySelector(".products-area-wrapper").classList.remove("tableView");
-		};
-		// Execute this code when the window is resized
-		window.onresize = function() {
       document.querySelector(".list").classList.remove("active");
       document.querySelector(".grid").classList.add("active");
       document.querySelector(".products-area-wrapper").classList.add("gridView");
