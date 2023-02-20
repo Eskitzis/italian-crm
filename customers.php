@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
     <title>Customers</title>
 </head>
-<body>
+<body onload="changeview()">
     <div class="app-container">
         <div class="sidebar">
           <div class="sidebar-header">
@@ -179,10 +179,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </div>
                 </div>
               </div>
-              <button class="action-button list active" title="List View">
+              <button class="action-button list" title="List View">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
               </button>
-              <button class="action-button grid" title="Grid View">
+              <button class="action-button grid active" title="Grid View">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
               </button>
             </div>
@@ -466,11 +466,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.querySelector(".customerjs").addEventListener("click", function () {
             document.querySelector(".customer-menu").classList.toggle("active");
         });
-        
-        document.querySelector(".list").classList.remove("active");
-        document.querySelector(".grid").classList.add("active");
-        document.querySelector(".products-area-wrapper").classList.add("gridView");
-        document.querySelector(".products-area-wrapper").classList.remove("tableView");
+        function changeview(){
+          document.querySelector(".list").classList.remove("active");
+          document.querySelector(".grid").classList.add("active");
+          document.querySelector(".products-area-wrapper").classList.add("gridView");
+          document.querySelector(".products-area-wrapper").classList.remove("tableView");
+        }
 
         document.querySelector(".grid").addEventListener("click", function () {
             document.querySelector(".list").classList.remove("active");
