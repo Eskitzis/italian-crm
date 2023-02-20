@@ -472,6 +472,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.querySelector(".products-area-wrapper").classList.add("gridView");
           document.querySelector(".products-area-wrapper").classList.remove("tableView");
 	    	}
+        window.onresize = function() {
+          document.querySelector(".list").classList.remove("active");
+          document.querySelector(".grid").classList.add("active");
+          document.querySelector(".products-area-wrapper").classList.add("gridView");
+          document.querySelector(".products-area-wrapper").classList.remove("tableView");
+		    }
         document.querySelector(".grid").addEventListener("click", function () {
             document.querySelector(".list").classList.remove("active");
             document.querySelector(".grid").classList.add("active");
