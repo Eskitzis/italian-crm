@@ -455,6 +455,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="close">&times;</span>
           <h2 id='customerid'></h2>
           <h2 id='customerlastname'></h2>
+        </div>
       </div>
 </div>
     <script>
