@@ -50,35 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
     <title>Customers</title>
-    <style>
-        .more-options-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  padding: 0;
-  margin: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  list-style: none;
-  }
-  .more-options-menu li {
-  padding: 8px 16px;
-  border-bottom: 1px solid #ccc;
-  }
-  .more-options-menu li:last-child {
-  border-bottom: none;
-  }
-  .more-options-menu li a {
-  color: #333;
-  text-decoration: none;
-  }
-  .more-options-menu li a:hover {
-  background-color: #f2f2f2;
-  }
-    </style>
 </head>
 <body>
     <div class="app-container">
