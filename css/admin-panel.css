@@ -939,6 +939,7 @@ body {
 .total-label{
   flex-basis: 120px;
   margin-right: 150px;
+  margin-left: 5px;
   text-align: left;
 }
 
