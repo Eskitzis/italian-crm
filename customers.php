@@ -449,13 +449,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   }
                 }
             ?>
-            <div class="more-options">
-              <ul id="more-options-list">
-                <li><a href="#">Option 1</a></li>
-                <li><a href="#">Option 2</a></li>
-                <li><a href="#">Option 3</a></li>
-              </ul>
-            </div>
+            <ul id="more-options-list">
+              <li><a href="#">Option 1</a></li>
+              <li><a href="#">Option 2</a></li>
+              <li><a href="#">Option 3</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -521,20 +519,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         function moreoptions(val) {
           alert(val);
-          var moreOptionsBtn = document.getElementById("cell-more-button");
-          var moreOptionsList = document.getElementById("more-options-list");
-
-          moreOptionsBtn.addEventListener("click", function() {
-            moreOptionsList.parentElement.classList.toggle("active");
-          });
-
-          document.addEventListener("click", function(event) {
-            var isClickInside = moreOptionsBtn.contains(event.target) || moreOptionsList.contains(event.target);
-            if (!isClickInside) {
-              moreOptionsList.parentElement.classList.remove("active");
-            }
-          });
-
+          if (val!= ""){
+            document.getElementById("more-options-menu").style.display = "block";
+          }
         }
     </script>
 </body>

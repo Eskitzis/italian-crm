@@ -171,9 +171,6 @@ p {
 a:hover {
     text-decoration:none;
 }
-.more-options {
-  position: relative;
-  }
   .more-options-menu {
   display: none;
   position: absolute;
