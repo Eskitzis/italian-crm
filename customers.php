@@ -479,6 +479,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <option value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
                   <option value="advance1">Advance payment 1</option>
                   <option value="advance2">Advance payment 2</option>
+                  <option value="invoice">Invoices</option>
                   <option value="final">Final payment</option>
                   <option value="shipped">Order Shipped</option>
                 </select>
