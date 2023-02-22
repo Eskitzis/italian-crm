@@ -470,7 +470,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
-                <select class="modal-input" name="status" id="status">
+                <select class="modal-select" name="status" id="status">
                   <option value="orderfromcustomer">Customer Order</option>
                   <option value="orderfromus">GRUPPOCASA->FACTORY</option>
                   <option value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
