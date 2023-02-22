@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <title>CRM</title>
 </head>
-<body class="bodyclass">
+<body>
     <form class="login" action="proccess-login.php" method="post">
         <input type="text" name="user" id="user" placeholder="Username*" required>
         <input type="password" name="pass" id="pass" placeholder="Password*" required>
