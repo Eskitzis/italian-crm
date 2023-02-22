@@ -457,7 +457,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h2>Add Order</h2>
             <form action="" style="width:100% !important;">
               <div class="total-group">
-                <label class="total-label">ID::</label>
+                <label class="total-label">ID:</label>
                 <input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled>
               </div>
   		        <div class="total-group">
