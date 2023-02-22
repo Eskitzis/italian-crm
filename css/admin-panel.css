@@ -967,7 +967,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .modal-button-blue:focus {
@@ -1037,5 +1037,5 @@ body {
   display: flex !important;
   justify-content: center !important;
   align-items: end !important;
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
