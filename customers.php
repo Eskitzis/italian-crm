@@ -430,21 +430,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!--END DATA ARCHIVE-->  
                     </div>
                 ';
-                $dropdownmenu ='
-                <div class="more-options">
-                  <ul class="more-options-menu">
-                    <li><a href="#">Option 1</a></li>
-                    <li><a href="#">Option 2</a></li>
-                    <li><a href="#">Option 3</a></li>
-                  </ul>
-                </div>
-                ';
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
                     echo '<div class="products-row" id="customer1" onclick="cartela(this.id)">';
                     echo '<button class="cell-more-button" onclick="moreoptions(' . $row['id'] .')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
-                    echo $dropdownmenu;
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
                     echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
@@ -459,6 +449,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   }
                 }
             ?>
+            <div class="more-options">
+              <ul id="more-options-list">
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -524,25 +521,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         function moreoptions(val) {
           alert(val);
-        }
-        //EXTRA MENU FOR EACH CUSTOMER
-        const moreOptionsButton = document.querySelector('.cell-more-button');
-        const moreOptionsMenu = document.querySelector('.cell-more-button');
+          var moreOptionsBtn = document.getElementById("cell-more-button");
+          var moreOptionsList = document.getElementById("more-options-list");
 
-        moreOptionsButton.addEventListener('click', function() {
-        if (moreOptionsMenu.style.display === 'none') {
-            moreOptionsMenu.style.display = 'block';
-        } else {
-            moreOptionsMenu.style.display = 'none';
-        }
-        });
-        document.addEventListener('click', function(event) {
-        if (!moreOptionsButton.contains(event.target) && !moreOptionsMenu.contains(event.target)) {
-            moreOptionsMenu.style.display = 'none';
-        }
-        });
-        //////////////////////////////////////////////////////////////////////////////////////
+          moreOptionsBtn.addEventListener("click", function() {
+            moreOptionsList.parentElement.classList.toggle("active");
+          });
 
+          document.addEventListener("click", function(event) {
+            var isClickInside = moreOptionsBtn.contains(event.target) || moreOptionsList.contains(event.target);
+            if (!isClickInside) {
+              moreOptionsList.parentElement.classList.remove("active");
+            }
+          });
+
+        }
     </script>
 </body>
 </html>
