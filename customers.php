@@ -443,7 +443,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representive'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';                      
+                    echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
                     echo '</div>';
                     //echo $customercartela;
                   }
