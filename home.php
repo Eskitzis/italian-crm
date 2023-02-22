@@ -338,7 +338,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /////////////////////////////////////////////////////////////////////////////////////
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
-          document.getElementById('customername').value = name;
+          //document.getElementById('customername').value = name;
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
