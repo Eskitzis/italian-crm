@@ -40,7 +40,6 @@ p {
 }
 .customer-container{
   overflow: hidden;
-  
 }
 /* Create two unequal columns that floats next to each other */
 .column {
@@ -217,4 +216,64 @@ a:hover {
 
 .more-options.active #more-options-list {
   display: block;
+}
+.customermenu:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--app-content-secondary-color);
+  bottom: 100%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.customermenu.active {
+  visibility: visible;
+  opacity: 1;
+  top: calc(100% + 8px);
+}
+.customermenu label {
+  display: block;
+  font-size: 14px;
+  color: var(--app-content-main-color);
+  margin-bottom: 8px;
+}
+.customermenu select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 8px;
+  background-position: right 4px center;
+  border: 1px solid var(--app-content-main-color);
+  border-radius: 4px;
+  color: var(--app-content-main-color);
+  font-size: 12px;
+  background-color: transparent;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.customermenu select option {
+  font-size: 14px;
+}
+.light .customermenu select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f1c2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+.customermenu select:hover {
+  border-color: var(--action-color-hover);
+}
+.customermenu select:focus, .customermenu select.active {
+  outline: none;
+  color: var(--action-color);
+  border-color: var(--action-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232869ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.customermenu-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
