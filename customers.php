@@ -520,10 +520,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        function moreoptions(id, lastname) {
+        function moreoptions(id) {
           modal.style.display = "block";
           document.getElementById('customerid').innerHTML = id;
-          document.getElementById('customerlastname').innerHTML = lastname;
         }
         span.onclick = function() {
           modal.style.display = "none";
