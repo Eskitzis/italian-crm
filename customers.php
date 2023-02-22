@@ -456,15 +456,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="close">&times;</span>
           <h2>Add Order</h2>
             <form action="" style="width:100% !important;">
-              <label>ID:<input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
-              <br>
-              <label>Lastname:<input class="modal-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
-              <br>
-              <label>Category:<input class="modal-input" type="text" name="" id=""></label>
-              <br>
-              <label>Status:<input class="modal-input" type="text" name="" id=""></label>
-              <br>
-              <label>Representive:<input class="modal-input" type="text" name="" id=""></label>
+              <div class="total-group">
+                <label class="total-label">ID::</label>
+                <input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled>
+              </div>
+  		        <div class="total-group">
+    		        <label class="total-label">Lastname:</label>
+    		        <input class="modal-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled>
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Category:</label>
+    		        <input class="modal-input" type="text" name="" id="">
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Status:</label>
+    		        <input class="modal-input" type="text" name="" id="">
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Representive:</label>
+    		        <input class="modal-input" type="text" name="" id="">
+  		        </div>
               <br>
               <button class="modal-button" type="button" onclick="customReset()">Reset</button>
               <br>
