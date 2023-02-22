@@ -499,7 +499,7 @@ if(isset($_POST['order_submit'])){
                 </select>             
   		        </div>
               <div class="total-group">
-    		        <label class="total-label">Representive:</label>
+    		        <label class="total-label">Representative:</label>
     		        <input class="modal-input" type="text" name="representative" id="representative">
   		        </div>
               <br>
