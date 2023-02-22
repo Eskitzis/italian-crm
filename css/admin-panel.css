@@ -925,6 +925,7 @@ body {
 .modal-input{
   width: 50%;
   float: right;
+  text-align: right;
 }
 .modal-button{
   height: 3px;
