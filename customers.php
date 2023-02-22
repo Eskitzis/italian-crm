@@ -238,7 +238,6 @@ if(isset($_POST['order_submit'])){
               //END DIV FOR EACH CUSTOMER
               $sql = 'SELECT * FROM customers';
                 $result = $conn->query($sql);
-                echo $customercartela; 
                 if ($result->num_rows > 0) {
                 $customercartela = '
                   <div class="customer-container" id="customercontainer" style="display: none;">

@@ -1,3 +1,17 @@
+<?php
+ session_start();
+ // Connect to MySQL database
+$host = 'localhost';
+$username = 'gruppocasa';
+$password = 'b2tV*5e3';
+$dbname = 'italiancrm';
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die('Connection failed: ' . $conn->connect_error);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,25 +158,28 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
                 </button></div>
             </div>
-            <div class="products-row" onclick="alert('Downloading Receipt')">
-              <button class="cell-more-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
-              </button>
-
-                <div class="product-cell image">
-                  <!--IMAGE GOES HERE-->
-                  <span>Koulideis</span>
-                </div>
-              <div class="product-cell category"><span class="cell-label">Category:</span>Furniture</div>
-              <div class="product-cell status-cell">
-                <span class="cell-label">Status:</span>
-                <span class="status active">Pre-Order</span>
-              </div>
-              <div class="product-cell sales"><span class="cell-label">Last Update:</span>20.12.2022</div>
-              <div class="product-cell stock"><span class="cell-label">Representative:</span>Kakos</div>
-              <div class="product-cell price"><span class="cell-label">Receipt:</span>receipt.pdf</div>
-            </div>
-
+            <?php
+              //DIV FOR EACH CUSTOMER
+              //END DIV FOR EACH CUSTOMER
+              $sql = 'SELECT * FROM orders';
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                // Output data of each row
+                  while($row = $result->fetch_assoc()) {
+                    // Create divs based on the data
+                    echo '<div class="products-row">';
+                    echo '<button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
+                    echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['name'] .'</span></div>';
+                    echo '<div class="product-cell category"><span class="cell-label">Category:</span>' . $row['category'] .'</div>';
+                    echo '<div class="product-cell status-cell"><span class="cell-label">Status:</span><span class="status active">' . $row['status'] .'</span></div>';
+                    echo '<div class="product-cell sales"><span class="cell-label">Last Update:</span>' . $row['lastupdate'] .'</div>';
+                    echo '<div class="product-cell stock"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Receipt:</span>receipt.pdf</div>';
+                    echo '</div>';
+                    //echo $customercartela;
+                  }
+                }
+            ?>
           </div>
         </div>
       </div>
