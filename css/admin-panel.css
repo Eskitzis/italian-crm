@@ -954,8 +954,7 @@ body {
 }
 .modal-button-blue {
   align-items: center;
-  background-color: var(--customer-reset);
-  border: 2px solid var(--customer-reset);
+  background-color: rgba(195, 207, 244, 1);
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -983,24 +982,21 @@ body {
 }
 
 .modal-button-blue:focus {
-  color: #171e29;
+  color: rgba(195, 207, 244, 1);
 }
 
 .modal-button-blue:hover {
-  background-color: #3385ff;
-  border-color: #3385ff;
-  fill: #06f;
+  background-color: rgba(195, 207, 244, 1);
+  fill: rgba(195, 207, 244, 1);
 }
 
 .modal-button-blue:active {
-  background-color: #3385ff;
-  border-color: #3385ff;
-  fill: #06f;
+  background-color: rgba(195, 207, 244, 1);
+  fill: rgba(195, 207, 244, 1);
 }
 .modal-button-green {
   align-items: center;
-  background-color: var(--action-color);
-  border: 2px solid var(--action-color);
+  background-color: rgba(16, 24, 39, 0.8);
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -1031,15 +1027,13 @@ body {
 }
 
 .modal-button-green:hover {
-  background-color: var(--action-color);
-  border-color: var(--action-color);
-  fill: var(--action-color);
+  background-color: rgba(16, 24, 39, 0.8);
+  fill: rgba(16, 24, 39, 0.8);
 }
 
 .modal-button-green:active {
-  background-color: var(--action-color);
-  border-color: var(--action-color);
-  fill: var(--action-color);
+  background-color: rgba(16, 24, 39, 0.8);
+  fill: rgba(16, 24, 39, 0.8);
 }
 
 @media (min-width: 768px) {
