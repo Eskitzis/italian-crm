@@ -454,7 +454,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>Modal Title</h2>
-          <p>Modal content goes here.</p>
+          <p id='customerid'></p>
       </div>
 </div>
     <script>
@@ -522,6 +522,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         const span = document.getElementsByClassName("close")[0];
         function moreoptions(val) {
           modal.style.display = "block";
+          document.getElementById('customerid').innerHTML = val;
         }
         span.onclick = function() {
           modal.style.display = "none";
