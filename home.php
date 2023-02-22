@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Output data of each row
                           while($row = $result->fetch_assoc()) {
                             // Create divs based on the data
-                            echo '<article class="leaderboard__profile" onclick="cust1()">';
+                            echo '<article class="leaderboard__profile" onclick="cust(' . $row['name'] .')">';
                             echo '<img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">';
                             echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
                             echo '<span class="leaderboard__value">' . $row['lastupdate'] .'<span style="color: black;">B</span></span>';
@@ -269,10 +269,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-                  <div id="customerdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 1</span></div>
-                  <div id="customerdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 2</span></div>
-                  <div id="customerdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 3</span></div>
-                  <div id="customerdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Name 4</span></div>
+                  <div id="customerdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername"></span></div>
 
                   <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Pre-Order</span></div>
                   <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Offer to Customer</span></div>
@@ -339,11 +336,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////////
-        function cust1() {
+        function cust(name) {
           document.getElementById("customerdiv1").style.display = "block";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("customername").innerHTML = name;
 
           document.getElementById("orderdiv1").style.display = "none";
           document.getElementById("orderdiv2").style.display = "none";
@@ -354,52 +349,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
         }
-        function cust2() {
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "block";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
-
-          document.getElementById("orderdiv1").style.display = "none";
-          document.getElementById("orderdiv2").style.display = "none";
-          document.getElementById("orderdiv3").style.display = "none";
-          document.getElementById("orderdiv4").style.display = "none";
-          document.getElementById("orderdiv5").style.display = "none";
-          document.getElementById("orderdiv6").style.display = "none";
-          document.getElementById("orderdiv7").style.display = "none";
-          document.getElementById("orderdiv8").style.display = "none";
-        }
-        function cust3() {
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "block";
-          document.getElementById("customerdiv4").style.display = "none";
-
-          document.getElementById("orderdiv1").style.display = "none";
-          document.getElementById("orderdiv2").style.display = "none";
-          document.getElementById("orderdiv3").style.display = "none";
-          document.getElementById("orderdiv4").style.display = "none";
-          document.getElementById("orderdiv5").style.display = "none";
-          document.getElementById("orderdiv6").style.display = "none";
-          document.getElementById("orderdiv7").style.display = "none";
-          document.getElementById("orderdiv8").style.display = "none";
-        }
-        function cust4() {
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "block";
-
-          document.getElementById("orderdiv1").style.display = "none";
-          document.getElementById("orderdiv2").style.display = "none";
-          document.getElementById("orderdiv3").style.display = "none";
-          document.getElementById("orderdiv4").style.display = "none";
-          document.getElementById("orderdiv5").style.display = "none";
-          document.getElementById("orderdiv6").style.display = "none";
-          document.getElementById("orderdiv7").style.display = "none";
-          document.getElementById("orderdiv8").style.display = "none";
-        }
-
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
           document.getElementById("orderdiv2").style.display = "none";
