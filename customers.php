@@ -517,14 +517,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function factory(clicked_id){
           alert(clicked_id);
         }
-        function moreoptions(val) {
-          alert(val);
-        }
         //MENU MODAL
         const modal = document.getElementById("menumodal");
-        const button = document.getElementById("menupopup");
         const span = document.getElementsByClassName("close")[0];
-        button.onclick = function() {
+        function moreoptions(val) {
           modal.style.display = "block";
         }
         span.onclick = function() {
