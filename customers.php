@@ -458,11 +458,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="" style="width:100% !important;">
               <div class="total-group">
                 <label class="total-label">ID:</label>
-                <input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled>
+                <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" disabled>
               </div>
   		        <div class="total-group">
     		        <label class="total-label">Lastname:</label>
-    		        <input class="modal-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled>
+    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled>
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Category:</label>
