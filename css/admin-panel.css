@@ -923,7 +923,7 @@ body {
   width: 100%;
 }
 .modal-input{
-  width: 30%;
+  width: 50%;
   box-shadow: 5px 5px 10px 0px #d4d4d4;
   border-color: var(--dl-color-gray-black);
   border-width: 1px;
@@ -933,6 +933,6 @@ body {
   float: right;
 }
 .modal-button{
-  height: 3px;
-  width: 20px;
+  height: 20px;
+  width: 150px;
 }
