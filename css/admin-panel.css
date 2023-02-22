@@ -944,21 +944,6 @@ body {
 .green{
   background-color: rgb(0, 102, 14) !important;
 }
-.green:focus {
-  color: #0fe408;
-}
-
-.green:hover {
-  background-color: #1afa06;
-  border-color: #1afa06;
-  fill: rgb(9, 243, 68);
-}
-
-.green:active {
-  background-color: #1afa06;
-  border-color: #1afa06;
-  fill: rgb(0, 255, 0);
-}
 
 .modal-button {
   align-items: center;
@@ -985,7 +970,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
 }
 
 .modal-button:focus {
