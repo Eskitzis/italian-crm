@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Output data of each row
                           while($row = $result->fetch_assoc()) {
                             // Create divs based on the data
-                            echo '<article class="leaderboard__profile" onclick="cust(' . $row['name'] .')">';
+                            echo '<article class="leaderboard__profile" onclick="cust(\''.$row['name'].'\')">';
                             echo '<img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">';
                             echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
                             echo '<span class="leaderboard__value">' . $row['lastupdate'] .'<span style="color: black;">B</span></span>';
@@ -338,7 +338,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /////////////////////////////////////////////////////////////////////////////////////
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
-          //document.getElementById('customername').value = name;
+          document.getElementById('customername').value = name;
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
