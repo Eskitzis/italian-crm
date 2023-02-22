@@ -176,7 +176,6 @@ if ($conn->connect_error) {
                     echo '<div class="product-cell stock"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Receipt:</span>receipt.pdf</div>';
                     echo '</div>';
-                    //echo $customercartela;
                   }
                 }
             ?>
@@ -184,11 +183,6 @@ if ($conn->connect_error) {
         </div>
       </div>
     <script>
-        $(document).ready(function () {
-            $('select').selectize({
-             sortField: 'text'
-            });
-        });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
