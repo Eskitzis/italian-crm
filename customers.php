@@ -456,16 +456,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="close">&times;</span>
           <h2>Add Order</h2>
             <form action="">
-              <label>ID:<input class="customer-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
+              <label>ID:<input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
               <br>
               <br>
-              <label>Lastname:<input class="customer-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
+              <label>Lastname:<input class="modal-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
               <br>
               <br>
-              <label>Category:<input class="customer-input" type="text" name="" id=""></label>
+              <label>Category:<input class="modal-input" type="text" name="" id=""></label>
               <br>
               <br>
-              <label>Status:<input class="customer-input" type="text" name="" id=""></label>
+              <label>Status:<input class="modal-input" type="text" name="" id=""></label>
               <br>
               <br>
               <label>Representive:<input class="customer-input" type="text" name="" id=""></label>

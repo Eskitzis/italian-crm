@@ -922,3 +922,6 @@ body {
 .customer-container{
   width: 100%;
 }
+.modal-input{
+  width: 50%;
+}
