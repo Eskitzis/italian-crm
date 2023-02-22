@@ -485,19 +485,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="shipped">Order Shipped</option>
                 </select>                 
                 </div>
-                <select class="modal-select" name="addstatus" id="addstatus">
-                    <option value="orderfromcustomer">Customer Order</option>
-                    <option value="orderfromus">GRUPPOCASA->FACTORY</option>
-                    <option value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
-                    <option value="proformafromus">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                    <option value="confirmationfromcustomer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
-                    <option value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
-                    <option value="advance1">Advance payment 1</option>
-                    <option value="advance2">Advance payment 2</option>
-                    <option value="invoice">Invoices</option>
-                    <option value="final">Final payment</option>
-                    <option value="shipped">Order Shipped</option>
-                </select>
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Representive:</label>
