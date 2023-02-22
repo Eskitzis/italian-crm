@@ -1032,3 +1032,8 @@ body {
     min-width: 170px;
   }
 }
+.buttons-center{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}

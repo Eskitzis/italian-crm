@@ -477,7 +477,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     		        <input class="modal-input" type="text" name="" id="">
   		        </div>
               <br>
-              <div style="-ms-transform: translateY(-50%); transform: translateY(-50%);">
+              <div class="buttons-center">
                 <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
                 <button class="modal-button-green" type="submit" value="submit">Apply</button>
               </div>
