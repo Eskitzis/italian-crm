@@ -471,12 +471,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="total-group">
     		        <label class="total-label">Status:</label>
                 <select class="modal-input" name="status" id="status">
-                  <option value="orderfromcustomer"> Customer Order</option>
+                  <option value="orderfromcustomer">Customer Order</option>
                   <option value="orderfromus">GRUPPOCASA->FACTORY</option>
                   <option value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
                   <option value="proformafromus">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                  <option value="">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
-                  <option value="confirmationfromus"></option>
+                  <option value="confirmationfromcustomer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                  <option value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
                   <option value="advance1">Advance payment 1</option>
                   <option value="advance2">Advance payment 2</option>
                   <option value="final">Final payment</option>
