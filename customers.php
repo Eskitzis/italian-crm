@@ -22,9 +22,9 @@ if(isset($_POST['customer_submit'])){
   $country = mysqli_real_escape_string($conn, $_POST["country"]);
 	$email = mysqli_real_escape_string($conn, $_POST["email"]);
   $telephone = mysqli_real_escape_string($conn, $_POST["telephone"]);
-	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
+	$representative = mysqli_real_escape_string($conn, $_POST["representative"]);
   
-  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representative) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representative')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
   } else {
@@ -37,9 +37,9 @@ if(isset($_POST['order_submit'])){
   $category = mysqli_real_escape_string($conn, $_POST["category"]);
 	$status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
   $lastupdate = mysqli_real_escape_string($conn, $_POST[""]);
-	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
+	$representive = mysqli_real_escape_string($conn, $_POST["representative"]);
   
-  $sql = "INSERT INTO orders (customer_id, name, category, status, lastupdate, representive) VALUES ('$customer_id', '$lastname', '$category', '$status', '$lastupdate', '$representive')";
+  $sql = "INSERT INTO orders (customer_id, name, category, status, lastupdate, representative) VALUES ('$customer_id', '$lastname', '$category', '$status', '$lastupdate', '$representative')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
   } else {
@@ -155,7 +155,7 @@ if(isset($_POST['order_submit'])){
                     <br>
                     <input class="customer-input" type="text" name="telephone" id="telephone" placeholder="Telephone">
                     <br>
-                    <input class="customer-input" type="text" name="representive" id="representive" placeholder="Representative/Salesman">
+                    <input class="customer-input" type="text" name="representative" id="representative" placeholder="Representative/Salesman">
                     <br>
                     <button class="customer-button reset" type="reset">Reset</button>
                     <br>
@@ -453,7 +453,7 @@ if(isset($_POST['order_submit'])){
                     echo '<div class="product-cell sales"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
                     echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representive'] .'</div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
@@ -500,7 +500,7 @@ if(isset($_POST['order_submit'])){
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Representive:</label>
-    		        <input class="modal-input" type="text" name="representive" id="representive">
+    		        <input class="modal-input" type="text" name="representative" id="representative">
   		        </div>
               <br>
               <div class="buttons-center">

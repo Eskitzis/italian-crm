@@ -104,7 +104,7 @@ if ($conn->connect_error) {
                     <br>
                     <input type="date" class="customer-input" name="orderdate" id="orderdate">
                     <br>
-                    <input type="text" class="customer-input" name="orderrepresentive" id="orderrepresentive" placeholder="Representative">
+                    <input type="text" class="customer-input" name="orderrepresentative" id="orderrepresentative" placeholder="Representative">
                     <br>
                     <input type="text" disabled class="customer-input" name="orderstatus" id="orderstatus" value="Pre-Order">
                     <button class="customer-button reset" type="reset">
