@@ -1036,4 +1036,5 @@ body {
   display: flex !important;
   justify-content: center !important;
   align-items: end !important;
+  margin-bottom: 5px;
 }
