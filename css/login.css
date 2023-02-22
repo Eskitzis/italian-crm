@@ -80,12 +80,6 @@ body {
   .login > button:hover {
     background-color: #7a7a7a;
   }
-  @media (max-width: 800px){
-    .login{
-      width: 30%;
-    }
-  }
-  
   @-webkit-keyframes wawes {
     from {
       -webkit-transform: rotate(0);
@@ -125,4 +119,9 @@ body {
     right: 10px;
     bottom: 10px;
     font-size: 12px;
+  }
+  @media (max-width: 700px){
+    .login, .login::before, .login::after{
+      width: 300px;
+    }
   }
