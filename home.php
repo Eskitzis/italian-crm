@@ -360,10 +360,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv8").style.display = "none";
 
           
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord2() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -375,10 +372,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";          
+          document.getElementById("cust").style.display = "none";         
         }
         function ord3() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -390,10 +384,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord4() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -405,10 +396,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord5() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -420,10 +408,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord6() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -435,10 +420,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord7() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -450,10 +432,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "block";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
         function ord8() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -465,10 +444,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "block";
 
-          document.getElementById("customerdiv1").style.display = "none";
-          document.getElementById("customerdiv2").style.display = "none";
-          document.getElementById("customerdiv3").style.display = "none";
-          document.getElementById("customerdiv4").style.display = "none";
+          document.getElementById("cust").style.display = "none";
         }
     </script>
 </body>
