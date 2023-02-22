@@ -454,8 +454,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div id="menumodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close">&times;</span>
-          <h2 id='customerid'></h2>
-          <h2 id='customerlastname'></h2>
+          <h2>Add Order</h2>
+            <form action="">
+              <label>ID:<input class="customer-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
+              <br>
+              <br>
+              <label>Lastname:<input class="customer-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
+              <br>
+              <br>
+              <label>Category:<input class="customer-input" type="text" name="" id=""></label>
+              <br>
+              <br>
+              <label>Status:<input class="customer-input" type="text" name="" id=""></label>
+              <br>
+              <br>
+              <label>Representive:<input class="customer-input" type="text" name="" id=""></label>
+              <br>
+              <button class="customer-button reset" type="button" onclick="customReset()">Reset</button>
+              <br>
+              <button class="customer-button apply" type="submit" value="submit">Apply</button>
+            </form>
         </div>
       </div>
 </div>
@@ -532,6 +550,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         window.onclick = function(event) {
           if (event.target == modal) {
             modal.style.display = "none";
+          }
+        }
+        function customReset(){
+          var fieldsToReset = document.querySelectorAll("input:not([data-noreset='true'])")
+          for(var i=0;i<fieldsToReset.length;i++){
+            fieldsToReset[i].value = null;
           }
         }
         //////////////////////////////////////////////////////////////////////////////////////

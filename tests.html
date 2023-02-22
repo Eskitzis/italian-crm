@@ -1,38 +1,37 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
-
-<div class="w3-container">
-  <button onclick="openmodal('one')" class="w3-button w3-black">Open Animated Modal</button>
-
-  <div id="modalmenu" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal">
-        <span class="w3-button w3-display-topright">&times;</span>
-        <h2>Modal Header</h2>
-      </header>
-      <div class="w3-container">
-        <p id="id">.</p>
-        <p>Some text..</p>
-      </div>
-    </div>
+<button onclick="test('1')">Test Me</button>
+<div id="menumodal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4">
+    <span class="close">&times;</span>
+    <h2>Add Order</h2>
+    <form action="">
+      <label>ID:<input class="customer-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
+      <br>
+      <br>
+      <label>Lastname:<input class="customer-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
+      <br>
+      <br>
+      <label>Category:<input class="customer-input" type="text" name="" id=""></label>
+      <br>
+      <br>
+      <label>Status:<input class="customer-input" type="text" name="" id=""></label>
+      <br>
+      <br>
+      <label>Representive:<input class="customer-input" type="text" name="" id=""></label>
+      <br>
+      <button class="customer-button reset" type="button" onclick="customReset()">Reset</button>
+      <br>
+      <button class="customer-button apply" type="submit" value="submit">Apply</button>
+    </form>
   </div>
-
-</div>    
-</body>
+</div>
 <script>
-    function openmodal(val) {
-        document.getElementById('modalmenu').style.display='block';
-        document.getElementById('id').innerHTML = val;
-    }
-    span.onclick = function() {
-        document.getElementById('modalmenu').style.display='none';
-    }
-    window.onclick = function(event) {         
-        document.getElementById('modalmenu').style.display='none';
-    }
+  function test(val){
+    document.getElementById('customerid').value = val;
+  }
+  function customReset(){
+    var fieldsToReset = document.querySelectorAll("input:not([data-noreset='true'])")
+    for(var i=0;i<fieldsToReset.length;i++){
+      fieldsToReset[i].value = null;
+    } 
+  }
 </script>
-</html>
