@@ -1033,7 +1033,7 @@ body {
   }
 }
 .buttons-center{
-  display: flex;
-  justify-content: center;
-  align-items: end;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: end !important;
 }
