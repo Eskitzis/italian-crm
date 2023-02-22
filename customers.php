@@ -542,7 +542,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         const span = document.getElementsByClassName("close")[0];
         function moreoptions(id) {
           modal.style.display = "block";
-          document.getElementById('customerid').innerHTML = id;
+          document.getElementById('customerid').value = id;
         }
         span.onclick = function() {
           modal.style.display = "none";
