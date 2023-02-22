@@ -573,7 +573,7 @@ if(isset($_POST['order_submit'])){
         function moreoptions(id,fname,lname) {
           modal.style.display = "block";
           document.getElementById('customerid').value = id;
-          document.getElementById('customerlastname').value = fname + ' '+ lname;
+          document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         span.onclick = function() {
           modal.style.display = "none";
