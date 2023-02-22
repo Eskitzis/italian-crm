@@ -1,58 +1,38 @@
-<style>
-    .more-options {
-    position: relative;
-    }
-    .more-options-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    list-style: none;
-    }
-    .more-options-menu li {
-    padding: 8px 16px;
-    border-bottom: 1px solid #ccc;
-    }
-    .more-options-menu li:last-child {
-    border-bottom: none;
-    }
-    .more-options-menu li a {
-    color: #333;
-    text-decoration: none;
-    }
-    .more-options-menu li a:hover {
-    background-color: #f2f2f2;
-    }
-</style>
-<div class="more-options">
-    <button class="more-options-button">More Options</button>
-    <ul class="more-options-menu">
-      <li><a href="#">Option 1</a></li>
-      <li><a href="#">Option 2</a></li>
-      <li><a href="#">Option 3</a></li>
-    </ul>
-</div>
-<script>
-    const moreOptionsButton = document.querySelector('.more-options-button');
-    const moreOptionsMenu = document.querySelector('.more-options-menu');
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
-    moreOptionsButton.addEventListener('click', function() {
-    if (moreOptionsMenu.style.display === 'none') {
-        moreOptionsMenu.style.display = 'block';
-    } else {
-        moreOptionsMenu.style.display = 'none';
+<div class="w3-container">
+  <button onclick="openmodal('one')" class="w3-button w3-black">Open Animated Modal</button>
+
+  <div id="modalmenu" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal">
+        <span class="w3-button w3-display-topright">&times;</span>
+        <h2>Modal Header</h2>
+      </header>
+      <div class="w3-container">
+        <p id="id">.</p>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+
+</div>    
+</body>
+<script>
+    function openmodal(val) {
+        document.getElementById('modalmenu').style.display='block';
+        document.getElementById('id').innerHTML = val;
     }
-    });
-    document.addEventListener('click', function(event) {
-    if (!moreOptionsButton.contains(event.target) && !moreOptionsMenu.contains(event.target)) {
-        moreOptionsMenu.style.display = 'none';
+    span.onclick = function() {
+        document.getElementById('modalmenu').style.display='none';
     }
-    });
+    window.onclick = function(event) {         
+        document.getElementById('modalmenu').style.display='none';
+    }
 </script>
-  
+</html>

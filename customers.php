@@ -450,8 +450,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
         </div>
       </div>
-      <div id="menumodal" class="modal">
-        <div class="modal-content">
+      <div id="menumodal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close">&times;</span>
           <h2 id='customerid'></h2>
           <h2 id='customerlastname'></h2>
