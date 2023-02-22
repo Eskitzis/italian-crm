@@ -269,7 +269,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-                  <div id="customerdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername"></span></div>
+                  <div id="customerdiv" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername"></span></div>
 
                   <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Pre-Order</span></div>
                   <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Offer to Customer</span></div>
@@ -337,7 +337,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////////
         function cust(name) {
-          document.getElementById("customerdiv1").style.display = "block";
+          document.getElementById("customerdiv").style.display = "block";
           document.getElementById("customername").innerHTML = name;
 
           document.getElementById("orderdiv1").style.display = "none";
@@ -360,7 +360,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv8").style.display = "none";
 
           
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord2() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -372,7 +372,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";         
+          document.getElementById("customerdiv").style.display = "none";         
         }
         function ord3() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -384,7 +384,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord4() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -396,7 +396,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord5() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -408,7 +408,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord6() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -420,7 +420,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord7() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -432,7 +432,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "block";
           document.getElementById("orderdiv8").style.display = "none";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
         function ord8() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -444,7 +444,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "block";
 
-          document.getElementById("cust").style.display = "none";
+          document.getElementById("customerdiv").style.display = "none";
         }
     </script>
 </body>
