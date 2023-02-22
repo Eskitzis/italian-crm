@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_POST['customer_submit'])){
   $firstname = mysqli_real_escape_string($conn, $_POST["firstname"]);
 	$lastname = mysqli_real_escape_string($conn, $_POST["lastname"]);
   $company = mysqli_real_escape_string($conn, $_POST["company"]);
@@ -25,6 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
   
   $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representive) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representive')";
+  if ($conn->query($sql) === TRUE) {
+    //echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+if(isset($_POST['order_submit'])){
+  $customer_id = mysqli_real_escape_string($conn, $_POST["customerid"]);
+	$lastname = mysqli_real_escape_string($conn, $_POST["customerlastname"]);
+  $category = mysqli_real_escape_string($conn, $_POST["category"]);
+	$status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
+  $lastupdate = mysqli_real_escape_string($conn, $_POST[""]);
+	$representive = mysqli_real_escape_string($conn, $_POST["representive"]);
+  
+  $sql = "INSERT INTO orders (customer_id, name, category, status, lastupdate, representive) VALUES ('$customer_id', '$lastname', '$category', '$status', '$lastupdate', '$representive')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
   } else {
@@ -121,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <button class="app-content-headerButton customer customerjs">Add Customer</button>
               <div class="customer-menu">
                 <div class="customer-menu-buttons">
-                  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                  <form action="" method="post">
                     <input class="customer-input" type="text" name="firstname" id="firstname" placeholder="First Name" required>
                     <br>
                     <input class="customer-input" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
@@ -144,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <br>
                     <button class="customer-button reset" type="reset">Reset</button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="submit">Apply</button>                  
+                    <button class="customer-button apply" type="submit" name="customer_submit" value="submit">Apply</button>                  
                   </form>
                 </div>
               </div>
@@ -455,7 +470,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close">&times;</span>
           <h2>Add Order</h2>
-            <form action="" style="width:100% !important;">
+            <form action="" method="post" style="width:100% !important;">
               <div class="total-group">
                 <label class="total-label">ID:</label>
                 <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" disabled>
@@ -466,7 +481,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Category:</label>
-    		        <input class="modal-input" type="text" name="" id="">
+    		        <input class="modal-input" type="text" name="category" id="category">
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
@@ -486,12 +501,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Representive:</label>
-    		        <input class="modal-input" type="text" name="" id="">
+    		        <input class="modal-input" type="text" name="representive" id="representive">
   		        </div>
               <br>
               <div class="buttons-center">
                 <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
-                <button class="modal-button-green" type="submit" value="submit">Apply</button>
+                <button class="modal-button-green" type="submit" name="order_submit" value="submit">Apply</button>
               </div>
             </form>
         </div>
