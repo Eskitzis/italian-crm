@@ -466,9 +466,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <br>
               <label>Representive:<input class="modal-input" type="text" name="" id=""></label>
               <br>
-              <button class="modal-button reset" type="button" onclick="customReset()">Reset</button>
+              <button class="modal-button" type="button" onclick="customReset()">Reset</button>
               <br>
-              <button class="modal-button apply" type="submit" value="submit">Apply</button>
+              <button class="modal-button" type="submit" value="submit">Apply</button>
             </form>
         </div>
       </div>
