@@ -923,9 +923,14 @@ body {
   width: 100%;
 }
 .modal-input{
-  width: 50%;
+  width: 30%;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: 3px;
+  line-height: 2!important;
+  background-color:#ffffff;
   float: right;
-  text-align: right;
 }
 .modal-button{
   height: 3px;
