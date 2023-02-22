@@ -1,37 +1,13 @@
-<button onclick="test('1')">Test Me</button>
-<div id="menumodal" class="w3-modal">
-  <div class="w3-modal-content w3-animate-top w3-card-4">
-    <span class="close">&times;</span>
-    <h2>Add Order</h2>
-    <form action="">
-      <label>ID:<input class="customer-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
-      <br>
-      <br>
-      <label>Lastname:<input class="customer-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
-      <br>
-      <br>
-      <label>Category:<input class="customer-input" type="text" name="" id=""></label>
-      <br>
-      <br>
-      <label>Status:<input class="customer-input" type="text" name="" id=""></label>
-      <br>
-      <br>
-      <label>Representive:<input class="customer-input" type="text" name="" id=""></label>
-      <br>
-      <button class="customer-button reset" type="button" onclick="customReset()">Reset</button>
-      <br>
-      <button class="customer-button apply" type="submit" value="submit">Apply</button>
-    </form>
-  </div>
-</div>
-<script>
-  function test(val){
-    document.getElementById('customerid').value = val;
-  }
-  function customReset(){
-    var fieldsToReset = document.querySelectorAll("input:not([data-noreset='true'])")
-    for(var i=0;i<fieldsToReset.length;i++){
-      fieldsToReset[i].value = null;
-    } 
-  }
-</script>
+<select>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+    <option value="option4">Option 4</option>
+    <option value="option5">Option 5</option>
+    <option value="option6">Option 6</option>
+    <option value="option7">Option 7</option>
+    <option value="option8">Option 8</option>
+    <option value="option9">Option 9</option>
+    <option value="option10">Option 10</option>
+    <option value="option11">Option 11</option>
+</select>
