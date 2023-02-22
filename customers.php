@@ -452,9 +452,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div id="menumodal" class="modal">
         <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Modal Title</h2>
-        <p>Modal content goes here.</p>
+          <span class="close">&times;</span>
+          <h2>Modal Title</h2>
+          <p>Modal content goes here.</p>
       </div>
 </div>
     <script>
