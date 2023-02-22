@@ -979,6 +979,7 @@ body {
   touch-action: manipulation;
   margin-right: 2px;
   margin-bottom: 3px !important;
+  border-radius: 8px;
 }
 
 .modal-button-blue:focus {
@@ -1022,6 +1023,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-bottom: 3px !important;
+  border-radius: 8px;
 }
 
 .modal-button-green:focus {
