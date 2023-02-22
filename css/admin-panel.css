@@ -967,6 +967,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 2px;
 }
 
 .modal-button-blue:focus {
