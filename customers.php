@@ -432,7 +432,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
                     echo '<div class="products-row" id="customer1" onclick="cartela(this.id)">';
+                    echo '<div class="more-options">';
                     echo '<button class="cell-more-button" onclick="moreoptions(' . $row['id'] .')"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
+                    echo '<ul id="more-options-list">';
+                    echo '<li><a href="#">Option 1</a></li>';
+                    echo '<li><a href="#">Option 2</a></li>';
+                    echo '<li><a href="#">Option 3</a></li>';
+                    echo '</ul>';
+                    echo '</div>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
                     echo '<div class="product-cell status-cell"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
@@ -447,11 +454,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   }
                 }
             ?>
-            <ul class="more-options-list">
-              <li><a href="#">Option 1</a></li>
-              <li><a href="#">Option 2</a></li>
-              <li><a href="#">Option 3</a></li>
-            </ul>
           </div>
         </div>
       </div>
@@ -517,10 +519,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         function moreoptions(val) {
           alert(val);
-          if (val!= ""){
-            document.getElementById("more-options-list").style.display = "block";
-          }
         }
+        var moreOptionsBtn = document.getElementById("more-options-btn");
+        var moreOptionsList = document.getElementById("more-options-list");
+
+        moreOptionsBtn.addEventListener("click", function() {
+          moreOptionsList.parentElement.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function(event) {
+          var isClickInside = moreOptionsBtn.contains(event.target) || moreOptionsList.contains(event.target);
+          if (!isClickInside) {
+            moreOptionsList.parentElement.classList.remove("active");
+          }
+        });
     </script>
 </body>
 </html>

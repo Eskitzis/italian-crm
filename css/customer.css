@@ -171,7 +171,11 @@ p {
 a:hover {
     text-decoration:none;
 }
-.more-options-list {
+.more-options {
+  position: relative;
+}
+
+#more-options-list {
   display: none;
   position: absolute;
   top: 100%;
@@ -183,23 +187,23 @@ a:hover {
   margin: 0;
 }
 
-.more-options-list li {
+#more-options-list li {
   margin: 0;
   padding: 0;
 }
 
-.more-options-list li a {
+#more-options-list li a {
   display: block;
   padding: 5px 10px;
   text-decoration: none;
   color: #333;
 }
 
-.more-options-list li a:hover {
+#more-options-list li a:hover {
   background-color: #f5f5f5;
 }
 
-.more-options-btn {
+#more-options-btn {
   padding: 5px 10px;
   background-color: #eee;
   border: none;
@@ -207,7 +211,7 @@ a:hover {
   cursor: pointer;
 }
 
-.more-options-btn:focus {
+#more-options-btn:focus {
   outline: none;
 }
 
