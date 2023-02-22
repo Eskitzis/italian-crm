@@ -518,7 +518,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function moreoptions(val) {
           alert(val);
           if (val!= ""){
-            document.getElementById("more-options-menu").style.display = "block";
+            document.getElementById("more-options-list").style.display = "block";
           }
         }
     </script>
