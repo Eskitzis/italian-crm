@@ -458,21 +458,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="">
               <label>ID:<input class="modal-input" type="text" data-noreset="true" name="customerid" id="customerid" disabled></label>
               <br>
-              <br>
               <label>Lastname:<input class="modal-input" type="text" data-noreset="true" name="customerlastname" id="customerlastname" disabled></label>
-              <br>
               <br>
               <label>Category:<input class="modal-input" type="text" name="" id=""></label>
               <br>
-              <br>
               <label>Status:<input class="modal-input" type="text" name="" id=""></label>
-              <br>
               <br>
               <label>Representive:<input class="modal-input" type="text" name="" id=""></label>
               <br>
-              <button class="customer-button reset" type="button" onclick="customReset()">Reset</button>
+              <button class="modal-button reset" type="button" onclick="customReset()">Reset</button>
               <br>
-              <button class="customer-button apply" type="submit" value="submit">Apply</button>
+              <button class="modal-button apply" type="submit" value="submit">Apply</button>
             </form>
         </div>
       </div>
