@@ -468,7 +468,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label>Status:<input class="modal-input" type="text" name="" id=""></label>
               <br>
               <br>
-              <label>Representive:<input class="customer-input" type="text" name="" id=""></label>
+              <label>Representive:<input class="modal-input" type="text" name="" id=""></label>
               <br>
               <button class="customer-button reset" type="button" onclick="customReset()">Reset</button>
               <br>
