@@ -339,6 +339,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
           document.getElementById('customername').innerHTML = name;
+
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
