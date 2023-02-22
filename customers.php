@@ -470,18 +470,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
-                <select class="modal-input" name="status" id="status">
-                  <option readonly="readonly" value="orderfromcustomer">Customer Order</option>
-                  <option readonly="readonly" value="orderfromus">GRUPPOCASA->FACTORY</option>
-                  <option readonly="readonly" value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
-                  <option readonly="readonly" value="proformafromus">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                  <option readonly="readonly" value="confirmationfromcustomer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
-                  <option readonly="readonly" value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
-                  <option readonly="readonly" value="advance1">Advance payment 1</option>
-                  <option readonly="readonly" value="advance2">Advance payment 2</option>
-                  <option readonly="readonly" value="invoice">Invoices</option>
-                  <option readonly="readonly" value="final">Final payment</option>
-                  <option readonly="readonly" value="shipped">Order Shipped</option>
+                <select class="modal-input" name="status" id="status" size="11">
+                  <option value="orderfromcustomer">Customer Order</option>
+                  <option value="orderfromus">GRUPPOCASA->FACTORY</option>
+                  <option value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
+                  <option value="proformafromus">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                  <option value="confirmationfromcustomer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                  <option value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
+                  <option value="advance1">Advance payment 1</option>
+                  <option value="advance2">Advance payment 2</option>
+                  <option value="invoice">Invoices</option>
+                  <option value="final">Final payment</option>
+                  <option value="shipped">Order Shipped</option>
                 </select>
   		        </div>
               <div class="total-group">
