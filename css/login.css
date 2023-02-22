@@ -82,7 +82,7 @@ body {
   }
   @media (max-width: 800px){
     .login{
-      width: -200px;
+      width: 30%;
     }
   }
   
