@@ -968,6 +968,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-right: 2px;
+  margin-bottom: 3px !important;
 }
 
 .modal-button-blue:focus {
@@ -1010,6 +1011,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-bottom: 3px !important;
 }
 
 .modal-button-green:focus {
@@ -1037,5 +1039,4 @@ body {
   display: flex !important;
   justify-content: center !important;
   align-items: end !important;
-  margin-bottom: 5px !important;
 }
