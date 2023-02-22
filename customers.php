@@ -36,7 +36,8 @@ if(isset($_POST['order_submit'])){
 	$lastname = mysqli_real_escape_string($conn, $_POST["customerlastname"]);
   $category = mysqli_real_escape_string($conn, $_POST["category"]);
 	$status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
-  $lastupdate = mysqli_real_escape_string($conn, $_POST[""]);
+  $current_timestamp = time();
+  $lastupdate = date('d-m-Y H:i:s', $current_timestamp);
 	$representive = mysqli_real_escape_string($conn, $_POST["representative"]);
   
   $sql = "INSERT INTO orders (customer_id, name, category, status, lastupdate, representative) VALUES ('$customer_id', '$lastname', '$category', '$status', '$lastupdate', '$representative')";
