@@ -452,7 +452,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
       <div id="menumodal" class="w3-modal">
-        <div class="w3-modal-content w3-animate-top w3-card-4">
+        <div class="w3-modal-content w3-animate-top w3-card-4" style="width: 100% !important;">
           <span class="close">&times;</span>
           <h2>Add Order</h2>
             <form action="">
