@@ -191,30 +191,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="flex-container">
                 <div class="flex-item-one">
                     <span style="font-size: large;">Active Orders</span>
-                    <article class="leaderboard__profile" onclick="cust1()">
-                        <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
-                        <span class="leaderboard__name">Evan Spiegel</span>
-                        <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
-                    </article>
-
-                    <article class="leaderboard__profile" onclick="cust2()">
-                        <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
-                        <span class="leaderboard__name">Evan Spiegel</span>
-                        <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
-                    </article>
-
-                    <article class="leaderboard__profile" onclick="cust3()">
-                        <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
-                        <span class="leaderboard__name">Evan Spiegel</span>
-                        <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
-                    </article>
-
-                    <article class="leaderboard__profile" onclick="cust4()">
-                      <img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">
-                      <span class="leaderboard__name">Evan Spiegel</span>
-                      <span class="leaderboard__value">20.01.2023<span style="color: black;">B</span></span>
-                    </article>
-
+                    <?php
+                      //DIV FOR EACH CUSTOMER
+                      //END DIV FOR EACH CUSTOMER
+                      $sql = 'SELECT * FROM orders';
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                        // Output data of each row
+                          while($row = $result->fetch_assoc()) {
+                            // Create divs based on the data
+                            echo '<article class="leaderboard__profile" onclick="cust1()">';
+                            echo '<img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">';
+                            echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
+                            echo '<span class="leaderboard__value">' . $row['lastupdate'] .'<span style="color: black;">B</span></span>';
+                            echo '</article>';
+                          }
+                        }
+                    ?>
                 </div>
                 <div class="flex-item-two">
                     <span style="font-size: large;">Detailed Order Status</span>
