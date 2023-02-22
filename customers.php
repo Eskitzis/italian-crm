@@ -478,8 +478,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		        </div>
               <br>
               <button class="modal-button" type="button" onclick="customReset()">Reset</button>
-              <br>
-              <button class="modal-button" type="submit" value="submit">Apply</button>
+              <button class="modal-button green" type="submit" value="submit">Apply</button>
             </form>
         </div>
       </div>

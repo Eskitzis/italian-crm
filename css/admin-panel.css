@@ -941,6 +941,9 @@ body {
   margin-right: 150px;
   text-align: left;
 }
+.green{
+  background-color: rgb(0, 102, 14);
+}
 .modal-button {
   align-items: center;
   background-color: #06f;
