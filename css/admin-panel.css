@@ -1049,3 +1049,9 @@ body {
 .deactivated{
   background-color: #979cb0;
 }
+.detailed-order{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}

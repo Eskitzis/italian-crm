@@ -324,40 +324,41 @@ if(isset($_POST['order_submit'])){
                       <button id="factory10" onclick="factory(this.id)">Factory10</button>
                       <button id="factory11" onclick="factory(this.id)">Factory11</button>
                     </div>
+                    <br>
                     <div class="row">
                       <div class="column left">
                       <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Customer Order</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">GRUPPOCASA->FACTORY</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">FACTORY->CUSTOMER (PROFORMA)</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">GRUPPOCASA->CUSTOMER (PROFORMA)</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">CUSTOMER->GRUPPOCASA (CONFIRMATION)</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">GRUPPOCASA->FACTORY (CONFIRMATION)</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Advance payment 1</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Advance payment 2</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Invoices</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Final payment</label>
                       </div>
-                      <div class="total-group">
+                      <div class="detailed-order">
                         <label for="">Order Shipped</label>
                       </div>  
                       <!--END DETAILED ORDER-->
