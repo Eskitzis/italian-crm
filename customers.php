@@ -309,7 +309,7 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <h2 id="customerlastname">Customer</h2>
+          <h2 id="customername">Customer</h2>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -556,7 +556,7 @@ if(isset($_POST['order_submit'])){
         }
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
-          document.getElementById('customerlastname').value = fname +' '+ lname;
+          document.getElementById('customername').innerHTML = fname +' '+ lname;
         }
         span.onclick = function() {
           modal.style.display = "none";
