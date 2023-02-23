@@ -588,6 +588,8 @@ if(isset($_POST['order_submit'])){
         }
         span.onclick = function() {
           modal.style.display = "none";
+        }
+        ctspan.onclick = function() {
           ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
