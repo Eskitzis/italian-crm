@@ -486,16 +486,16 @@ if(isset($_POST['order_submit'])){
               <div class="total-group">
     		        <label class="total-label">Status:</label>
                 <select class="modal-select" name="addstatus" id="addstatus">
-                    <option value="orderfromcustomer">Customer Order</option>
-                    <option value="orderfromus">GRUPPOCASA->FACTORY</option>
-                    <option value="proformafromfactory">FACTORY->CUSTOMER (PROFORMA)</option>
-                    <option value="proformafromus">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                    <option value="confirmationfromcustomer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
-                    <option value="confirmationtoitaly">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
-                    <option value="advance1">Advance payment 1</option>
-                    <option value="advance2">Advance payment 2</option>
-                    <option value="invoice">Invoices</option>
-                    <option value="final">Final payment</option>
+                    <option value="Customer Order">Customer Order</option>
+                    <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
+                    <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->CUSTOMER PF">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                    <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
+                    <option value="Advance payment 1">Advance payment 1</option>
+                    <option value="Advance payment 2">Advance payment 2</option>
+                    <option value="Invoices">Invoices</option>
+                    <option value="Final payment">Final payment</option>
                     <option value="shipped">Order Shipped</option>
                 </select>             
   		        </div>

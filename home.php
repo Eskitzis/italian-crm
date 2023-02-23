@@ -339,7 +339,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
           document.getElementById('customername').innerHTML = name;
-
+          
           document.getElementById("orderdiv1").style.display = "none";
           document.getElementById("orderdiv2").style.display = "none";
           document.getElementById("orderdiv3").style.display = "none";
