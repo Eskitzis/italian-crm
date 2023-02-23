@@ -576,17 +576,26 @@ if(isset($_POST['order_submit'])){
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
+        const ctmodal = document.getElementById("customermodal");
+        const ctspan = document.getElementsByClassName("close")[0];
         function moreoptions(id,fname,lname) {
           modal.style.display = "block";
           document.getElementById('customerid').value = id;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
+        function cartela() {
+          ctmodal.style.display = "block";
+        }
         span.onclick = function() {
           modal.style.display = "none";
+          ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
           if (event.target == modal) {
             modal.style.display = "none";
+          }
+          if (event.target == ctmodal) {
+            ctmodal.style.display = "none";
           }
         }
         function customReset(){
@@ -597,22 +606,6 @@ if(isset($_POST['order_submit'])){
         }
         //////////////////////////////////////////////////////////////////////////////////////
         //MENU MODAL
-        const ctmodal = document.getElementById("customermodal");
-        const ctspan = document.getElementsByClassName("close")[0];
-        function cartela() {
-          ctmodal.style.display = "block";
-          //document.getElementById('customerid').value = id;
-          //document.getElementById('customerlastname').value = fname +' '+ lname;
-        }
-        span.onclick = function() {
-          ctmodal.style.display = "none";
-        }
-        window.onclick = function(event) {
-          if (event.target == ctmodal) {
-            ctmodal.style.display = "none";
-          }
-        }
-        //////////////////////////////////////////////////////////////////////////////////////
       </script>
 </body>
 </html>
