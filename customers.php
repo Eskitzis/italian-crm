@@ -243,7 +243,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" id="customer1" onclick="cartela()">';
+                    echo '<div class="products-row" id="customer1" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -309,7 +309,7 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <h2>Customer</h2>
+          <h2 id="customerlastname">Customer</h2>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -554,8 +554,9 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customerid').value = id;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
-        function cartela() {
+        function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
+          document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         span.onclick = function() {
           modal.style.display = "none";
