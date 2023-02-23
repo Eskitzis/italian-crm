@@ -513,7 +513,7 @@ if(isset($_POST['order_submit'])){
       </div>
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
-          <span class="close">&times;</span>
+          <span class="close ct">&times;</span>
           <h2>Add Order</h2>
         </div>
       </div>
@@ -577,7 +577,7 @@ if(isset($_POST['order_submit'])){
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
         const ctmodal = document.getElementById("customermodal");
-        const ctspan = document.getElementsByClassName("close")[0];
+        const ctspan = document.getElementsByClassName("ct")[0];
         function moreoptions(id,fname,lname) {
           modal.style.display = "block";
           document.getElementById('customerid').value = id;
