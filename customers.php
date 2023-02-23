@@ -636,19 +636,19 @@ if(isset($_POST['order_submit'])){
         }
         //////////////////////////////////////////////////////////////////////////////////////
         //MENU MODAL
-        const modal = document.getElementById("customermodal");
-        const span = document.getElementsByClassName("close")[0];
-        function cartela(id,fname,lname) {
-          modal.style.display = "block";
+        const ctmodal = document.getElementById("customermodal");
+        const ctspan = document.getElementsByClassName("close")[0];
+        function cartela() {
+          ctmodal.style.display = "block";
           //document.getElementById('customerid').value = id;
           //document.getElementById('customerlastname').value = fname +' '+ lname;
         }
-        span.onclick = function() {
-          modal.style.display = "none";
+        ctspan.onclick = function() {
+          ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
           if (event.target == modal) {
-            modal.style.display = "none";
+            ctmodal.style.display = "none";
           }
         }
         //////////////////////////////////////////////////////////////////////////////////////
