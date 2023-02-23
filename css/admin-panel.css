@@ -1059,4 +1059,6 @@ body {
 }
 .span-customer{
   float: right;
+  align-items: end;
+  text-align: right;
 }
