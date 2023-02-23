@@ -1058,5 +1058,5 @@ body {
   font-size: 12px;
 }
 .span-customer{
-  text-align: right !important;
+  float: right;
 }
