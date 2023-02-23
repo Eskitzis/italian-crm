@@ -580,7 +580,7 @@ if(isset($_POST['order_submit'])){
         const ctspan = document.getElementsByClassName("ct")[0];
         function moreoptions(id,fname,lname) {
           modal.style.display = "block";
-          ctmodal.style.display = "noen";
+          ctmodal.style.display = "none";
           document.getElementById('customerid').value = id;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
