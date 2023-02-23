@@ -241,7 +241,79 @@ if(isset($_POST['order_submit'])){
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                 $customercartela = '
-                  <div class="customer-container" id="customercontainer" style="display: none;">
+                ';
+                // Output data of each row
+                  while($row = $result->fetch_assoc()) {
+                    // Create divs based on the data
+                    echo '<div class="products-row" id="customer1" onclick="cartela()">';
+                    echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
+                    echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
+                    echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
+                    echo '<div class="product-cell sales"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
+                    echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
+                    echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
+                    echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
+                    echo '</div>';
+                    //echo $customercartela;
+                  }
+                }
+            ?>
+          </div>
+        </div>
+      </div>
+      <div id="menumodal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <span class="close">&times;</span>
+          <h2>Add Order</h2>
+            <form action="" method="post" style="width:100% !important;">
+              <div class="total-group">
+                <label class="total-label">ID:</label>
+                <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" readonly>
+              </div>
+  		        <div class="total-group">
+    		        <label class="total-label">Lastname:</label>
+    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="customerlastname" id="customerlastname" readonly>
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Category:</label>
+    		        <input class="modal-input" type="text" name="category" id="category">
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Status:</label>
+                <select class="modal-select" name="addstatus" id="addstatus">
+                    <option value="Customer Order">Customer Order</option>
+                    <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
+                    <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->CUSTOMER PF">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                    <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
+                    <option value="Advance payment 1">Advance payment 1</option>
+                    <option value="Advance payment 2">Advance payment 2</option>
+                    <option value="Invoices">Invoices</option>
+                    <option value="Final payment">Final payment</option>
+                    <option value="shipped">Order Shipped</option>
+                </select>             
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Representative:</label>
+    		        <input class="modal-input" type="text" name="representative" id="representative">
+  		        </div>
+              <br>
+              <div class="buttons-center">
+                <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
+                <button class="modal-button-green" type="submit" name="order_submit" value="submit">Apply</button>
+              </div>
+            </form>
+        </div>
+      </div>
+      <div id="customermodal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <span class="close ct">&times;</span>
+          <h2>Customer</h2>
+          <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
                       <button id="factory2" onclick="factory(this.id)">Factory2</button>
@@ -442,80 +514,7 @@ if(isset($_POST['order_submit'])){
                         </div>
                       </div>
                     <!--END DATA ARCHIVE-->  
-                    </div>
-                ';
-                // Output data of each row
-                  while($row = $result->fetch_assoc()) {
-                    // Create divs based on the data
-                    echo '<div class="products-row" id="customer1" onclick="cartela()">';
-                    echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
-                    echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
-                    echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
-                    echo '<div class="product-cell sales"><span class="cell-label">Address:</span><span>' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
-                    echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
-                    echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
-                    echo '</div>';
-                    //echo $customercartela;
-                  }
-                }
-            ?>
-          </div>
-        </div>
-      </div>
-      <div id="menumodal" class="w3-modal">
-        <div class="w3-modal-content w3-animate-top w3-card-4">
-          <span class="close">&times;</span>
-          <h2>Add Order</h2>
-            <form action="" method="post" style="width:100% !important;">
-              <div class="total-group">
-                <label class="total-label">ID:</label>
-                <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" readonly>
-              </div>
-  		        <div class="total-group">
-    		        <label class="total-label">Lastname:</label>
-    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="customerlastname" id="customerlastname" readonly>
-  		        </div>
-              <div class="total-group">
-    		        <label class="total-label">Category:</label>
-    		        <input class="modal-input" type="text" name="category" id="category">
-  		        </div>
-              <div class="total-group">
-    		        <label class="total-label">Status:</label>
-                <select class="modal-select" name="addstatus" id="addstatus">
-                    <option value="Customer Order">Customer Order</option>
-                    <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
-                    <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
-                    <option value="GRUPPOCASA->CUSTOMER PF">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                    <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
-                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
-                    <option value="Advance payment 1">Advance payment 1</option>
-                    <option value="Advance payment 2">Advance payment 2</option>
-                    <option value="Invoices">Invoices</option>
-                    <option value="Final payment">Final payment</option>
-                    <option value="shipped">Order Shipped</option>
-                </select>             
-  		        </div>
-              <div class="total-group">
-    		        <label class="total-label">Representative:</label>
-    		        <input class="modal-input" type="text" name="representative" id="representative">
-  		        </div>
-              <br>
-              <div class="buttons-center">
-                <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
-                <button class="modal-button-green" type="submit" name="order_submit" value="submit">Apply</button>
-              </div>
-            </form>
-        </div>
-      </div>
-      <div id="customermodal" class="w3-modal">
-        <div class="w3-modal-content w3-animate-top w3-card-4">
-          <span class="close ct">&times;</span>
-          <h2>Customer</h2>
-          <?php echo $customercartela?>
+                    </div>   
         </div>
       </div>
 </div>
