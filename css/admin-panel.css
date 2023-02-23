@@ -1054,3 +1054,6 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
+.label-custome{
+  text-align: end;
+}
