@@ -643,7 +643,7 @@ if(isset($_POST['order_submit'])){
           //document.getElementById('customerid').value = id;
           //document.getElementById('customerlastname').value = fname +' '+ lname;
         }
-        ctspan.onclick = function() {
+        span.onclick = function() {
           ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
