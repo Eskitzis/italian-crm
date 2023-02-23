@@ -1055,5 +1055,8 @@ body {
   margin-bottom: 10px;
 }
 .label-customer{
-  text-align: end;
+  font-size: 12px;
+}
+.span-customer{
+  float: right;
 }
