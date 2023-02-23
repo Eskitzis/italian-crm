@@ -647,7 +647,7 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
-          if (event.target == modal) {
+          if (event.target == ctmodal) {
             ctmodal.style.display = "none";
           }
         }
