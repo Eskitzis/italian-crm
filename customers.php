@@ -560,16 +560,6 @@ if(isset($_POST['order_submit'])){
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////CUSTOM CUSTOMER CARTELA //////////////////////////////
-        function cartela(clicked_customer) {
-          var c = document.getElementById("customercontainer");
-          if (c.style.display === "none") {
-            c.style.display = "block";
-          } else {
-            c.style.display = "none";
-          }
-          //alert(clicked_customer);
-        }
-        //////////////////////////////////////////////////////////////////////////////////////
         function factory(clicked_id){
           alert(clicked_id);
         }
