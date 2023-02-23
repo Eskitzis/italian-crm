@@ -566,8 +566,8 @@ if(isset($_POST['order_submit'])){
         const ctmodal = document.getElementById("customermodal");
         const ctspan = document.getElementsByClassName("ct")[0];
         function moreoptions(id,fname,lname) {
+          event.stopPropagation();
           modal.style.display = "block";
-          ctmodal.style.display = "none";
           document.getElementById('customerid').value = id;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
