@@ -514,7 +514,8 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <h2>Add Order</h2>
+          <h2>Customer</h2>
+          <?php echo $customercartela?>
         </div>
       </div>
 </div>
