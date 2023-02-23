@@ -580,11 +580,13 @@ if(isset($_POST['order_submit'])){
         const ctspan = document.getElementsByClassName("ct")[0];
         function moreoptions(id,fname,lname) {
           modal.style.display = "block";
+          ctmodal.style.display = "noen";
           document.getElementById('customerid').value = id;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela() {
           ctmodal.style.display = "block";
+          modal.style.display = "none";
         }
         span.onclick = function() {
           modal.style.display = "none";
