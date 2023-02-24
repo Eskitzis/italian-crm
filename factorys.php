@@ -200,7 +200,7 @@ if ($conn->connect_error) {
                     echo '<button class="cell-more-button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--image can go here--><span>' . $row['factory'] .'</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Representive:</span>' . $row['representative'] .'</div>';
-                    echo '<div class="product-cell status-cell"><span class="cell-label">Telephone:</span><span>+' . $row['telephone'] .'</span></div>';
+                    echo '<div class="product-cell status-cell"><span class="cell-label">Telephone:</span><span>' . $row['telephone'] .'</span></div>';
                     echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Address:</span>' . $row['address'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">ZIP:</span>' . $row['zip'] .'</div>';
