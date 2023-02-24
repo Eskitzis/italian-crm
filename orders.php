@@ -226,7 +226,7 @@ if ($conn->connect_error) {
           document.querySelector(".products-area-wrapper").classList.add("tableView");
         }
         }
-        var x = window.matchMedia("(max-width: 1000px)")
+        var x = window.matchMedia("(max-width: 6000px)")
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////
