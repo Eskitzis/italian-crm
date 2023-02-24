@@ -135,9 +135,7 @@ if(isset($_POST['factory_add'])){
                       Reset
                     </button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="factory_add">
-                      Apply
-                    </button>
+                    <button class="customer-button apply" type="submit" name="factory_add" value="submit" >Apply</button>
                   </form>
                 </div>
               </div>
