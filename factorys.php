@@ -11,6 +11,23 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
+if(isset($_POST['factory_add'])){
+  $factoryname = mysqli_real_escape_string($conn, $_POST["factoryname"]);
+	$factoryrepresentative = mysqli_real_escape_string($conn, $_POST["factoryrepresentative"]);
+  $factorytelephone = mysqli_real_escape_string($conn, $_POST["factorytelephone"]);
+	$factoryemail = mysqli_real_escape_string($conn, $_POST["factoryemail"]);
+  $factoryaddress = mysqli_real_escape_string($conn, $_POST["factoryaddress"]);
+  $factorycity = mysqli_real_escape_string($conn, $_POST["factorycity"]);
+	$factoryzip = mysqli_real_escape_string($conn, $_POST["factoryzip"]);
+  $factorycountry = mysqli_real_escape_string($conn, $_POST["factorycountry"]);
+  
+  $sql = "INSERT INTO factorys (factory, representative, telephone, email, address, city, zip, country) VALUES ('$factoryname', '$factoryrepresentative', '$factorytelephone', '$factoryemail', '$factoryaddress', '$factorycity', '$factoryzip', '$factorycountry')";
+  if ($conn->query($sql) === TRUE) {
+    //echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,13 +117,15 @@ if ($conn->connect_error) {
                   <form action="" method="post">
                     <input class="customer-input" type="text" name="factoryname" id="factoryname" placeholder="Factory Name*" required>
                     <br>
-                    <input class="customer-input" type="text" name="factoryrepresentive" id="factoryrepresentive" placeholder="Factorys Representive">
+                    <input class="customer-input" type="text" name="factoryrepresentative" id="factoryrepresentative" placeholder="Factorys Representative">
                     <br>
                     <input class="customer-input" type="text" name="factorytelephone" id="factorytelephone" placeholder="Telephone*" required>
                     <br>
                     <input class="customer-input" type="text" name="factoryemail" id="factoryemail" placeholder="E-Mail*" required>
                     <br>
                     <input class="customer-input" type="text" name="factoryaddress" id="factoryaddress" placeholder="Address">
+                    <br>
+                    <input class="customer-input" type="text" name="factorycity" id="factorycity" placeholder="City">
                     <br>
                     <input class="customer-input" type="text" name="factoryzip" id="factoryzip" placeholder="ZIP">
                     <br>
@@ -116,7 +135,7 @@ if ($conn->connect_error) {
                       Reset
                     </button>
                     <br>
-                    <button class="customer-button apply" type="submit" value="submit">
+                    <button class="customer-button apply" type="submit" value="factory_add">
                       Apply
                     </button>
                   </form>
@@ -167,25 +186,36 @@ if ($conn->connect_error) {
               <div class="products-header">
                 <div class="product-cell image">Factory<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
                 <div class="product-cell category">Representive<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
                 <div class="product-cell status-cell">Telephone<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
                 <div class="product-cell sales">E-Mail<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
                 <div class="product-cell stock">Address<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
+                <div class="product-cell stock">City<button class="sort-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
+                  </button>
+                </div>
                 <div class="product-cell price">ZIP<button class="sort-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                  </button></div>
+                  </button>
+                </div>
                 <div class="product-cell price">Country<button class="sort-button">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                </button></div>
+                </button>
+              </div>
               </div>
               <?php
               //DIV FOR EACH CUSTOMER
@@ -203,6 +233,7 @@ if ($conn->connect_error) {
                     echo '<div class="product-cell status-cell"><span class="cell-label">Telephone:</span><span>' . $row['telephone'] .'</span></div>';
                     echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Address:</span>' . $row['address'] .'</div>';
+                    echo '<div class="product-cell stock"><span class="cell-label">City:</span>' . $row['city'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">ZIP:</span>' . $row['zip'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Country:</span>' . $row['country'] .'</div>';
                     echo '</div>';
