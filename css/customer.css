@@ -171,7 +171,8 @@ a:hover {
     text-decoration:none;
 }
 .select-cartela{
-  text-align: end;
+  float: right;
+  width: 20%;
 }
 
 
