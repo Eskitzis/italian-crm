@@ -170,10 +170,14 @@ p {
 a:hover {
     text-decoration:none;
 }
-.select-cartela{
-  float: right;
-  width: 20%;
+.div-select {
+  display: flex;
+  justify-content: flex-end;
 }
+.select-cartela {
+  margin-left: 10px;
+}
+
 
 
 
