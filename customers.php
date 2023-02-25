@@ -327,8 +327,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id_of_customer = $_POST["customerid"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id_of_customer'";
+                          $value = $_GET["value"];
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$value'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -581,7 +581,18 @@ if(isset($_POST['order_submit'])){
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          document.getElementById('customerid').value = id;
+          var value = id;
+              // Create a new XMLHttpRequest object
+          var xhttp = new XMLHttpRequest();
+          // Define the callback function to handle the response
+          xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+          // Update the HTML with the response from the PHP script
+            document.getElementById("result").innerHTML = this.responseText;
+          }
+          };
+          xhttp.open("GET", "script.php?value=" + value, true);
+          xhttp.send();
         }
         span.onclick = function() {
           modal.style.display = "none";
