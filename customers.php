@@ -327,15 +327,17 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id_of_customer = $_POST["cartelacustomerid"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id_of_customer'";
+                          if (isset($_POST['inputValue'])) {
+                            $inputValue = $_POST['inputValue'];
+                          }
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$inputValue'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
                             $orders[] = $row;
                           }
                         ?>
-                        <input type="text" name="cartelacustomerid" id="cartelacustomerid">
+                        <input type="hidden" name="cartelacustomerid" id="cartelacustomerid">
                         <select class="modal-select" name="orders">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
@@ -605,7 +607,24 @@ if(isset($_POST['order_submit'])){
           }
         }
         //////////////////////////////////////////////////////////////////////////////////////
-        //MENU MODAL
+        //AJAX FOR PHP SEND VALUE
+        const inputText = document.getElementById('cartelacustomerid');
+        // Listen to input events on the input element
+        inputText.addEventListener('input', function() {
+          // Send an AJAX request to the server
+          const xhr = new XMLHttpRequest();
+          const url = '<?php echo $_SERVER["PHP_SELF"]; ?>';
+          const data = 'inputValue=' + inputText.value;
+          xhr.open('POST', url);
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              responsePlaceholder.textContent = xhr.responseText;
+            }
+          };
+          xhr.send(data);
+        });
+        //////////////////////////////////////////////////////////////////////////////////////
       </script>
 </body>
 </html>
