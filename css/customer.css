@@ -171,11 +171,11 @@ a:hover {
     text-decoration:none;
 }
 .div-select {
-  display: flex;
-  justify-content: flex-end;
+  display: flex !important;
+  justify-content: flex-end !important;
 }
 .select-cartela {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 
 
