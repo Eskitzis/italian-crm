@@ -171,8 +171,7 @@ a:hover {
     text-decoration:none;
 }
 .select-cartela{
-  display: flex;
-  justify-content: flex-end;
+  text-align: end;
 }
 
 
