@@ -308,7 +308,7 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <label><h2 id="customername">Customer</h2><input type="text" id="customerid" readonly></label>
+          <label><h2 id="customername">Customer</h2><input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" readonly></label>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
