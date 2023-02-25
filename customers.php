@@ -335,6 +335,7 @@ if(isset($_POST['order_submit'])){
                             $order[] = $row;
                           }
                         ?>
+                        <input type="hidden" name="customerid" id="customerid">
                         <select name="orders" id="" class="select-cartela">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
