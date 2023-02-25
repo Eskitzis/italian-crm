@@ -308,7 +308,8 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <label><h2 id="customername">Customer</h2><input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly></label>
+          <h2 id="customername">Customer</h2>
+          <input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -327,7 +328,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-
+                          $customer_id = $_POST["cartelacustomerid"];
                           $sql = "SELECT * FROM orders WHERE customer_id = '$'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
