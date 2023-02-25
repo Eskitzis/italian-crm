@@ -951,6 +951,7 @@ body {
   background-color:#ffffff;
   height: 35px;
   align-items: end;
+  float: right;
 }
 .total-group{
   display: flex;
