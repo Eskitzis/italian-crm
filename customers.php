@@ -337,7 +337,7 @@ if(isset($_POST['order_submit'])){
                           }
                         ?>
                         <input type="hidden" name="cartelacustomerid" id="cartelacustomerid">
-                        <select class="modal-select" name="orders" style="text-align: right !important;" >
+                        <select class="orders-select" name="orders">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
                         <?php } ?>

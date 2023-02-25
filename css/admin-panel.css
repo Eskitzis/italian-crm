@@ -941,6 +941,18 @@ body {
   background-color:#ffffff;
   height: 35px;
 }
+.orders-select{
+  width: 50%;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: 3px;
+  line-height: 2!important;
+  background-color:#ffffff;
+  height: 35px;
+
+  align-items: end;
+}
 .total-group{
   display: flex;
   align-items: center;
