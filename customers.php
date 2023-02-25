@@ -23,8 +23,11 @@ if(isset($_POST['customer_submit'])){
 	$email = mysqli_real_escape_string($conn, $_POST["email"]);
   $telephone = mysqli_real_escape_string($conn, $_POST["telephone"]);
 	$representative = mysqli_real_escape_string($conn, $_POST["representative"]);
+  $current_timestamp = time();
+  $lastupdate = date('d-m-Y H:i:s', $current_timestamp);
+
   
-  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representative) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representative')";
+  $sql = "INSERT INTO customers (firstname, lastname, company, addr, zip, city, country, email, telephone, representative, lastupdate) VALUES ('$firstname', '$lastname', '$company', '$address', '$zip', '$city', '$country', '$email', '$telephone', '$representative', '$lastupdate')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
   } else {
@@ -35,12 +38,12 @@ if(isset($_POST['order_submit'])){
   $customer_id = mysqli_real_escape_string($conn, $_POST["customerid"]);
 	$lastname = mysqli_real_escape_string($conn, $_POST["customerlastname"]);
   $category = mysqli_real_escape_string($conn, $_POST["category"]);
-	$status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
+	$first_status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
   $current_timestamp = time();
-  $lastupdate = date('d-m-Y H:i:s', $current_timestamp);
+  $first_update = date('d-m-Y H:i:s', $current_timestamp);
 	$representive = mysqli_real_escape_string($conn, $_POST["representative"]);
   
-  $sql = "INSERT INTO orders (customer_id, name, category, status, lastupdate, representative) VALUES ('$customer_id', '$lastname', '$category', '$status', '$lastupdate', '$representative')";
+  $sql = "INSERT INTO orders (customer_id, name, category, first_status, first_update, representative) VALUES ('$customer_id', '$lastname', '$category', '$first_status', '$first_update', '$representative')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
   } else {
@@ -224,10 +227,7 @@ if(isset($_POST['order_submit'])){
               <div class="product-cell price">Representative<button class="sort-button">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
                 </button></div>
-                <div class="product-cell price">Factorys<button class="sort-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
-                </button></div>
-                <div class="product-cell price">Status Last Order<button class="sort-button">
+                <div class="product-cell price">User Last Update:<button class="sort-button">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
                 </button></div>
                 <div class="product-cell price">Archive<button class="sort-button">
@@ -251,7 +251,6 @@ if(isset($_POST['order_submit'])){
                     echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
-                    echo '<div class="product-cell price"><span class="cell-label">Factorys:</span>' . $row['factorys'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
                     echo '</div>';
@@ -327,6 +326,20 @@ if(isset($_POST['order_submit'])){
                     <br>
                     <div class="row">
                       <div class="column left">
+                        <?php
+                          $id_of_customer = $_POST["customerid"];
+                          $sql = "SELECT * FROM orders WHERE customer_id == '$id_of_customer";
+                          $result = mysqli_query($conn, $sql);
+                          $order = array();
+                          while ($row = mysqli_fetch_assoc($result)){
+                            $order[] = $row;
+                          }
+                        ?>
+                        <select name="orders" id="">
+                        <?php foreach ($orders as $order) { ?>
+                          <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
+                        <?php } ?>
+                        </select>
                       <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
                       <div class="detailed-order">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
@@ -567,6 +580,7 @@ if(isset($_POST['order_submit'])){
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+          document.getElementById('customerid').value = id;
         }
         span.onclick = function() {
           modal.style.display = "none";
