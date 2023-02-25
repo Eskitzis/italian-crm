@@ -327,15 +327,15 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $value = $_GET["value"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$value'";
+                          $id_of_customer = $_POST["cartelacustomerid"];
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$id_of_customer'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
                             $orders[] = $row;
                           }
                         ?>
-                        <input type="hidden" name="customerid" id="customerid">
+                        <input type="text" name="cartelacustomerid" id="cartelacustomerid">
                         <select class="modal-select" name="orders">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
@@ -581,18 +581,8 @@ if(isset($_POST['order_submit'])){
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var value = id;
-              // Create a new XMLHttpRequest object
-          var xhttp = new XMLHttpRequest();
-          // Define the callback function to handle the response
-          xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-          // Update the HTML with the response from the PHP script
-            document.getElementById("result").innerHTML = this.responseText;
-          }
-          };
-          xhttp.open("GET", "script.php?value=" + value, true);
-          xhttp.send();
+          document.getElementById('cartelacustomerid').value = id;
+          
         }
         span.onclick = function() {
           modal.style.display = "none";
