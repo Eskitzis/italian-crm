@@ -330,6 +330,7 @@ if(isset($_POST['order_submit'])){
                         <?php
                           if (isset($_POST["customerid"])) {
                             $customerid = $_POST["customerid"];
+                            echo $customerid;
                             $sql = "SELECT * FROM orders WHERE customer_id = '$customerid'";
                             $result = mysqli_query($conn, $sql);
                             $orders = array();
@@ -587,7 +588,7 @@ if(isset($_POST['order_submit'])){
 
           var customerid = 1; // Replace with the actual ID
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "fetch_data.php", true);
+          xhr.open("POST", "customers.php", true);
           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
