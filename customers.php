@@ -328,9 +328,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          if (isset($_POST["customerid"])) {
-                            $id = $_POST["customerid"];
-                          }         
+                          $id = $_POST["customerid"];
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -583,19 +581,8 @@ if(isset($_POST['order_submit'])){
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
-          document.getElementById('customername').innerHTML = fname +' '+ lname;
-          
-          var customerid = id;
-          var form = document.createElement("form");
-          form.setAttribute("method", "POST");
-          form.setAttribute("action", ""); // Leave the URL empty to submit the form to the same page
-          var hiddenField = document.createElement("input");
-          hiddenField.setAttribute("type", "hidden");
-          hiddenField.setAttribute("name", "customerid");
-          hiddenField.setAttribute("value", customerid);
-          form.appendChild(hiddenField);
-          document.body.appendChild(form);
-          form.submit();          
+          document.getElementById('customername').innerHTML = fname +' '+ lname; 
+          var customerid = id;      
         }        
         span.onclick = function() {
           modal.style.display = "none";
