@@ -951,6 +951,9 @@ body {
   background-color:#ffffff;
   height: 25px;
 }
+.customerid{
+  width: 10px !important;
+}
 .total-group{
   display: flex;
   align-items: center;
