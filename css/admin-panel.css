@@ -959,6 +959,8 @@ body {
   border-radius: 3px;
   line-height: 2!important;
   background-color:#ffffff;
+  margin-left: 15px;
+  align-content: center;
 }
 .total-group{
   display: flex;
