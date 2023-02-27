@@ -330,12 +330,12 @@ if(isset($_POST['order_submit'])){
                         <?php
                           if (isset($_POST["customerid"])) {
                             $id = $_POST["customerid"];
-                          }
-                          $sql = "SELECT * FROM orders WHERE customer_id = ?";
-                          $result = mysqli_query($conn, $sql);
-                          $orders = array();
-                          while ($row = mysqli_fetch_assoc($result)){
-                            $orders[] = $row;
+                            $sql = "SELECT * FROM orders WHERE customer_id = ?";
+                            $result = mysqli_query($conn, $sql);
+                            $orders = array();
+                            while ($row = mysqli_fetch_assoc($result)){
+                              $orders[] = $row;
+                            }
                           }
                         ?>
                         <select class="orders-select" name="orders">
