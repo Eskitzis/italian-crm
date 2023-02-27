@@ -328,7 +328,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $sql = "SELECT * FROM orders WHERE customer_id = ";
+                          $id = $_POST['id'];
+                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -591,9 +592,6 @@ if(isset($_POST['order_submit'])){
             type: "POST",
             url: "customers.php",
             data: { id: id },
-            success: function(response) {
-              console.log(response);
-            }
           });
         }
 
