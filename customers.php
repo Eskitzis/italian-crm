@@ -309,7 +309,7 @@ if(isset($_POST['order_submit'])){
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
           <h2 id="customername">Customer</h2>
-          <form id="idform" method="post">
+          <form id="idform" method="post" onsubmit="event.preventDefault();">
             <input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </form>
           <div class="customer-container" id="customercontainer">
@@ -609,11 +609,6 @@ if(isset($_POST['order_submit'])){
             fieldsToReset[i].value = null;
           }
         }
-        const form = document.querySelector('idform');
-        form.addEventListener('submit', (event) => {
-        event.preventDefault(); // prevent the form from submitting normally
-        // do whatever you need to do with the form data here
-        });
         //////////////////////////////////////////////////////////////////////////////////////
       </script>
 </body>
