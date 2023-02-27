@@ -330,16 +330,12 @@ if(isset($_POST['order_submit'])){
                         <?php
                           if (isset($_POST["customerid"])) {
                             $id = $_POST["customerid"];
-                            $sql = "SELECT * FROM orders WHERE customer_id = ?";
-                            $stmt = $conn->prepare($sql);
-                            $stmt->bind_param("s", $customerid);
-                            $stmt->execute();
-                            $result = $stmt->get_result();
-                            $orders = array();
-                            while ($row = $result->fetch_assoc()) {
-                              $orders[] = $row;
-                            }
-                            echo json_encode($orders);
+                          }
+                          $sql = "SELECT * FROM orders WHERE customer_id = ?";
+                          $result = mysqli_query($conn, $sql);
+                          $orders = array();
+                          while ($row = mysqli_fetch_assoc($result)){
+                            $orders[] = $row;
                           }
                         ?>
                         <select class="orders-select" name="orders">
@@ -589,16 +585,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
-          var customerid = id;      
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "query.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("result").innerHTML = this.responseText;
-            }
-          };
-          xhr.send("customerid=" + customerid);
+          var customerid = id;
         }        
         span.onclick = function() {
           modal.style.display = "none";
