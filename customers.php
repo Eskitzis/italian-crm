@@ -1,7 +1,5 @@
 <?php
  session_start();
-  $customerId = $_POST['customer_id'];
-  echo $customerId;
 // Connect to MySQL database
 $host = 'localhost';
 $username = 'gruppocasa';
@@ -586,16 +584,8 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var customerId = $('#cartelacustomerid').val();
-          $.ajax({
-            type: 'POST',
-            url: 'customers.php',
-            data: { customer_id: customerId },
-            success: function(response) {
-              $('#customer-info').html(response);
-            }
-          });
-        }        
+        }
+               
         span.onclick = function() {
           modal.style.display = "none";
         }
