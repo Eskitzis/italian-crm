@@ -339,6 +339,7 @@ if(isset($_POST['order_submit'])){
                             while ($row = $result->fetch_assoc()) {
                               $orders[] = $row;
                             }
+                            echo json_encode($data);
                           }
                         ?>
                         <select class="orders-select" name="orders">
