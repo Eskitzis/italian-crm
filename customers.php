@@ -243,7 +243,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
+                    echo '<div class="products-row" id="queryBtn" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -328,7 +328,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $sql = "SELECT * FROM orders";
+                          $sql = "SELECT * FROM orders WHERE customer_id = ";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -584,8 +584,19 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+
+          var id = $("#cartelacustomerid").val();
+          // Send an AJAX request to the PHP script
+          $.ajax({
+            type: "POST",
+            url: "customers.php",
+            data: { id: id },
+            success: function(response) {
+              console.log(response);
+            }
+          });
         }
-               
+
         span.onclick = function() {
           modal.style.display = "none";
         }
