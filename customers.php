@@ -587,6 +587,7 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+          event.preventDefault();
           document.getElementById("idform").submit();
         }
         span.onclick = function() {
