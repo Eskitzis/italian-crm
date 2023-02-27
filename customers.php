@@ -590,7 +590,7 @@ if(isset($_POST['order_submit'])){
           var inputValue = $('#cartelacustomerid').val();
           $.ajax({
             type: 'POST',
-            url: 'customers.php',
+            url: '',
             data: { input_value: inputValue },
             success: function(response) {
               console.log(response);
