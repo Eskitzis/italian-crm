@@ -309,9 +309,9 @@ if(isset($_POST['order_submit'])){
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
           <h2 id="customername">Customer</h2>
-          <form id="idform" method="post" onsubmit="event.preventDefault();">
+          <div style="text-align: right;">
             <input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
-          </form>
+          </div>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -330,8 +330,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_POST["cartelacustomerid"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
+                          $sql = "SELECT * FROM orders";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -587,10 +586,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          document.getElementById("idform").submit();
-          $("#idform").submit(function(e) {
-            e.preventDefault();
-          });
         }
         span.onclick = function() {
           modal.style.display = "none";
