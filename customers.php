@@ -584,13 +584,13 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-
+          
           $(document).ready(function() {
-          var customerid = $('#cartelacustomerid').text();
+          var inputValue = $('#cartelacustomerid').val();
           $.ajax({
             type: 'POST',
-            url: '',
-            data: { heading: customerid },
+            url: 'customers.php',
+            data: { input_value: inputValue },
             success: function(response) {
               console.log(response);
             }
