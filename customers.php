@@ -328,15 +328,13 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          if (isset($_POST["customerid"])) {
-                            $customerid = $_POST["customerid"];
-                            echo $customerid;
-                            $sql = "SELECT * FROM orders WHERE customer_id = '$customerid'";
-                            $result = mysqli_query($conn, $sql);
-                            $orders = array();
-                            while ($row = mysqli_fetch_assoc($result)){
-                              $orders[] = $row;
-                            }
+                          $customerid = $_POST["customerid"];
+                          echo $customerid;
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$customerid'";
+                          $result = mysqli_query($conn, $sql);
+                          $orders = array();
+                          while ($row = mysqli_fetch_assoc($result)){
+                            $orders[] = $row;
                           }
                         ?>
                         <select class="orders-select" name="orders">
