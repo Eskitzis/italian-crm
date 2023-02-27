@@ -329,7 +329,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$customerid'";
+                          $sql = "SELECT * FROM orders WHERE customer_id = '1'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
