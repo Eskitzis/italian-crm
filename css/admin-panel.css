@@ -954,6 +954,9 @@ body {
 }
 .customerid{
   width: 50px;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: 3px;
   line-height: 2!important;
   background-color:#ffffff;
 }
