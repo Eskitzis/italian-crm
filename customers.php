@@ -584,7 +584,16 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-        }        
+          var inputValue = $('#cartelacustomerid').val();
+          $.ajax({
+            type: 'POST',
+            url: 'customers.php',
+            data: { input_value: inputValue },
+            success: function(response) {
+              console.log(response);
+            }
+          });
+        }  
         span.onclick = function() {
           modal.style.display = "none";
         }
@@ -605,17 +614,6 @@ if(isset($_POST['order_submit'])){
             fieldsToReset[i].value = null;
           }
         }
-        $(document).ready(function() {
-          var inputValue = $('#cartelacustomerid').val();
-          $.ajax({
-            type: 'POST',
-            url: 'customers.php',
-            data: { input_value: inputValue },
-            success: function(response) {
-              console.log(response);
-            }
-          });
-        });
         //////////////////////////////////////////////////////////////////////////////////////
       </script>
 </body>
