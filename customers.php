@@ -328,9 +328,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $customerid = $_POST["customerid"];
-                          echo $customerid;
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$customerid'";
+                          $sql = "SELECT * FROM orders";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -583,17 +581,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-
-          var customerid = 1; // Replace with the actual ID
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "customers.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("result").innerHTML = this.responseText;
-            }
-          };
-          xhr.send("id=" + customerid);
         }        
         span.onclick = function() {
           modal.style.display = "none";
