@@ -950,8 +950,7 @@ body {
   line-height: 2!important;
   background-color:#ffffff;
   height: 35px;
-  align-items: end;
-  float: right;
+  text-align: right;
 }
 .total-group{
   display: flex;
