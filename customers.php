@@ -328,8 +328,10 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_POST["customerid"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                          if (isset($_POST["customerid"])) {
+                            $id = $_POST["customerid"];
+                          }
+                          $sql = "SELECT * FROM orders WHERE customer_id = ?";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -581,8 +583,18 @@ if(isset($_POST['order_submit'])){
         function cartela(id,fname,lname) {
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
-          document.getElementById('customername').innerHTML = fname +' '+ lname; 
+          document.getElementById('customername').innerHTML = fname +' '+ lname;
+
           var customerid = id;      
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "query.php", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("result").innerHTML = this.responseText;
+            }
+          };
+          xhr.send("customerid=" + customerid);
         }        
         span.onclick = function() {
           modal.style.display = "none";
