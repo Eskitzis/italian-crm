@@ -1,7 +1,17 @@
 <?php
  session_start();
- $inputValue = $_POST['input_value'];
-  echo 'The input value is: ' . $inputValue;
+ if(isset($_POST['customer_id'])) {
+  $customerId = $_POST['customer_id'];
+  
+  // Code to retrieve customer info based on customer ID goes here
+  
+  $customerInfo = '<h2>Customer Info:</h2>';
+  $customerInfo .= '<p>Customer ID: ' . $customerId . '</p>';
+  $customerInfo .= '<p>Customer Name: John Doe</p>';
+  $customerInfo .= '<p>Customer Email: john.doe@example.com</p>';
+  
+  echo $customerInfo;
+}
 
 // Connect to MySQL database
 $host = 'localhost';
@@ -587,13 +597,13 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var inputValue = $('#cartelacustomerid').val();
+          var customerId = $('#cartelacustomerid').val();
           $.ajax({
             type: 'POST',
-            url: '',
-            data: { input_value: inputValue },
+            url: 'customers.php',
+            data: { customer_id: customerId },
             success: function(response) {
-              console.log(response);
+              $('#customer-info').html(response);
             }
           });
         }        
