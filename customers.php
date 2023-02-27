@@ -329,7 +329,7 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
                           $id = $_POST["customerid"];
-                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -585,16 +585,16 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var customerid = id;
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "customers.php", true);
+          xhr.open("POST", "", true); // Leave the URL empty to send the request to the same page
           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
           xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            // Handle the response from the PHP script
-            console.log(xhr.responseText);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              // Handle the response from the PHP script
+              console.log(xhr.responseText);
             }
           };
           xhr.send(customerid);
-        }
+        }        
         span.onclick = function() {
           modal.style.display = "none";
         }
