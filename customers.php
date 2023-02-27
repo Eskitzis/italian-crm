@@ -335,7 +335,7 @@ if(isset($_POST['order_submit'])){
                             $orders[] = $row;
                           }
                         ?>
-                        <select class="orders-select" name="orders">
+                        <select class="orders-select" style="text-align: right;" name="orders">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
                         <?php } ?>
