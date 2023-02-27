@@ -942,6 +942,7 @@ body {
   height: 35px;
 }
 .orders-select{
+  all: unset;
   width: 50%;
   box-shadow: 5px 5px 10px 0px #d4d4d4;
   border-color: var(--dl-color-gray-black);
@@ -950,7 +951,7 @@ body {
   line-height: 2!important;
   background-color:#ffffff;
   height: 35px;
-  text-align: right;
+  text-align: right !important;
 }
 .total-group{
   display: flex;
