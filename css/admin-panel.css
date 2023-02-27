@@ -942,7 +942,7 @@ body {
   height: 35px;
 }
 .orders-select{
-  width: 100%;
+  width: calc(100%-15px);
   box-shadow: 5px 5px 10px 0px #d4d4d4;
   border-color: var(--dl-color-gray-black);
   border-width: 1px;
