@@ -330,7 +330,7 @@ if(isset($_POST['order_submit'])){
                         <?php
                           if (isset($_POST["customerid"])) {
                             $id = $_POST["customerid"];
-                          }
+                          }         
                           $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -584,17 +584,18 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+          
           var customerid = id;
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "", true); // Leave the URL empty to send the request to the same page
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-              // Handle the response from the PHP script
-              console.log(xhr.responseText);
-            }
-          };
-          xhr.send(customerid);
+          var form = document.createElement("form");
+          form.setAttribute("method", "POST");
+          form.setAttribute("action", ""); // Leave the URL empty to submit the form to the same page
+          var hiddenField = document.createElement("input");
+          hiddenField.setAttribute("type", "hidden");
+          hiddenField.setAttribute("name", "customerid");
+          hiddenField.setAttribute("value", customerid);
+          form.appendChild(hiddenField);
+          document.body.appendChild(form);
+          form.submit();          
         }        
         span.onclick = function() {
           modal.style.display = "none";
