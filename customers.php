@@ -586,14 +586,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-
-          var id = $("#cartelacustomerid").val();
-          // Send an AJAX request to the PHP script
-          $.ajax({
-            type: "POST",
-            url: "customers.php",
-            data: { id: id },
-          });
         }
 
         span.onclick = function() {
@@ -617,6 +609,20 @@ if(isset($_POST['order_submit'])){
           }
         }
         //////////////////////////////////////////////////////////////////////////////////////
+        $(document).ready(function(){
+        var inputVal = $("#cartelacustomerid").val();
+
+        // Make AJAX request to server-side script to query SQL table
+        $.ajax({
+          url: "customers.php",
+          method: "POST",
+          data: { inputVal: inputVal },
+          success: function(response){
+            // Do something with the response
+            console.log(response);
+          }
+        });
+      });
       </script>
 </body>
 </html>
