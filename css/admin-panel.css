@@ -953,8 +953,9 @@ body {
   margin-left: 15px;
 }
 .customerid{
-  width: 10px !important;
-  box-shadow: 0 !important;
+  width: 50px;
+  line-height: 2!important;
+  background-color:#ffffff;
 }
 .total-group{
   display: flex;
