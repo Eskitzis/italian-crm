@@ -309,7 +309,9 @@ if(isset($_POST['order_submit'])){
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
           <h2 id="customername">Customer</h2>
-          <input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+          <form id="idform" method="post">
+            <input class="modal-input deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+          </form>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -328,8 +330,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_POST['id'];
-                          echo $id;
+                          $id = $_POST["cartelacustomerid"];
                           $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -586,8 +587,8 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+          document.getElementById("idform").submit();
         }
-
         span.onclick = function() {
           modal.style.display = "none";
         }
@@ -609,20 +610,6 @@ if(isset($_POST['order_submit'])){
           }
         }
         //////////////////////////////////////////////////////////////////////////////////////
-        $(document).ready(function(){
-        var inputVal = $("#cartelacustomerid").val();
-
-        // Make AJAX request to server-side script to query SQL table
-        $.ajax({
-          url: "customers.php",
-          method: "POST",
-          data: { inputVal: inputVal },
-          success: function(response){
-            // Do something with the response
-            console.log(response);
-          }
-        });
-      });
       </script>
 </body>
 </html>
