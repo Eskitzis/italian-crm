@@ -588,6 +588,9 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           document.getElementById("idform").submit();
+          $("#idform").submit(function(e) {
+            e.preventDefault();
+          });
         }
         span.onclick = function() {
           modal.style.display = "none";
