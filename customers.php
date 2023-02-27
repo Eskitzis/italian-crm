@@ -331,9 +331,12 @@ if(isset($_POST['order_submit'])){
                           if (isset($_POST["customerid"])) {
                             $id = $_POST["customerid"];
                             $sql = "SELECT * FROM orders WHERE customer_id = ?";
-                            $result = mysqli_query($conn, $sql);
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bind_param("s", $customerid);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
                             $orders = array();
-                            while ($row = mysqli_fetch_assoc($result)){
+                            while ($row = $result->fetch_assoc()) {
                               $orders[] = $row;
                             }
                           }
