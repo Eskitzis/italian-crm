@@ -1,18 +1,7 @@
 <?php
  session_start();
- if(isset($_POST['customer_id'])) {
   $customerId = $_POST['customer_id'];
-  
-  // Code to retrieve customer info based on customer ID goes here
-  
-  $customerInfo = '<h2>Customer Info:</h2>';
-  $customerInfo .= '<p>Customer ID: ' . $customerId . '</p>';
-  $customerInfo .= '<p>Customer Name: John Doe</p>';
-  $customerInfo .= '<p>Customer Email: john.doe@example.com</p>';
-  
-  echo $customerInfo;
-}
-
+  echo $customerId;
 // Connect to MySQL database
 $host = 'localhost';
 $username = 'gruppocasa';
