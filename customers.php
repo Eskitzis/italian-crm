@@ -587,7 +587,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          event.preventDefault();
           document.getElementById("idform").submit();
         }
         span.onclick = function() {
@@ -610,6 +609,11 @@ if(isset($_POST['order_submit'])){
             fieldsToReset[i].value = null;
           }
         }
+        const form = document.querySelector('idform');
+        form.addEventListener('submit', (event) => {
+        event.preventDefault(); // prevent the form from submitting normally
+        // do whatever you need to do with the form data here
+        });
         //////////////////////////////////////////////////////////////////////////////////////
       </script>
 </body>
