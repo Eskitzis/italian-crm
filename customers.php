@@ -243,7 +243,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" id="customer1" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
+                    echo '<div class="products-row" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -328,11 +328,17 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $sql = "SELECT * FROM orders WHERE customer_id = '1'";
-                          $result = mysqli_query($conn, $sql);
-                          $orders = array();
-                          while ($row = mysqli_fetch_assoc($result)){
-                            $orders[] = $row;
+                          if (isset($_POST["customerid"])) {
+                            $customerid = $_POST["customerid"];
+                            $sql = "SELECT * FROM orders WHERE customer_id = ?";
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bind_param("i", $id);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            $orders = array();
+                            while ($row = $result->fetch_assoc()) {
+                              $orders[] = $row;
+                            }
                           }
                         ?>
                         <select class="orders-select" name="orders">
@@ -582,7 +588,16 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
-          var customerid = id;
+          var customerid = 1; // Replace with the actual ID
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "fetch_data.php", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("result").innerHTML = this.responseText;
+            }
+          };
+          xhr.send("id=" + customerid);
         }        
         span.onclick = function() {
           modal.style.display = "none";
