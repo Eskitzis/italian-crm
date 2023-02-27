@@ -331,14 +331,13 @@ if(isset($_POST['order_submit'])){
                           if (isset($_POST["customerid"])) {
                             $id = $_POST["customerid"];
                           }
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
                             $orders[] = $row;
                           }
                         ?>
-                        <input type="hidden" name="cartelacustomerid" id="cartelacustomerid">
                         <select class="orders-select" name="orders">
                         <?php foreach ($orders as $order) { ?>
                           <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
