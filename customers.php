@@ -332,9 +332,11 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_GET['id'];
-                          $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                          $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                          $parts = parse_url($current_url);
+                          $hash = isset($parts['fragment']) ? $parts['fragment'] : '';
+                          echo $hash;
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$hash'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
