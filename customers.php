@@ -600,8 +600,11 @@ if(isset($_POST['order_submit'])){
           $.ajax({
             url: "customers.php",
             method: "POST",
-            data: { "id": id }
-          })
+            data: {id: id},
+            success: function(result) {
+              console.log(result); // output the result to the console
+            }
+          });
         }
         span.onclick = function() {
           modal.style.display = "none";
