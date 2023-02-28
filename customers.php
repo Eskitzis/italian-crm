@@ -602,7 +602,7 @@ if(isset($_POST['order_submit'])){
             method: "POST",
             data: {id: id},
             success: function(result) {
-              console.log(result); // output the result to the console
+              console.log(data); // output the result to the console
             }
           });
         }
