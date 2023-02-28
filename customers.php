@@ -332,9 +332,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-
                           $id = $_COOKIE['id'];
-
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -593,6 +591,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
           document.cookie = "id"+id;
+          window.location.href = "#id";
         }
         span.onclick = function() {
           modal.style.display = "none";
