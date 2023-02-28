@@ -336,7 +336,8 @@ if(isset($_POST['order_submit'])){
                           $parts = parse_url($current_url);
                           $hash = isset($parts['fragment']) ? $parts['fragment'] : '';
                           echo $hash;
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$hash'";
+                          echo $current_url;
+                          $sql = "SELECT * FROM orders WHERE customer_id = $hash";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
