@@ -339,7 +339,7 @@ if(isset($_POST['order_submit'])){
                               parse_str($query, $params);
                               if (isset($params['id'])) {
                                   $id = $params['id'];
-                                  echo '<h6 style="text-align:right;">'.$id.'</h6>'; // outputs 2
+                                  echo $id; // outputs the value of the id parameter
                               }
                           }
                           $sql = "SELECT * FROM orders WHERE customer_id = $id";
