@@ -611,13 +611,6 @@ if(isset($_POST['order_submit'])){
           xhr.setRequestHeader('Content-Type', 'application/json');
           // Convert the data object to a JSON string
           var jsonData = JSON.stringify(data);
-          // Set a callback function to handle the response
-          xhr.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                  console.log(this.responseText);
-              }
-          };
-
           // Send the AJAX request with the JSON data as the body
           xhr.send(jsonData);
         }
