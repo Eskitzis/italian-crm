@@ -595,7 +595,7 @@ if(isset($_POST['order_submit'])){
           link.href = '/customers.php?id=' + encodeURIComponent(id);
           link.addEventListener('click', event => {
             event.preventDefault();
-            // do something with the URL
+            window.location.href = '/customers.php?id=' + encodeURIComponent(id);
           });
           document.body.appendChild(link);
         }
