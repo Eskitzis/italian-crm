@@ -332,12 +332,15 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                          if (preg_match('/#([^\s]+)/', $current_url, $matches)) {
-                            $id = $matches[1];
-                            echo $id; // outputs the id value
-                          } else {
-                            echo 'id not found';
+                          $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                          $parts = parse_url($url);
+                          if (isset($parts['fragment'])) {
+                              $query = $parts['fragment'];
+                              parse_str($query, $params);
+                              if (isset($params['id'])) {
+                                  $id = $params['id'];
+                                  echo $id; // outputs 2
+                              }
                           }
                           $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
