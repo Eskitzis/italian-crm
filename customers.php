@@ -532,8 +532,8 @@ if(isset($_POST['order_submit'])){
 </div>
     <script>
         function submitform() {
-          event.preventDefault();
           document.getElementById('idform').submit();
+          event.preventDefault();
         }
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
