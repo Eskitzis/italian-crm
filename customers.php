@@ -591,7 +591,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
-          window.location.href = '/customers.php?myVar=' + encodeURIComponent(id);
+          window.location.href = '/customers.php?id=' + encodeURIComponent(id);
         }
         span.onclick = function() {
           modal.style.display = "none";
