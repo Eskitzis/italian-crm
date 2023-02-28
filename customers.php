@@ -335,7 +335,7 @@ if(isset($_POST['order_submit'])){
                         <?php
                           $desiredId = $_GET["id"];
                           echo '<h1 style="text-align:right;">'.$desiredId.'</h1>';
-                          $sql = "SELECT * FROM orders";
+                          $sql = "SELECT * FROM orders WHERE customer_id = $desiredId";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
