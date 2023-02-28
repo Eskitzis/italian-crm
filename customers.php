@@ -1,10 +1,5 @@
 <?php
  session_start();
- $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
- if (preg_match('/#id=(\d+)/', $url, $matches)) {
-     $id = $matches[1];
-     echo $id; // outputs the value of the id parameter
- }
 // Connect to MySQL database
 $host = 'localhost';
 $username = 'gruppocasa';
@@ -342,7 +337,7 @@ if(isset($_POST['order_submit'])){
                               $id = $matches[1];
                               echo $id; // outputs the value of the id parameter
                           }
-                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
