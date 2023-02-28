@@ -333,7 +333,12 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_POST['id'];
+                          // Get the request body
+                          $body = file_get_contents('php://input');
+                          // Decode the JSON data
+                          $data = json_decode($body);
+                          // Get the value of the id parameter
+                          $id = $data->id;  
                           echo '<h6 style="text-align:right;" >'.$id.'</h6>';
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
@@ -596,15 +601,25 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var id = id;
-          $.ajax({
-            url: "/customers.php",
-            method: "POST",
-            data: {id: id},
-            success: function(result) {
-              console.log(data); // output the result to the console
-            }
-          });
+          var data = {};
+          data.id = id; // Set the value of the id parameter
+          // Create a new XMLHttpRequest object
+          var xhr = new XMLHttpRequest();
+          // Set the HTTP method and URL of the request
+          xhr.open('POST', 'customers.php');
+          // Set the content type of the request
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          // Convert the data object to a JSON string
+          var jsonData = JSON.stringify(data);
+          // Set a callback function to handle the response
+          xhr.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  console.log(this.responseText);
+              }
+          };
+
+          // Send the AJAX request with the JSON data as the body
+          xhr.send(jsonData);
         }
         span.onclick = function() {
           modal.style.display = "none";
