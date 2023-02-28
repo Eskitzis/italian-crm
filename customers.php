@@ -332,7 +332,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id = $_COOKIE['id'];
+                          $id = "<script>document.writeln(customersid);</script>";
+
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -589,8 +590,7 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-
-          document.cookie="id";
+          var customersid = id;
         }
         span.onclick = function() {
           modal.style.display = "none";
