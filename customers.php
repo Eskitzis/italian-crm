@@ -598,7 +598,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
           $.ajax({
-            url: "customers.php",
+            url: "/customers.php",
             method: "POST",
             data: {id: id},
             success: function(result) {
