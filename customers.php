@@ -332,11 +332,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                          echo $url;
-                          if (preg_match('/#id=(\d+)/', $url, $matches)) {
-                              $id = $matches[1];
-                          }
+                          $id = $_POST['id'];
+                          echo $id;
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -599,7 +596,11 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
-          window.location.href = '/customers.php#id=' + encodeURIComponent(id);
+          $.ajax({
+            url: "customers.php",
+            method: "POST",
+            data: { "id": id }
+          })
         }
         span.onclick = function() {
           modal.style.display = "none";
