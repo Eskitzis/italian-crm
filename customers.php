@@ -592,11 +592,10 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           // Delete the previous 'id' cookie
-          document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
+          document.cookie = "id=; ";
           // Assign a new value to the 'id' cookie
           var newIdValue = id; // replace this with your desired new value
-          document.cookie = "id=" + newIdValue + "; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;";
+          document.cookie = "id=" + newIdValue;
         }
         span.onclick = function() {
           modal.style.display = "none";
