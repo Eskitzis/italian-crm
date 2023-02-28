@@ -333,11 +333,13 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
                           $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                          $parts = parse_url($current_url);
-                          $hash = isset($parts['fragment']) ? $parts['fragment'] : '';
-                          echo $hash;
-                          echo $current_url;
-                          $sql = "SELECT * FROM orders WHERE customer_id = $hash";
+                          if (preg_match('/#([^\s]+)/', $current_url, $matches)) {
+                            $id = $matches[1];
+                            echo $id; // outputs the id value
+                          } else {
+                            echo 'id not found';
+                          }
+                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
