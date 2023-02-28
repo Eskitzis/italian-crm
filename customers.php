@@ -590,7 +590,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
-          document.cookie="id=1";
+          document.cookie="id";
         }
         span.onclick = function() {
           modal.style.display = "none";
