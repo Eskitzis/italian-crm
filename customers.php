@@ -531,6 +531,11 @@ if(isset($_POST['order_submit'])){
       </div>
 </div>
     <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', event => {
+          event.preventDefault();
+        });
+      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
