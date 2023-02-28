@@ -332,10 +332,10 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                          $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                          echo $url;
                           if (preg_match('/#id=(\d+)/', $url, $matches)) {
                               $id = $matches[1];
-                              echo $url, $id; // outputs the value of the id parameter
                           }
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
