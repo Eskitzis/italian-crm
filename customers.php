@@ -243,7 +243,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" id="queryBtn" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\');submitform(event)">';
+                    echo '<div class="products-row" id="queryBtn" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -312,9 +312,7 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <form id="idform" method="post">
-              <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
-            </form>
+            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </div>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
@@ -335,7 +333,9 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
 
-                          $id = $_POST['cartelacustomerid'];
+                          $id = $_COOKIE['id'];
+
+                          echo $id;
 
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
@@ -534,19 +534,6 @@ if(isset($_POST['order_submit'])){
       </div>
 </div>
     <script>
-        function submitform(event) {
-          event.preventDefault();
-          document.getElementById('idform').submit();
-
-          var formData = new FormData(document.getElementById('idform'));
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'customers.php');
-          xhr.onload = function() {
-            // handle response from server
-            console.log(xhr.responseText);
-          };
-          xhr.send(formData);
-        }
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
@@ -606,6 +593,8 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+
+          document.cookie="id";
         }
         span.onclick = function() {
           modal.style.display = "none";
