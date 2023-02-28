@@ -591,13 +591,8 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
-          const link = document.createElement('a');
-          link.href = '/customers.php?id=' + encodeURIComponent(id);
-          link.addEventListener('click', event => {
-            event.preventDefault();
-            window.location.href = '/customers.php?id=' + encodeURIComponent(id);
-          });
-          document.body.appendChild(link);
+          preventDefault();
+          window.location.href = '/customers.php?id=' + encodeURIComponent(id);
         }
         span.onclick = function() {
           modal.style.display = "none";
