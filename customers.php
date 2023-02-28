@@ -310,7 +310,7 @@ if(isset($_POST['order_submit'])){
           <span class="close ct">&times;</span>
           <h2 id="customername">Customer</h2>
           <div style="text-align: right;">
-            <input class="customerid deactivated" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </div>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
