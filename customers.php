@@ -333,14 +333,9 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
                           $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                          $parts = parse_url($url);
-                          if (isset($parts['fragment'])) {
-                              $query = $parts['fragment'];
-                              parse_str($query, $params);
-                              if (isset($params['id'])) {
-                                  $id = $params['id'];
-                                  echo $id; // outputs the value of the id parameter
-                              }
+                          if (preg_match('/#id=(\d+)/', $url, $matches)) {
+                              $id = $matches[1];
+                              echo $id; // outputs the value of the id parameter
                           }
                           $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
