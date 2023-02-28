@@ -588,11 +588,15 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela(id,fname,lname) {
-          document.cookie = 'id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          document.cookie = "id="+ id;
+          // Delete the previous 'id' cookie
+          document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+          // Assign a new value to the 'id' cookie
+          var newIdValue = id; // replace this with your desired new value
+          document.cookie = "id=" + newIdValue + "; expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/;";
         }
         span.onclick = function() {
           modal.style.display = "none";
