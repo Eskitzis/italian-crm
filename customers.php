@@ -314,6 +314,7 @@ if(isset($_POST['order_submit'])){
           <div style="float:right;">
             <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </div>
+          
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
                       <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -333,7 +334,7 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
                           $id = $_POST['id'];
-                          echo $id;
+                          echo '<h6 style="text-align:right;" >'.$id.'</h6>';
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
