@@ -591,7 +591,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
           document.cookie = "id"+id;
-          window.location.href = "#id";
+          window.location.href = "#"+id;
         }
         span.onclick = function() {
           modal.style.display = "none";
