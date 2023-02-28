@@ -308,8 +308,10 @@ if(isset($_POST['order_submit'])){
       <div id="customermodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close ct">&times;</span>
-          <h2 id="customername">Customer</h2>
-          <div style="text-align: right;">
+          <div style="float:left;">
+            <h2 id="customername">Customer</h2>
+          </div>
+          <div style="float:right;">
             <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </div>
           <div class="customer-container" id="customercontainer">
