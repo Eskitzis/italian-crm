@@ -335,7 +335,7 @@ if(isset($_POST['order_submit'])){
                         <?php
                           $id= $_COOKIE['id'];
                           echo '<h1 style="text-align:right;">'.$id.'</h1>';
-                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
