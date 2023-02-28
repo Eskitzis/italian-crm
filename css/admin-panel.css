@@ -960,7 +960,7 @@ body {
   line-height: 2!important;
   background-color:#ffffff;
   margin-left: 15px;
-  align-content: center;
+  text-align: center;
 }
 .total-group{
   display: flex;
