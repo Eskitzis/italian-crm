@@ -337,9 +337,7 @@ if(isset($_POST['order_submit'])){
 
                           $id = $_POST['cartelacustomerid'];
 
-                          echo $id;
-
-                          $sql = "SELECT * FROM orders";
+                          $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
