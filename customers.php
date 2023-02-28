@@ -312,7 +312,9 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            <form id="idform" method="post">
+              <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            </form>
           </div>
           <div class="customer-container" id="customercontainer">
                     <div id="btn-group" class="column full">
@@ -340,7 +342,7 @@ if(isset($_POST['order_submit'])){
                           }
                         ?>
                         <div style="text-align: right;">
-                          <select class="orders-select" name="orders">
+                          <select class="orders-select" name="orders" onclick="submitform()">
                           <?php foreach ($orders as $order) { ?>
                             <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
                           <?php } ?>
@@ -529,6 +531,10 @@ if(isset($_POST['order_submit'])){
       </div>
 </div>
     <script>
+        function submitform() {
+          event.preventDefault();
+          document.getElementById('idform').submit();
+        }
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
