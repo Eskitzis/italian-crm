@@ -333,6 +333,7 @@ if(isset($_POST['order_submit'])){
                       <div class="column left">
                         <?php
                           $id = $_GET['id'];
+                          $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -590,7 +591,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var id = id;
-          window.location.href = "?customer"+"#id="+id;
+          window.location.href = '/customers.php?myVar=' + encodeURIComponent(id);
         }
         span.onclick = function() {
           modal.style.display = "none";
