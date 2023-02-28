@@ -332,8 +332,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                        
-                          $id = "<script>document.writeln(customersid);</script>";
+
+                          $id = "";
 
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
@@ -591,7 +591,7 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var customersid = id;
+          window.location.href=”customers.php?id";
         }
         span.onclick = function() {
           modal.style.display = "none";
