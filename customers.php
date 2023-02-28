@@ -342,7 +342,7 @@ if(isset($_POST['order_submit'])){
                           }
                         ?>
                         <div style="text-align: right;">
-                          <select class="orders-select" name="orders" onclick="submitform(event)">
+                          <select class="orders-select" name="orders" onclick="submitform()">
                           <?php foreach ($orders as $order) { ?>
                             <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
                           <?php } ?>
@@ -531,9 +531,9 @@ if(isset($_POST['order_submit'])){
       </div>
 </div>
     <script>
-        function submitform(event) {
+        function submitform() {
+          preventDefault();
           document.getElementById('idform').submit();
-          event.preventDefault();
         }
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
