@@ -333,9 +333,9 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          $id= $_COOKIE['id'];
-                          echo '<h1 style="text-align:right;">'.$id.'</h1>';
-                          $sql = "SELECT * FROM orders WHERE customer_id = $id";
+                          $desiredId = $_GET["id"];
+                          echo '<h1 style="text-align:right;">'.$desiredId.'</h1>';
+                          $sql = "SELECT * FROM orders";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
                           while ($row = mysqli_fetch_assoc($result)){
@@ -591,11 +591,20 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          // Delete the previous 'id' cookie
-          document.cookie = "id="+" ";
-          // Assign a new value to the 'id' cookie
-          var newIdValue = id; // replace this with your desired new value
-          document.cookie = "id="+newIdValue;
+          var desiredId = id; // Replace with your desired ID value
+          // Create a new XMLHttpRequest object
+          var xhr = new XMLHttpRequest();
+          // Set up the request
+          xhr.open("GET", "customers.php?id=" + desiredId, true);
+          // Set the callback function
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              // Do something with the response
+              console.log(xhr.responseText);
+            }
+          };
+          // Send the request
+          xhr.send();
         }
         span.onclick = function() {
           modal.style.display = "none";
