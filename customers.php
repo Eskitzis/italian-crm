@@ -332,6 +332,7 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
+                        
                           $id = "<script>document.writeln(customersid);</script>";
 
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
