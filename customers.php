@@ -333,13 +333,8 @@ if(isset($_POST['order_submit'])){
                     <div class="row">
                       <div class="column left">
                         <?php
-                          // Get the request body
-                          $body = file_get_contents('php://input');
-                          // Decode the JSON data
-                          $data = json_decode($body);
-                          // Get the value of the id parameter
-                          $id = $data->id;  
-                          echo '<h6 style="text-align:right;" >'.$id.'</h6>';
+                          $id= $_COOKIE['id'];
+                          echo '<h1 style="text-align:right;">'.$id.'</h1>';
                           $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                           $result = mysqli_query($conn, $sql);
                           $orders = array();
@@ -601,18 +596,7 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var data = {};
-          data.id = id; // Set the value of the id parameter
-          // Create a new XMLHttpRequest object
-          var xhr = new XMLHttpRequest();
-          // Set the HTTP method and URL of the request
-          xhr.open('POST', 'customers.php');
-          // Set the content type of the request
-          xhr.setRequestHeader('Content-Type', 'application/json');
-          // Convert the data object to a JSON string
-          var jsonData = JSON.stringify(data);
-          // Send the AJAX request with the JSON data as the body
-          xhr.send(jsonData);
+          document.cookie = "id="+ id;
         }
         span.onclick = function() {
           modal.style.display = "none";
