@@ -336,7 +336,10 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $sql = "SELECT * FROM orders JOIN customers ON orders.customer_id = customers.id";
+                  $value = $_GET['param'];
+                  // Use the value as needed
+                  echo "Received value: " . $value;
+                  $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
                   while ($row = mysqli_fetch_assoc($result)){
@@ -653,6 +656,16 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+          var value = id;
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  // Response from the PHP script
+                  console.log(this.responseText);
+              }
+          };
+          xhttp.open("GET", "script.php?param=" + value, true);
+          xhttp.send();
         }
         span.onclick = function() {
           modal.style.display = "none";
