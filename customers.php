@@ -645,6 +645,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
+          var myValue = 'Hello, world!';
           var xhr = new XMLHttpRequest();
           xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -657,7 +658,7 @@ if(isset($_POST['order_submit'])){
           };
           xhr.open('POST', 'myScript.php', true);
           xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-          xhr.send('myValue=' + encodeURIComponent(id));
+          xhr.send('myValue=' + encodeURIComponent(myValue));
         }
         span.onclick = function() {
           modal.style.display = "none";
