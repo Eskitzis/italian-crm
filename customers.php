@@ -657,15 +657,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var value = id;
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                  // Response from the PHP script
-                  console.log(this.responseText);
-              }
-          };
-          xhttp.open("GET", "customers.php?param=" + value, true);
-          xhttp.send();
+          window.location.href = "customers.php?param=" + encodeURIComponent(value);
         }
         span.onclick = function() {
           modal.style.display = "none";
