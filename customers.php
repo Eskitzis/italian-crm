@@ -313,7 +313,7 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <form id="hidden-form" method="post" action="customers.php">
+            <form id="hidden-form" method="post">
               <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
             </form>
             <iframe id="hidden-iframe" name="hidden-iframe" style="display:none"></iframe>
