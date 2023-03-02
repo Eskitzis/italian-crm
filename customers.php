@@ -334,7 +334,6 @@ if(isset($_POST['order_submit'])){
               <div class="column left">
                 <?php
                   $value = isset($_GET['id']) ? $_GET['id'] : '';
-                  
                   // Do something with the received value
                   // For example, echo it back to the browser
                   echo "Received value: " . $value;
@@ -648,6 +647,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var value = id;
+          window.location.href = 'customers.php?id=' + id;
 
           // Get the fragment identifier from the URL
           var fragment = window.location.hash;
