@@ -591,7 +591,7 @@ if(isset($_POST['order_submit'])){
           $.ajax({
             type: "POST",
             url: "customers.php",
-            data:id,
+            data:{id:id},
             success: function(data){
               console.log(data);
             }
