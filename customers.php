@@ -599,7 +599,7 @@ if(isset($_POST['order_submit'])){
           }
         };
         var hash = window.location.hash.substr(1); // Get the fragment identifier without the #
-        xhr.open('GET', 'script.php?hash=' + encodeURIComponent(hash), true); // Encode the hash to avoid URL encoding issues
+        xhr.open('GET', 'customers.php?hash=' + encodeURIComponent(hash), true); // Encode the hash to avoid URL encoding issues
         xhr.send();
       });
         if ( window.history.replaceState ) {
