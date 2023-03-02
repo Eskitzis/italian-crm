@@ -333,8 +333,8 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $hash = isset($_GET['hash']) ? $_GET['hash'] : '';
-                  echo 'The hash value is: ' . $hash;
+                  $myValue = isset($_POST['myValue']) ? $_POST['myValue'] : '';
+                  echo 'The value is: ' . $myValue;
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
@@ -585,22 +585,6 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
-      document.getElementById('urlbutton').addEventListener('click', function(event) {
-        event.preventDefault();
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-              document.getElementById('result').innerHTML = xhr.responseText;
-            } else {
-              document.getElementById('result').innerHTML = 'Error: ' + xhr.status;
-            }
-          }
-        };
-        var hash = window.location.hash.substr(1); // Get the fragment identifier without the #
-        xhr.open('GET', 'customers.php?hash=' + encodeURIComponent(hash), true); // Encode the hash to avoid URL encoding issues
-        xhr.send();
-      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
@@ -660,6 +644,20 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
+
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                console.log(xhr.responseText); // Display the response from the PHP script
+              } else {
+                console.log('Error: ' + xhr.status);
+              }
+            }
+          };
+          xhr.open('POST', 'myScript.php', true);
+          xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+          xhr.send('myValue=' + encodeURIComponent(id));
         }
         span.onclick = function() {
           modal.style.display = "none";
