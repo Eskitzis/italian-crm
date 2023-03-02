@@ -313,10 +313,7 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <form id="hidden-form" method="post">
-              <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
-            </form>
-            <iframe id="hidden-iframe" name="hidden-iframe" style="display:none"></iframe>
+            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
           </div>  
           <div class="customer-container" id="customercontainer">
             <div id="btn-group" class="column full">
@@ -590,14 +587,6 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
-      $(document).ready(function() {
-        $('#submit-form-button').click(function() {
-          // set the form's target attribute to the iframe's name
-          $('#hidden-form').attr('target', 'hidden-iframe');
-          // submit the form
-          $('#hidden-form').submit();
-        });
-      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
@@ -658,7 +647,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var value = id;
-          window.location.href = 'customer.php?id=' + id;
+          window.location.href = 'customers.php?id=' + id;
         }
         span.onclick = function() {
           modal.style.display = "none";
