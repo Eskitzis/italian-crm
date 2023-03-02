@@ -336,7 +336,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $value = $_GET['id'];
+                  $value = isset($_GET['id']) ? $_GET['id'] : '';
                   // Do something with the received value
                   // For example, echo it back to the browser
                   echo "Received value: " . $value;
@@ -658,7 +658,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var value = id;
-          window.location.href = "#id="+id;
+          window.location.href = 'customer.php?id=' + id;
         }
         span.onclick = function() {
           modal.style.display = "none";
