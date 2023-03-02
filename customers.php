@@ -336,7 +336,7 @@ if(isset($_POST['order_submit'])){
               <div class="column left">
                 
                 <?php
-                  $id = $_POST['id'];
+                  $id = $_POST['cartelacustomerid'];
                   echo '<h6 style="text-align:right;">'.$id.'</h6>';
                   $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                   $result = mysqli_query($conn, $sql);
