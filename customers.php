@@ -1,5 +1,6 @@
 <?php
- session_start();
+$cartela_id = $_POST['cartelacustomerid'];
+session_start();
 // Connect to MySQL database
 $host = 'localhost';
 $username = 'gruppocasa';
@@ -334,11 +335,10 @@ if(isset($_POST['order_submit'])){
             <br>
             <div class="row">
               <div class="column left">
-                
                 <?php
-                  $id = $_POST['cartelacustomerid'];
-                  echo '<h6 style="text-align:right;">'.$id.'</h6>';
-                  $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                  
+                  echo '<h6 style="text-align:right;">'.$cartela_id.'</h6>';
+                  $sql = "SELECT * FROM orders WHERE customer_id = $cartela_id";
                   $result = mysqli_query($conn, $sql);
                   $orders = array();
                   while ($row = mysqli_fetch_assoc($result)){
