@@ -244,7 +244,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" id="submit-form-button" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
+                    echo '<div class="products-row" id="urlbutton" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -333,10 +333,8 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $value = isset($_GET['id']) ? $_GET['id'] : '';
-                  // Do something with the received value
-                  // For example, echo it back to the browser
-                  echo "Received value: " . $value;
+                  $hash = isset($_GET['hash']) ? $_GET['hash'] : '';
+                  echo 'The hash value is: ' . $hash;
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
@@ -587,6 +585,23 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
+      document.getElementById('urlbutton').addEventListener('click', function(event) {
+        var hash = "1";
+        event.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              document.getElementById('result').innerHTML = xhr.responseText;
+            } else {
+              document.getElementById('result').innerHTML = 'Error: ' + xhr.status;
+            }
+          }
+        };
+        var hash = window.location.hash.substr(1); // Get the fragment identifier without the #
+        xhr.open('GET', 'script.php?hash=' + encodeURIComponent(hash), true); // Encode the hash to avoid URL encoding issues
+        xhr.send();
+      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
@@ -646,28 +661,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var value = id;
-          window.location.href = 'customers.php#id=' + id;
-
-          // Get the fragment identifier from the URL
-          var fragment = window.location.hash;
-          // Remove the '#' symbol from the fragment identifier
-          var id = fragment.substring(1).split('=')[1];
-          // Send the id parameter to the server using AJAX
-          var xhr = new XMLHttpRequest();
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200) {
-                // Display the result on the page
-                document.getElementById('result').innerHTML = xhr.responseText;
-              } else {
-                // Display an error message on the page
-                document.getElementById('result').innerHTML = 'Error: ' + xhr.status;
-              }
-            }
-          };
-          xhr.open('GET', 'customers.php?id=' + id, true);
-          xhr.send();
         }
         span.onclick = function() {
           modal.style.display = "none";
