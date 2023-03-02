@@ -1,5 +1,5 @@
 <?php
-$cartela_id = $_POST['cartelacustomerid'];
+$cartela_id = $_POST["cartelacustomerid"];
 session_start();
 // Connect to MySQL database
 $host = 'localhost';
@@ -336,7 +336,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  
+                  $cartela_id = $_POST["cartelacustomerid"];
                   echo '<h6 style="text-align:right;">'.$cartela_id.'</h6>';
                   $sql = "SELECT * FROM orders WHERE customer_id = $cartela_id";
                   $result = mysqli_query($conn, $sql);
