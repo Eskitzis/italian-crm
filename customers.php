@@ -588,7 +588,14 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          document.cookie = "customerid = " + id;
+          $.ajax({
+            type: "POST",
+            url: "customers.php",
+            data:id,
+            success: function(data){
+              console.log(data);
+            }
+            });
         }
         span.onclick = function() {
           modal.style.display = "none";
