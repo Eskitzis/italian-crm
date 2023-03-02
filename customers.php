@@ -586,7 +586,6 @@ if(isset($_POST['order_submit'])){
   </div>
     <script>
       document.getElementById('urlbutton').addEventListener('click', function(event) {
-        var hash = "1";
         event.preventDefault();
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
