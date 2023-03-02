@@ -333,8 +333,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $myValue = isset($_POST['myValue']) ? $_POST['myValue'] : '';
-                  echo 'The value is: ' . $myValue;
+                  echo 'The value is: ' . $_POST['myValue'];
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
