@@ -643,6 +643,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela(id,fname,lname) {
+          id.preventDefault();
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
