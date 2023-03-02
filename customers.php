@@ -334,6 +334,7 @@ if(isset($_POST['order_submit'])){
               <div class="column left">
                 <?php
                   $value = isset($_GET['id']) ? $_GET['id'] : '';
+                  
                   // Do something with the received value
                   // For example, echo it back to the browser
                   echo "Received value: " . $value;
@@ -647,7 +648,26 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
           var value = id;
-          window.location.href = 'customers.php?id=' + id;
+
+          // Get the fragment identifier from the URL
+          var fragment = window.location.hash;
+          // Remove the '#' symbol from the fragment identifier
+          var id = fragment.substring(1).split('=')[1];
+          // Send the id parameter to the server using AJAX
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                // Display the result on the page
+                document.getElementById('result').innerHTML = xhr.responseText;
+              } else {
+                // Display an error message on the page
+                document.getElementById('result').innerHTML = 'Error: ' + xhr.status;
+              }
+            }
+          };
+          xhr.open('GET', 'customers.php?id=' + id, true);
+          xhr.send();
         }
         span.onclick = function() {
           modal.style.display = "none";
