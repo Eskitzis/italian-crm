@@ -336,7 +336,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $sql = "SELECT * FROM orders JOIN customers WHERE customer_id.order = id.customers";
+                  $sql = "SELECT orders.first_update FROM orders JOIN customers WHERE customer_id.order = id.customers";
                   $result = mysqli_query($conn, $sql);
                   $orders = array();
                   while ($row = mysqli_fetch_assoc($result)){
