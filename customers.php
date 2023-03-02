@@ -337,7 +337,9 @@ if(isset($_POST['order_submit'])){
               <div class="column left">
                 <?php
                   $value = $_GET['param'];
-                  // Use the value as needed
+
+                  // Do something with the received value
+                  // For example, echo it back to the browser
                   echo "Received value: " . $value;
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
