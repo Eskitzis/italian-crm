@@ -337,7 +337,6 @@ if(isset($_POST['order_submit'])){
               <div class="column left">
                 <?php
                   $value = $_GET['id'];
-
                   // Do something with the received value
                   // For example, echo it back to the browser
                   echo "Received value: " . $value;
