@@ -312,7 +312,10 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            <form id="hidden-form" method="post" action="customers.php">
+              <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            </form>
+            <iframe id="hidden-iframe" name="hidden-iframe" style="display:none"></iframe>
           </div>  
           <div class="customer-container" id="customercontainer">
             <div id="btn-group" class="column full">
@@ -530,6 +533,14 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
+      $(document).ready(function() {
+        $('#submit-form-button').click(function() {
+          // set the form's target attribute to the iframe's name
+          $('#hidden-form').attr('target', 'hidden-iframe');
+          // submit the form
+          $('#hidden-form').submit();
+        });
+      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
@@ -589,31 +600,6 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          // create a new hidden form element
-          var form = document.createElement('form');
-          form.style.display = 'none';
-          // set the form's target to a hidden iframe
-          form.target = 'hidden_iframe';
-          // set the form's action URL and method
-          form.action = 'your_php_script.php';
-          form.method = 'post';
-          // create a new input element to hold the ID value
-          var input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = 'id';
-          input.value = id;
-          // add the input element to the form
-          form.appendChild(input);
-          // add the form element to the document body
-          document.body.appendChild(form);
-          // create a new hidden iframe element
-          var iframe = document.createElement('iframe');
-          iframe.name = 'hidden_iframe';
-          iframe.style.display = 'none';
-          // add the iframe element to the document body
-          document.body.appendChild(iframe);
-          // submit the form
-          form.submit();
         }
         span.onclick = function() {
           modal.style.display = "none";
