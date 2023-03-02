@@ -646,9 +646,8 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          id.preventDefault();
           var value = id;
-          window.location.href = 'customers.php?id=' + id;
+          window.location.href = 'customers.php#id=' + id;
 
           // Get the fragment identifier from the URL
           var fragment = window.location.hash;
