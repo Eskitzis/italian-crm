@@ -332,9 +332,8 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  $id = $_POST['data'];
-                  echo '<h6 style="text-align:right;">'.$id.'</h6>';
-                  $sql = "SELECT * FROM orders WHERE customer_id = '1' ";
+                  $id = $_POST['id'];
+                  $sql = "SELECT * FROM orders WHERE customer_id = $id";
                   $result = mysqli_query($conn, $sql);
                   $orders = array();
                   while ($row = mysqli_fetch_assoc($result)){
@@ -588,14 +587,31 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          $.ajax({
-            type: "POST",
-            url: "customers.php",
-            data:{id:id},
-            success: function(data){
-              console.log(data);
-            }
-            });
+          // create a new hidden form element
+          var form = document.createElement('form');
+          form.style.display = 'none';
+          // set the form's target to a hidden iframe
+          form.target = 'hidden_iframe';
+          // set the form's action URL and method
+          form.action = 'your_php_script.php';
+          form.method = 'post';
+          // create a new input element to hold the ID value
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'id';
+          input.value = id;
+          // add the input element to the form
+          form.appendChild(input);
+          // add the form element to the document body
+          document.body.appendChild(form);
+          // create a new hidden iframe element
+          var iframe = document.createElement('iframe');
+          iframe.name = 'hidden_iframe';
+          iframe.style.display = 'none';
+          // add the iframe element to the document body
+          document.body.appendChild(iframe);
+          // submit the form
+          form.submit();
         }
         span.onclick = function() {
           modal.style.display = "none";
