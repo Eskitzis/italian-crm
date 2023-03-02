@@ -664,7 +664,7 @@ if(isset($_POST['order_submit'])){
                   console.log(this.responseText);
               }
           };
-          xhttp.open("GET", "script.php?param=" + value, true);
+          xhttp.open("GET", "customers.php?param=" + value, true);
           xhttp.send();
         }
         span.onclick = function() {
