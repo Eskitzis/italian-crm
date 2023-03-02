@@ -656,7 +656,7 @@ if(isset($_POST['order_submit'])){
               }
             }
           };
-          xhr.open('POST', 'myScript.php', true);
+          xhr.open('POST', 'customers.php', true);
           xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
           xhr.send('myValue=' + encodeURIComponent(myValue));
         }
