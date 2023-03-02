@@ -243,7 +243,7 @@ if(isset($_POST['order_submit'])){
                 // Output data of each row
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
-                    echo '<div class="products-row" id="queryBtn" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
+                    echo '<div class="products-row" id="queryBtn" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\');valueparser('.$row['id'].')">';
                     echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
@@ -332,6 +332,8 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
+                  $id = $_COOKIE['customerid'];
+                  echo '<h6 style="text-align:right;">'.$id.'</h6>';
                   $sql = "SELECT * FROM orders WHERE customer_id = '1' ";
                   $result = mysqli_query($conn, $sql);
                   $orders = array();
@@ -586,20 +588,9 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-          var desiredId = id; // Replace with your desired ID value
-          // Create a new XMLHttpRequest object
-          var xhr = new XMLHttpRequest();
-          // Set up the request
-          xhr.open("GET", "customers.php?id=" + desiredId, true);
-          // Set the callback function
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-              // Do something with the response
-              console.log(xhr.responseText);
-            }
-          };
-          // Send the request
-          xhr.send();
+        }
+        function valueparser(customerid){
+          document.cookie = "customerid = " + customerid;
         }
         span.onclick = function() {
           modal.style.display = "none";
