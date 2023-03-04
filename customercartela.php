@@ -192,7 +192,7 @@
         <div class="products-area-wrapper tableView2">
           <div class="products-header2">
             <div class="product-cell2 img">
-              <span>Data Archive</span>
+              <span class="data-title" >Data Archive</span>
             </div>
           </div>
         <div id="main-content" class="file_manager">
