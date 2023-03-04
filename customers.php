@@ -261,23 +261,35 @@ if(isset($_POST['order_submit'])){
                     echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                     echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
                     echo '</div>';
-                    echo '<div id="customermodal" class="w3-modal">';
-                    echo '<div class="w3-modal-content w3-animate-top w3-card-4">';
-                    echo '<span class="close ct">&times;</span>';
-                    echo '<div style="float:left;">';
-                    echo '<h2>' . $row['firstname'] .' '. $row['lastname'] . '</h2>';
-                    echo '</div>';
-                    echo '<div style="float:right;">';
-                    echo '<input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true"value="'.$row['id'].'" readonly>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
                   }
                 }
             ?>
           </div>
         </div>
       </div>
+      <?php
+      //DIV FOR EACH CUSTOMER
+      //END DIV FOR EACH CUSTOMER
+        $sql = 'SELECT * FROM customers';
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+        // Output data of each row
+          while($row = $result->fetch_assoc()) {
+            // Create divs based on the data
+            echo '<div id="customermodal" class="w3-modal">';
+            echo '<div class="w3-modal-content w3-animate-top w3-card-4">';
+            echo '<span class="close ct">&times;</span>';
+            echo '<div style="float:left;">';
+            echo '<h2>' . $row['firstname'] .' '. $row['lastname'] . '</h2>';
+            echo '</div>';
+            echo '<div style="float:right;">';
+            echo '<input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true"value="'.$row['id'].'" readonly>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+          }
+        }
+      ?>
       <div id="menumodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close">&times;</span>
