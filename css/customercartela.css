@@ -5,7 +5,32 @@ body{
 .data-title{
     margin-left: 10px;
 }
-.status-container {
-    display: flex;
-    align-items: center;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid lightgray;
+}
+td {
+    padding: 10px;
+    vertical-align: middle;
+    border: 1px solid lightgray;
+}
+.col1 {
+    width: 60%;
+}
+.col2 {
+    width: 40%;
+}
+tr:nth-child(odd) {
+    background-color: lightgray;
+}
+tr:nth-child(even) {
+    background-color: white;
+}
+tr {
+    height: 20px;
+    margin: 5px 0;
+}
+.label-customer{
+    vertical-align: middle;
 }
