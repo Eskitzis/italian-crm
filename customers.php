@@ -341,7 +341,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php             
-                  $id = $_GET['cartelacustomerid'];
+                  $id = $_GET['id'];
                   echo 'The value is: ' . $id;
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
