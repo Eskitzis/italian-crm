@@ -319,7 +319,9 @@ if(isset($_POST['order_submit'])){
             <h2 id="customername">Customer</h2>
           </div>
           <div style="float:right;">
-            <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            <form id="my-form" action="customers.php" method="POST" style="display:none;">
+              <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+            </form>
           </div>  
           <div class="customer-container" id="customercontainer">
             <div id="btn-group" class="column full">
@@ -591,6 +593,21 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
+      $(document).ready(function() {
+        $("#urlbutton").click(function() {
+          $("#my-form").submit(function(event) {
+            event.preventDefault(); // prevent the default form submission
+            $.ajax({
+              type: "POST",
+              url: "customers.php",
+              data: $(this).serialize(), // serialize the form data
+              success: function(response) {
+                // handle the response from the server
+              }
+            });
+          });
+        });
+      });
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
