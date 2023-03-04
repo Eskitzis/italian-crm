@@ -84,7 +84,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<div style="text-align:right;"><span class="span-customer">'.$row['order_update'].'</span></div>';
+              echo '<div style="text-align:right;">'.$row['order_update'].'</div>';
             ?>
           </div>
           <div class="detailed-order">
