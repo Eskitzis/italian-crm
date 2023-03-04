@@ -32,5 +32,5 @@ tr {
     margin: 5px 0;
 }
 .label-customer{
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
