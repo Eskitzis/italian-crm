@@ -77,12 +77,14 @@
           <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
           <div class="detailed-order">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-            <label for="" class="label-customer">Customer Order</label>
+            <div style="text-align:left;" >
+                <label for="" class="label-customer">Customer Order</label>
+            </div>
             <?php
               $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<div style="text-align:right;"><span class="span-customer">'.$row['order_update'].'</span></div>';
             ?>
           </div>
           <div class="detailed-order">
@@ -92,7 +94,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>
           </div>
           <div class="detailed-order">
@@ -102,7 +104,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'FACTORY->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -112,7 +114,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -122,7 +124,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -132,7 +134,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY (CONFIRMATION)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -142,7 +144,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 1' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -152,7 +154,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 2' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>               
           </div>
           <div class="detailed-order">
@@ -162,7 +164,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Invoices' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -172,7 +174,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Final payment' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -182,7 +184,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Order Shipped' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer">'.$row['order_update'].'</span>';
             ?>
           </div>  
             <!--END DETAILED ORDER-->
