@@ -82,7 +82,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>
           </div>
           <div class="detailed-order">
@@ -92,7 +92,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>
           </div>
           <div class="detailed-order">
@@ -102,7 +102,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'FACTORY->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -112,7 +112,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -122,7 +122,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -132,7 +132,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY (CONFIRMATION)' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -152,7 +152,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 2' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>               
           </div>
           <div class="detailed-order">
@@ -162,7 +162,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Invoices' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -172,7 +172,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Final payment' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
@@ -182,7 +182,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Order Shipped' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>
           </div>  
             <!--END DETAILED ORDER-->
