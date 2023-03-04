@@ -59,14 +59,12 @@
       <div class="row">
         <div class="column left">
           <?php
-          	if(isset($_GET['id'])) {
-                $id = $_GET['id'];
-                $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
-                $result = $conn->query($sql);
-                $orders = array();
-                while ($row = mysqli_fetch_assoc($result)){
-                  $orders[] = $row;
-                }
+            $id = $_GET['id'];
+            $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+            $result = $conn->query($sql);
+            $orders = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                $orders[] = $row;
             }
           ?>
           <div style="text-align: right;">
