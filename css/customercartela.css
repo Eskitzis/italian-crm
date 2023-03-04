@@ -21,13 +21,18 @@ td {
 }
 .col2 {
     width: 20%;
-text-align: right;
+    text-align: right;
 }
+
 tr:nth-child(odd) {
     background-color: var(--action-color);
 }
 tr:nth-child(even) {
     background-color: white;
+}
+tr {
+    height: 5px;
+    margin: 5px 0;
 }
 .label-customer{
     vertical-align: middle !important;
