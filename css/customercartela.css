@@ -9,8 +9,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid lightgray;
-    font-size: 10px;
-    margin-left: 10px;
+font-size: 14px;
 }
 td {
     padding: 10px;
@@ -18,18 +17,20 @@ td {
     border: 1px solid lightgray;
 }
 .col1 {
-    width: 60%;
+    width: 80%;
 }
 .col2 {
-    width: 40%;
+    width: 20%;
+text-align: right;
 }
 tr:nth-child(odd) {
-    background-color: lightgray;
+    background-color: var(--action-color);
 }
 tr:nth-child(even) {
     background-color: white;
 }
 tr {
+    height: 5px;
     margin: 5px 0;
 }
 .label-customer{
