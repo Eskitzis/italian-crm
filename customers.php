@@ -339,6 +339,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
+                if(isset($_POST['urlbutton'])){
                   $id = $_GET['id'];
                   echo 'The value is: ' . $id;
                   $sql = "SELECT * FROM orders";
@@ -347,6 +348,7 @@ if(isset($_POST['order_submit'])){
                   while ($row = mysqli_fetch_assoc($result)){
                     $orders[] = $row;
                   }
+                }
                 ?>
                 <div style="text-align: right;">
                   <select class="orders-select" name="orders">
