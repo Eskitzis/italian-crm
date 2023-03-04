@@ -142,7 +142,7 @@
               $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 1' AND customer_id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              echo '<span class="span-customer right">'.$row['order_update'].'</span>';
             ?>                
           </div>
           <div class="detailed-order">
