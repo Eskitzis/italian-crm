@@ -593,24 +593,6 @@ if(isset($_POST['order_submit'])){
     </div>
   </div>
     <script>
-      $(document).ready(function() {
-        $("#urlbutton").click(function() {
-          $("#my-form").submit(function(event) {
-            event.preventDefault(); // prevent the default form submission
-            $.ajax({
-              type: "POST",
-              url: "customers.php",
-              data: $(this).serialize(), // serialize the form data
-              success: function(response) {
-                // handle the response from the server
-              }
-            });
-          });
-        });
-      });
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
         //BLACK AND WHITE JS
         document.querySelector(".jsFilter").addEventListener("click", function () {
             document.querySelector(".filter-menu").classList.toggle("active");
