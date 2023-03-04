@@ -363,9 +363,7 @@ if(isset($_POST['order_submit'])){
               $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '1'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo '<div style="float:right;">';
-              echo '<label for="" class="label-customer" style="text-align:right;">'.$row['order_update'].'</label>';
-              echo '</div>';
+              echo '<div style="float:right;"><label for="" class="label-customer">'.$row['order_update'].'</label></div>';
             ?>
           </div>
           <div class="detailed-order">
