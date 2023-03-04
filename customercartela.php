@@ -57,7 +57,7 @@
       </div>
       <br>
       <div class="row">
-        <div class="column left" style="margin-left:5px">
+        <div class="column left">
           <?php
             $id = $_GET['id'];
             $sql = "SELECT * FROM orders WHERE customer_id = '$id'";

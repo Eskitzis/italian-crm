@@ -36,3 +36,6 @@ tr {
 .label-customer{
     vertical-align: middle !important;
 }
+.left{
+    margin-left: 10px !important;
+}
