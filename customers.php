@@ -594,6 +594,9 @@ if(isset($_POST['order_submit'])){
 
   </div>
     <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
         //BLACK AND WHITE JS
         document.querySelector(".jsFilter").addEventListener("click", function () {
             document.querySelector(".filter-menu").classList.toggle("active");
@@ -650,8 +653,10 @@ if(isset($_POST['order_submit'])){
           ctmodal.style.display = "block";
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
-
-          history.pushState(null, null, "customers.php?id=" + id);
+          // Construct the URL with the data as parameters
+			    var url = 'customercartela.php?id='+id;
+          // Open the new tab with the URL
+          window.open(url, '_blank');
         }
         span.onclick = function() {
           modal.style.display = "none";
