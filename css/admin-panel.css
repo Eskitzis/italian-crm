@@ -1070,9 +1070,9 @@ body {
   background-color: #979cb0;
 }
 .detailed-order{
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
 }
 .label-customer{
   font-size: 14px;

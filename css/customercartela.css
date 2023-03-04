@@ -5,3 +5,7 @@ body{
 .data-title{
     margin-left: 10px;
 }
+.status-container {
+    display: flex;
+    align-items: center;
+}
