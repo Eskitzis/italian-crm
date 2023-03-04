@@ -33,9 +33,6 @@
 	<title>Customer Cartela</title>
 </head>
 <body>
-<div id="customermodal" class="w3-modal">
-  <div class="w3-modal-content w3-animate-top w3-card-4">
-    <span class="close ct">&times;</span>
     <div style="float:left;">
       <h2 id="customername">Customer</h2>
     </div>
@@ -309,9 +306,5 @@
         </div>
       </div>
     </div>
-    <!--END DATA ARCHIVE-->  
-  </div>   
-</div>
-</div>
 </body>
 </html>
