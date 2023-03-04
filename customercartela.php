@@ -7,10 +7,9 @@
 	<h1>Welcome to the other page!</h1>
 
 	<?php
-		if(isset($_GET['name'])) {
-			$name = $_GET['id'];
-
-			echo "<p>Name: $name</p>";
+		if(isset($_GET['id'])) {
+			$id = $_GET['id'];
+			echo "<p>ID: $id</p>";
 		}
 	?>
 </body>
