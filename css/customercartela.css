@@ -6,5 +6,5 @@ body{
     margin-left: 10px;
 }
 .right{
-    float: right;
+    text-align: right !important;
 }
