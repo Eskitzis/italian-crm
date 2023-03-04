@@ -9,10 +9,10 @@ table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid lightgray;
-font-size: 14px;
+    font-size: 14px;
 }
 td {
-    padding: 5px;
+    padding: 10px;
     vertical-align: middle;
     border: 1px solid lightgray;
 }
@@ -23,12 +23,13 @@ td {
     width: 20%;
     text-align: right;
 }
-
 tr:nth-child(odd) {
-    background-color: var(--action-color);
+    background-color: #101827;
+color: white;
 }
 tr:nth-child(even) {
     background-color: white;
+    color: black;
 }
 tr {
     height: 5px;
