@@ -152,12 +152,12 @@
                     <label for="" class="label-customer">GRUPPOCASA->FACTORY (CONFIRMATION)</label>
                 </td>
                 <td class="col2">
-                <?php
-                $sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
-                $result = mysqli_query($conn, $sql);
-                $row = mysqli_fetch_assoc($result);
-                echo $row['order_update'];
-                ?> 
+                    <?php
+                        $sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['order_update'];
+                    ?> 
                 </td>
             </tr>
             <tr>
