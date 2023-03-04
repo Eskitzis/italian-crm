@@ -38,7 +38,7 @@
     </div>
     <div style="float:right;">
       <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" value="<?php $id = $_GET['id']; echo "$id";?>" readonly>
-    </div>  
+    </div>
     <div class="customer-container" id="customercontainer">
       <div id="btn-group" class="column full">
         <button id="factory1" onclick="factory(this.id)">Factory1</button>
@@ -61,7 +61,7 @@
           	if(isset($_GET['id'])) {
                 $id = $_GET['id'];
                 echo "<p>ID: $id</p>";
-                $sql = "SELECT * FROM orders WHERE customer_id = $id";
+                $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
                 $result = $conn->query($sql);
                 $orders = array();
                 while ($row = mysqli_fetch_assoc($result)){
