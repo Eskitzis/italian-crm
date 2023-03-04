@@ -45,13 +45,11 @@ p {
 .column {
   float: left;
 }
-
 .left {
   width: 49%;
 }
 .right {
   width: 49%;
-
 }
 .full{
   width: 100%;
