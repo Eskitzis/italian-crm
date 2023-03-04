@@ -37,7 +37,7 @@
       <h2 id="customername">Customer</h2>
     </div>
     <div style="float:right;">
-      <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" name="cartelacustomerid" id="cartelacustomerid" readonly>
+      <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" value="<?php $id = $_GET['id']; echo "$id";?>" readonly>
     </div>  
     <div class="customer-container" id="customercontainer">
       <div id="btn-group" class="column full">
