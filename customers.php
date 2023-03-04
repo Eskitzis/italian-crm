@@ -46,7 +46,14 @@ if(isset($_POST['order_submit'])){
   
   $sql = "INSERT INTO orders (customer_id, name, category, first_status, first_update, representative) VALUES ('$customer_id', '$lastname', '$category', '$first_status', '$first_update', '$representative')";
   if ($conn->query($sql) === TRUE) {
+    $inserted_id = mysqli_insert_id($conn);
     //echo "New record created successfully";
+    $sql2 = "INSERT INTO order_status (customer_id, order_id, order_status, order_update) VALUES ('$customer_id', '$inserted_id', '$first_status', '$first_update')";
+    if ($conn->query($sql2) === TRUE) {
+      //echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql2 . "<br>" . $conn->error;
+    }
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
@@ -333,7 +340,7 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  echo 'The value is: ' . $_POST['myValue'];
+                  echo 'The value is: ' . $_POST['myid'];
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
