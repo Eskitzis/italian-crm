@@ -359,12 +359,14 @@ if(isset($_POST['order_submit'])){
             <div style="float:left;">
               <label for="" class="label-customer">Customer Order</label>
             </div>
-            <?php
-              $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '1'";
-              $result = mysqli_query($conn, $sql);
-              $row = mysqli_fetch_assoc($result);
-              echo '<div style="float:right;"><span class="span-customer">'.$row['order_update'].'</span></div>';
-            ?>
+            <div style="float:right;">
+              <?php
+                $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '1'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              ?>
+            </div>
           </div>
           <div class="detailed-order">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
