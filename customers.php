@@ -361,8 +361,6 @@ if(isset($_POST['order_submit'])){
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        const ctmodal = document.getElementById("customermodal");
-        const ctspan = document.getElementsByClassName("ct")[0];
         function moreoptions(id,fname,lname) {
           event.stopPropagation();
           modal.style.display = "block";
@@ -370,9 +368,6 @@ if(isset($_POST['order_submit'])){
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela(id,fname,lname) {
-          ctmodal.style.display = "block";
-          document.getElementById('cartelacustomerid').value = id;
-          document.getElementById('customername').innerHTML = fname +' '+ lname;
           // Construct the URL with the data as parameters
 			    var url = 'customercartela.php?id='+id;
           // Open the new tab with the URL
@@ -380,9 +375,6 @@ if(isset($_POST['order_submit'])){
         }
         span.onclick = function() {
           modal.style.display = "none";
-        }
-        ctspan.onclick = function() {
-          ctmodal.style.display = "none";
         }
         window.onclick = function(event) {
           if (event.target == modal) {
