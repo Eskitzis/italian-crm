@@ -364,7 +364,7 @@ if(isset($_POST['order_submit'])){
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
               echo '<div style="float:right;">';
-              echo '<span>'.$row['order_update'].'</span>';
+              echo  $row['order_update'];
               echo '</div>';
             ?>
           </div>
