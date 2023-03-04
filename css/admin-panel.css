@@ -1080,5 +1080,6 @@ body {
 }
 .span-customer{
   font-size: 14px;
-  background-color: #35d8ac;
+  color: #35d8ac;
+  text-align: right;
 }
