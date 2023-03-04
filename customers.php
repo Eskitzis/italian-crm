@@ -339,7 +339,8 @@ if(isset($_POST['order_submit'])){
             <div class="row">
               <div class="column left">
                 <?php
-                  echo 'The value is: ' . $_POST['myid'];
+                  $id = $_GET['id'];
+                  echo 'The value is: ' . $id;
                   $sql = "SELECT * FROM orders";
                   $result = $conn->query($sql);
                   $orders = array();
@@ -650,7 +651,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
-          window.location.href = "customers.php?id=" + id;
+          history.pushState(null, null, "customers.php?id=" + id);
         }
         span.onclick = function() {
           modal.style.display = "none";
