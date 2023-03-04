@@ -1,5 +1,4 @@
 <?php
-$cartela_id = $_POST["cartelacustomerid"];
 session_start();
 // Connect to MySQL database
 $host = 'localhost';
@@ -42,7 +41,7 @@ if(isset($_POST['order_submit'])){
 	$first_status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
   $current_timestamp = time();
   $first_update = date('d-m-Y H:i:s', $current_timestamp);
-	$representive = mysqli_real_escape_string($conn, $_POST["representative"]);
+	$representative = mysqli_real_escape_string($conn, $_POST["representative"]);
   
   $sql = "INSERT INTO orders (customer_id, name, category, first_status, first_update, representative) VALUES ('$customer_id', '$lastname', '$category', '$first_status', '$first_update', '$representative')";
   if ($conn->query($sql) === TRUE) {
@@ -651,20 +650,7 @@ if(isset($_POST['order_submit'])){
           document.getElementById('cartelacustomerid').value = id;
           document.getElementById('customername').innerHTML = fname +' '+ lname;
 
-          var myValue = 'Hello, world!';
-          var xhr = new XMLHttpRequest();
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200) {
-                console.log(xhr.responseText); // Display the response from the PHP script
-              } else {
-                console.log('Error: ' + xhr.status);
-              }
-            }
-          };
-          xhr.open('POST', 'customers.php', true);
-          xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-          xhr.send('myValue=' + encodeURIComponent(myValue));
+          window.location.href = "your_php_file.php?id=" + id;4
         }
         span.onclick = function() {
           modal.style.display = "none";
