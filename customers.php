@@ -380,9 +380,6 @@ if(isset($_POST['order_submit'])){
           if (event.target == modal) {
             modal.style.display = "none";
           }
-          if (event.target == ctmodal) {
-            ctmodal.style.display = "none";
-          }
         }
         function customReset(){
           var fieldsToReset = document.querySelectorAll("input:not([data-noreset='true'])")

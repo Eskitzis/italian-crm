@@ -182,6 +182,51 @@ if ($conn->connect_error) {
           </div>
         </div>
       </div>
+      <div id="menumodal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <span class="close">&times;</span>
+          <h2>Add Order</h2>
+            <form action="" method="post" style="width:100% !important;">
+              <div class="total-group">
+                <label class="total-label">ID:</label>
+                <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" readonly>
+              </div>
+  		        <div class="total-group">
+    		        <label class="total-label">Lastname:</label>
+    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="customerlastname" id="customerlastname" readonly>
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Category:</label>
+    		        <input class="modal-input" type="text" name="category" id="category">
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Status:</label>
+                <select class="modal-select" name="addstatus" id="addstatus">
+                    <option value="Customer Order">Customer Order</option>
+                    <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
+                    <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->CUSTOMER PF">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                    <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
+                    <option value="Advance payment 1">Advance payment 1</option>
+                    <option value="Advance payment 2">Advance payment 2</option>
+                    <option value="Invoices">Invoices</option>
+                    <option value="Final payment">Final payment</option>
+                    <option value="shipped">Order Shipped</option>
+                </select>             
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Representative:</label>
+    		        <input class="modal-input" type="text" name="representative" id="representative">
+  		        </div>
+              <br>
+              <div class="buttons-center">
+                <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
+                <button class="modal-button-green" type="submit" name="order_submit" value="submit">Apply</button>
+              </div>
+            </form>
+        </div>
+      </div>
     <script>
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
@@ -230,6 +275,29 @@ if ($conn->connect_error) {
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////
+        //MENU MODAL
+        const modal = document.getElementById("menumodal");
+        const span = document.getElementsByClassName("close")[0];
+        function moreoptions(id,fname,lname) {
+          event.stopPropagation();
+          modal.style.display = "block";
+          document.getElementById('customerid').value = id;
+          document.getElementById('customerlastname').value = fname +' '+ lname;
+        }
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        function customReset(){
+          var fieldsToReset = document.querySelectorAll("input:not([data-noreset='true'])")
+          for(var i=0;i<fieldsToReset.length;i++){
+            fieldsToReset[i].value = null;
+          }
+        }
     </script>
 </body>
 </html>
