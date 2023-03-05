@@ -10,5 +10,5 @@ body{
 }
 .span-customer{
     all: unset;
-    float: right;
+    float: right !important;
 }
