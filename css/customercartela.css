@@ -10,6 +10,6 @@ body{
 }
 .span-customer{
     text-align: right;
-    align-items: end;
-    
+    align-items: flex-end;
+
 }
