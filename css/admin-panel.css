@@ -1070,15 +1070,17 @@ body {
   background-color: #979cb0;
 }
 .detailed-order{
+  all: unset;
   display: flex;
   margin-bottom: 10px;
 }
 .label-customer{
+  all: unset;
   font-size: 14px;
 }
 .span-customer{
+  all: unset;
   font-size: 14px;
   color: #35d8ac;
-  text-align: right;
-  align-items: end;
+  float: right;
 }
