@@ -22,7 +22,7 @@ if(isset($_POST['order_update'])){
   $sql = "INSERT INTO order_status (customer_id, order_id, order_status, order_update) VALUES ('$customer_id', '$id_order', '$update_status', '$last_update')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
-    $sql2 = "UPDATE oders SET first_status = '$update_status' WHERE id = '$id_order'";   
+    $sql2 = "UPDATE orders SET first_status = '$update_status' WHERE id = '$id_order'";   
     if ($conn->query($sql2) === TRUE) {
       //echo "New record created successfully";
     } else {
