@@ -5,9 +5,6 @@ body{
 .data-title{
     margin-left: 10px;
 }
-.label-customer{
-    vertical-align: middle !important;
-}
 .span-customer{
-    float: right !important;
+    float: right;
 }
