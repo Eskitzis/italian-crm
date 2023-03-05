@@ -22,6 +22,12 @@ if(isset($_POST['order_update'])){
   $sql = "INSERT INTO order_status (customer_id, order_id, order_status, order_update) VALUES ('$customer_id', '$id_order', '$update_status', '$last_update')";
   if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully";
+    $sql2 = "UPDATE oders SET first_status = '$update_status' WHERE id = '$id_order'";   
+    if ($conn->query($sql2) === TRUE) {
+      //echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql2 . "<br>" . $conn->error;
+    }
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
@@ -187,7 +193,7 @@ if(isset($_POST['order_update'])){
                   while($row = $result->fetch_assoc()) {
                     // Create divs based on the data
                     echo '<div class="products-row">';
-                    echo '<button class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['customer_id'].'\', \''.$row['representative'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
+                    echo '<button class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['customer_id'].'\', \''.$row['representative'].'\', \''.$row['first_status'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['name'] .'</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Category:</span>' . $row['category'] .'</div>';
                     echo '<div class="product-cell status-cell"><span class="cell-label">Status:</span><span class="status active">' . $row['first_status'] .'</span></div>';
@@ -221,6 +227,7 @@ if(isset($_POST['order_update'])){
               <div class="total-group">
     		        <label class="total-label">Status:</label>
                 <select class="modal-select" name="updatestatus" id="updatestatus">
+                    <option id="fs"></option>
                     <option value="Customer Order">Customer Order</option>
                     <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
                     <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
@@ -293,12 +300,13 @@ if(isset($_POST['order_update'])){
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        function moreoptions(id,customerid,rep) {
+        function moreoptions(id,customerid,rep,fs) {
           event.stopPropagation();
           modal.style.display = "block";
           document.getElementById('id').value = id;
           document.getElementById('customerid').value = customerid;
           document.getElementById('rep').value = rep;
+          document.getElementById('fs').value = fs;
         }
         span.onclick = function() {
           modal.style.display = "none";
