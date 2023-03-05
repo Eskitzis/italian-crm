@@ -8,3 +8,12 @@ body{
 .label-customer{
     vertical-align: middle !important;
 }
+.container {
+    width: 100%;
+}
+.left-text {
+    float: left;
+}
+.right-text {
+    float: right;
+}

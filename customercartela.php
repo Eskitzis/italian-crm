@@ -76,15 +76,22 @@
               <?php } ?>
             </select>
           </div>
+          
           <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
           <div class="detailed-order">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-            <label for="" class="label-customer">Customer Order</label>
-            <?php
-              $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
-              $result = mysqli_query($conn, $sql);
-              $row = mysqli_fetch_assoc($result);
-              echo '<span class="span-customer">'.$row['order_update'].'</span>';?>
+          <div class="container">
+            <div class="left-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+              <label for="" class="label-customer">Customer Order</label>
+            </div>
+            <div class="right-text">
+              <?php
+                $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                echo '<span class="span-customer">'.$row['order_update'].'</span>';
+              ?>
+            </div>
           </div>
           <div class="detailed-order">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
@@ -187,6 +194,7 @@
             ?>
           </div>  
             <!--END DETAILED ORDER-->
+        </div>
         </div>
         <div class="column right">
           <!--DATA ARCHIVE-->
