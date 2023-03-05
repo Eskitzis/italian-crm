@@ -8,9 +8,6 @@ body{
 .label-customer{
     vertical-align: middle !important;
 }
-.leftdiv{
-    display: inline-block;
-}
-.rightdiv{
-    display: inline-block;
+.span-customer{
+    float: right;
 }
