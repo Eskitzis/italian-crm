@@ -8,6 +8,9 @@ body{
 .label-customer{
     vertical-align: middle !important;
 }
-.span-customer{
-    align-items: flex-end;
+.leftdiv{
+    float: left;
+}
+.rightdiv{
+    float: right;
 }
