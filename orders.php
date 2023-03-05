@@ -227,7 +227,7 @@ if(isset($_POST['order_update'])){
               <div class="total-group">
     		        <label class="total-label">Status:</label>
                 <select class="modal-select" name="updatestatus" id="updatestatus">
-                    <option value="lastupdate">Last Update</option>
+                    <option value="lastupdate" class="activeorder">Last Update</option>
                     <option value="Customer Order">Customer Order</option>
                     <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
                     <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
