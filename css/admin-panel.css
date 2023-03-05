@@ -1071,13 +1071,14 @@ body {
 }
 .detailed-order{
   display: flex;
-  align-items: center;
   margin-bottom: 10px;
 }
 .label-customer{
   font-size: 14px;
+  float: left;
 }
 .span-customer{
   font-size: 14px;
   color: #35d8ac;
+  float: right;
 }
