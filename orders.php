@@ -11,6 +11,21 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
   die('Connection failed: ' . $conn->connect_error);
 }
+if(isset($_POST['order_update'])){
+  $id_order = mysqli_real_escape_string($conn, $_POST["id"]);
+	$customer_id = mysqli_real_escape_string($conn, $_POST["customerid"]);
+  $update_status = mysqli_real_escape_string($conn, $_POST["updatestatus"]);
+  $current_timestamp = time();
+  $last_update = date('d-m-Y H:i:s', $current_timestamp);
+	$representative = mysqli_real_escape_string($conn, $_POST["representative"]);
+  
+  $sql = "INSERT INTO order_status (customer_id, order_id, order_status, order_update) VALUES ('$customer_id', '$id_order', '$update_status', '$last_update')";
+  if ($conn->query($sql) === TRUE) {
+    //echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,8 +190,8 @@ if ($conn->connect_error) {
                     echo '<button class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['customer_id'].'\', \''.$row['representative'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['name'] .'</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Category:</span>' . $row['category'] .'</div>';
-                    echo '<div class="product-cell status-cell"><span class="cell-label">Status:</span><span class="status active">' . $row['status'] .'</span></div>';
-                    echo '<div class="product-cell sales"><span class="cell-label">Last Update:</span>' . $row['lastupdate'] .'</div>';
+                    echo '<div class="product-cell status-cell"><span class="cell-label">Status:</span><span class="status active">' . $row['first_status'] .'</span></div>';
+                    echo '<div class="product-cell sales"><span class="cell-label">Last Update:</span>' . $row['first_update'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
                     echo '<div class="product-cell price"><span class="cell-label">Receipt:</span>receipt.pdf</div>';
                     echo '</div>';
@@ -205,7 +220,7 @@ if ($conn->connect_error) {
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
-                <select class="modal-select" name="addstatus" id="addstatus">
+                <select class="modal-select" name="updatestatus" id="updatestatus">
                     <option value="Customer Order">Customer Order</option>
                     <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
                     <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
@@ -216,13 +231,13 @@ if ($conn->connect_error) {
                     <option value="Advance payment 2">Advance payment 2</option>
                     <option value="Invoices">Invoices</option>
                     <option value="Final payment">Final payment</option>
-                    <option value="shipped">Order Shipped</option>
+                    <option value="Order Shipped">Order Shipped</option>
                 </select>             
   		        </div>
               <br>
               <div class="buttons-center">
                 <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
-                <button class="modal-button-green" type="submit" name="order_submit" value="submit">Apply</button>
+                <button class="modal-button-green" type="submit" name="order_update" value="submit">Apply</button>
               </div>
             </form>
         </div>

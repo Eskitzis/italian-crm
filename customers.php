@@ -297,7 +297,7 @@ if(isset($_POST['order_submit'])){
                     <option value="Advance payment 2">Advance payment 2</option>
                     <option value="Invoices">Invoices</option>
                     <option value="Final payment">Final payment</option>
-                    <option value="shipped">Order Shipped</option>
+                    <option value="Order Shipped">Order Shipped</option>
                 </select>             
   		        </div>
               <div class="total-group">
