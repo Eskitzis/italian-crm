@@ -10,4 +10,5 @@ body{
 }
 .span-customer{
     text-align: right;
+    float: right;
 }
