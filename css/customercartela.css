@@ -9,7 +9,5 @@ body{
     vertical-align: middle !important;
 }
 .span-customer{
-    text-align: right;
     align-items: flex-end;
-
 }
