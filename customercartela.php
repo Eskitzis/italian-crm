@@ -11,6 +11,8 @@
     if ($conn->connect_error) {
     die('Connection failed: ' . $conn->connect_error);
     }
+    $fname = $_GET['firstname'];
+    $lname = $_GET['lastname'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +33,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" type="image/x-icon" href="assets/crm.png">
-	<title>Customer Cartela</title>
+	<title><?php echo $fname; echo $lname;  ?></title>
 </head>
 <body>
     <div style="float:left;">
