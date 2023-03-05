@@ -192,16 +192,16 @@ if ($conn->connect_error) {
           <h2>Add Order</h2>
             <form action="" method="post" style="width:100% !important;">
               <div class="total-group">
-                <label class="total-label">ID:</label>
+                <label class="total-label">Order ID:</label>
+                <input class="modal-input deactivated" type="text" data-noreset="true" name="id" id="id" readonly>
+              </div>
+              <div class="total-group">
+                <label class="total-label">Customer ID:</label>
                 <input class="modal-input deactivated" type="text" data-noreset="true" name="customerid" id="customerid" readonly>
               </div>
   		        <div class="total-group">
-    		        <label class="total-label">Lastname:</label>
-    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="customerlastname" id="customerlastname" readonly>
-  		        </div>
-              <div class="total-group">
-    		        <label class="total-label">Category:</label>
-    		        <input class="modal-input" type="text" name="category" id="category">
+    		        <label class="total-label">Representative:</label>
+    		        <input class="modal-input deactivated" type="text" data-noreset="true" name="rep" id="rep" readonly>
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
@@ -218,10 +218,6 @@ if ($conn->connect_error) {
                     <option value="Final payment">Final payment</option>
                     <option value="shipped">Order Shipped</option>
                 </select>             
-  		        </div>
-              <div class="total-group">
-    		        <label class="total-label">Representative:</label>
-    		        <input class="modal-input" type="text" name="representative" id="representative">
   		        </div>
               <br>
               <div class="buttons-center">
@@ -282,11 +278,12 @@ if ($conn->connect_error) {
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        function moreoptions(id,fname,lname) {
+        function moreoptions(id,customerid,rep) {
           event.stopPropagation();
           modal.style.display = "block";
-          document.getElementById('customerid').value = id;
-          document.getElementById('customerlastname').value = fname +' '+ lname;
+          document.getElementById('id').value = id;
+          document.getElementById('customerid').value = customerid;
+          document.getElementById('rep').value = rep;
         }
         span.onclick = function() {
           modal.style.display = "none";
