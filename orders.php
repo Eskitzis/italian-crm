@@ -189,7 +189,7 @@ if ($conn->connect_error) {
       <div id="menumodal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
           <span class="close">&times;</span>
-          <h2>Add Order</h2>
+          <h2>Update Order Status</h2>
             <form action="" method="post" style="width:100% !important;">
               <div class="total-group">
                 <label class="total-label">Order ID:</label>
