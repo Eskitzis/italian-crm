@@ -10,5 +10,5 @@ body{
 }
 .span-customer{
     float: right;
-    align-items: right;
+    margin-left: 200px;
 }
