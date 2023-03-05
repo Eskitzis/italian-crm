@@ -9,6 +9,6 @@ body{
     vertical-align: middle !important;
 }
 .span-customer{
-    text-align: right;
     float: right;
+    align-items: right;
 }
