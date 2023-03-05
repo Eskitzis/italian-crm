@@ -46,6 +46,7 @@ p {
   float: left;
 }
 .left {
+  min-width: 59%;
   width: 69%;
 }
 .right {
