@@ -6,5 +6,5 @@ body{
     margin-left: 10px;
 }
 .span-customer{
-    float: right;
+    float: right !important;
 }
