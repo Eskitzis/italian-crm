@@ -96,7 +96,9 @@ p {
     background-size: cover;
     background-position: top;
 }
-
+.file_manager{
+  text-align: right;
+}
 .file_manager .file .hover {
     position: absolute;
     display: none;
