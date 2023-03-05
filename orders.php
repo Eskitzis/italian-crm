@@ -227,7 +227,7 @@ if(isset($_POST['order_update'])){
               <div class="total-group">
     		        <label class="total-label">Status:</label>
                 <select class="modal-select" name="updatestatus" id="updatestatus">
-                    <option id="fs"></option>
+                    <option value="lastupdate">Last Update</option>
                     <option value="Customer Order">Customer Order</option>
                     <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
                     <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
@@ -306,7 +306,15 @@ if(isset($_POST['order_update'])){
           document.getElementById('id').value = id;
           document.getElementById('customerid').value = customerid;
           document.getElementById('rep').value = rep;
-          document.getElementById('fs').value = fs;
+          // get the select element and the option to update
+          const selectElement = document.getElementById("updatestatus");
+          const optionToUpdate = selectElement.querySelector('option[value="lastupdate"]');
+
+          // set the new text content and value for the option
+          const newOptionText = fs;
+          const newOptionValue = fs;
+          optionToUpdate.textContent = newOptionText;
+          optionToUpdate.value = newOptionValue;
         }
         span.onclick = function() {
           modal.style.display = "none";
