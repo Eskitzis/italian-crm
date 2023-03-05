@@ -212,13 +212,7 @@
             <!--END DETAILED ORDER-->
         </div>
         <div class="column right">
-          <!--DATA ARCHIVE-->
-        <div class="products-area-wrapper tableView2">
-          <div class="products-header2">
-            <div class="product-cell2 img">
-              <span class="data-title" >Data Archive</span>
-            </div>
-          </div>
+        <!--DATA ARCHIVE-->
         <div id="main-content" class="file_manager">
           <div class="container">
             <div class="row clearfix">
@@ -325,7 +319,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 </body>
