@@ -145,17 +145,16 @@ p {
     }
 }
 .card {
-    background: #fff;
-    transition: .5s;
-    border: 0;
-    border-radius: .55rem;
-    position: relative;
-    float: right;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+  background: #fff;
+  transition: .5s;
+  border: 0;
+  border-radius: .55rem;
+  float: right;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
 .custom-card{
   margin-bottom: 5px;
