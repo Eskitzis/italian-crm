@@ -141,6 +141,9 @@
               <div class="row">
                 <div class="column left">
                   <div>
+                    <div style="float:left;">
+                      <h4>Detailed Order Status</h4>
+                    </div>
                     <?php
                       $id = $_GET['id'];
                       $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
@@ -152,10 +155,10 @@
                     ?>
                     <div style="float:right;">
                       <select class="orders-select" name="orders">
-                          <?php foreach ($orders as $order) { ?>
-                          <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
-                          <?php } ?>
-                        </select>
+                        <?php foreach ($orders as $order) { ?>
+                        <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                   </div>
                   <br>
