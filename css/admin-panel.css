@@ -941,6 +941,8 @@ body {
   height: 35px;
 }
 .orders-select{
+  position: relative;
+  z-index: 1;
   width: 200px;
   border-color: var(--dl-color-gray-black);
   border-width: 1px;
