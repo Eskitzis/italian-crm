@@ -149,7 +149,7 @@
                         $orders[] = $row;
                     }
                   ?>
-                  <div style="text-align: right;">
+                  <div>
                     <select class="orders-select" name="orders">
                       <?php foreach ($orders as $order) { ?>
                       <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
