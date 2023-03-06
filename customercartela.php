@@ -144,16 +144,16 @@
                     <div class="leftdiv">
                       <h3>Detailed Order Status</h3>
                     </div>
-                    <?php
-                      $id = $_GET['id'];
-                      $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
-                      $result = $conn->query($sql);
-                      $orders = array();
-                      while ($row = mysqli_fetch_assoc($result)){
-                          $orders[] = $row;
-                      }
-                    ?>
                     <div style="float:right;">
+                      <?php
+                        $id = $_GET['id'];
+                        $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                        $result = $conn->query($sql);
+                        $orders = array();
+                        while ($row = mysqli_fetch_assoc($result)){
+                            $orders[] = $row;
+                        }
+                      ?>
                       <select class="orders-select" name="orders">
                         <?php foreach ($orders as $order) { ?>
                         <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
@@ -161,6 +161,7 @@
                       </select>
                     </div>
                   </div>
+                  <br>
                   <br>
                   <br>
                   <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
