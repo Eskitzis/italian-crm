@@ -150,7 +150,7 @@
                     }
                   ?>
                   <div>
-                    <select class="orders-select" name="orders" readonly>
+                    <select name="orders">
                       <?php foreach ($orders as $order) { ?>
                       <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
                       <?php } ?>
