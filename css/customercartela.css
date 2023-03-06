@@ -5,5 +5,5 @@
     color: white;
 }
 .detailed-order{
-    color: var(--action-color);
+    color: var(--sidebar-link);
 }
