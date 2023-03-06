@@ -950,6 +950,8 @@ body {
   background-color:#ffffff;
   height: 25px;
   margin-left: 15px;
+  position: relative;
+  z-index: 1;
 }
 .customerid{
   width: 50px;
