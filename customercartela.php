@@ -140,21 +140,23 @@
               <br>
               <div class="row">
                 <div class="column left">
-                  <?php
-                    $id = $_GET['id'];
-                    $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
-                    $result = $conn->query($sql);
-                    $orders = array();
-                    while ($row = mysqli_fetch_assoc($result)){
-                        $orders[] = $row;
-                    }
-                  ?>
-                  <div style="float:right;">
-                    <select class="orders-select" name="orders">
-                        <?php foreach ($orders as $order) { ?>
-                        <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
-                        <?php } ?>
-                      </select>
+                  <div>
+                    <?php
+                      $id = $_GET['id'];
+                      $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+                      $result = $conn->query($sql);
+                      $orders = array();
+                      while ($row = mysqli_fetch_assoc($result)){
+                          $orders[] = $row;
+                      }
+                    ?>
+                    <div style="float:right;">
+                      <select class="orders-select" name="orders">
+                          <?php foreach ($orders as $order) { ?>
+                          <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
+                          <?php } ?>
+                        </select>
+                    </div>
                   </div>
                   <br>
                   <br>
