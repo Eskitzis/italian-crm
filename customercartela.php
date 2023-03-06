@@ -149,11 +149,13 @@
                         $orders[] = $row;
                     }
                   ?>
-                  <select class="orders-select" name="orders">
-                    <?php foreach ($orders as $order) { ?>
-                    <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
-                    <?php } ?>
-                  </select>
+                  <div style="float:right;">
+                    <select class="orders-select" name="orders">
+                        <?php foreach ($orders as $order) { ?>
+                        <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
+                        <?php } ?>
+                      </select>
+                  </div>
                   <br>
                   <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
                   <div class="detailed-order">
