@@ -156,6 +156,8 @@
                       <?php } ?>
                     </select>
                   </div>
+                  <br>
+                  <br>
                   <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
                   <div class="detailed-order">
                     <div>
