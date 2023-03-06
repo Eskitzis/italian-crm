@@ -952,6 +952,7 @@ body {
   margin-left: 15px;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 }
 .customerid{
   width: 50px;
