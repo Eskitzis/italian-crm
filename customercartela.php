@@ -119,9 +119,6 @@
             </div>
           </div>
           <div class="products-area-wrapper tableView">
-            <div style="float:left;">
-              <h2 id="customername">Customer</h2>
-            </div>
             <div style="float:right;">
               <input class="customerid deactivated" style="text-align: center;" type="text" data-noreset="true" value="<?php $id = $_GET['id']; echo "$id";?>" readonly>
             </div>
