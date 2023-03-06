@@ -1,9 +1,6 @@
 .data-title{
     margin-left: 10px;
 }
-.label-customer{
-    color: white;
-}
 .detailed-order{
     color: var(--sidebar-link);
 }
