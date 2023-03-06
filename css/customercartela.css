@@ -4,3 +4,6 @@
 .label-customer{
     color: white;
 }
+.detailed-order{
+    color: var(--action-color);
+}
