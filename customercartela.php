@@ -141,7 +141,7 @@
               <div class="row">
                 <div class="column left">
                   <div>
-                    <div style="float:left;">
+                    <div style="float:left;margin-left: 15px;">
                       <h4>Detailed Order Status</h4>
                     </div>
                     <?php
