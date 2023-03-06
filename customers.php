@@ -371,7 +371,7 @@ if(isset($_POST['order_submit'])){
           // Construct the URL with the data as parameters
 			    var url = 'customercartela.php?id='+id+'&firstname='+fname+'&lastname='+lname;
           // Open the new tab with the URL
-          window.open(url, '_blank');
+          window.open(url, '_self');
         }
         span.onclick = function() {
           modal.style.display = "none";
