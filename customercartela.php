@@ -142,7 +142,7 @@
                 <div class="column left">
                   <div>
                     <div class="leftdiv">
-                      <h4>Detailed Order Status</h4>
+                      <h2>Detailed Order Status</h2>
                     </div>
                     <?php
                       $id = $_GET['id'];
