@@ -4,3 +4,8 @@
 .detailed-order{
     color: var(--sidebar-link);
 }
+.leftdiv{
+    float:left;
+    margin-left: 15px;
+    color: var(--sidebar-link);
+}
