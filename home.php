@@ -673,7 +673,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               // Loop through each row in the customers table (there should only be one)
                               while ($customer_row = mysqli_fetch_assoc($customer_result)) {
                                   // Do something with the customer data, for example:
-                                  echo $customer_row['firstname'];
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
                               }
                             }
                             '<span style="color: black;">' . $row[''] .'</span></span>';
