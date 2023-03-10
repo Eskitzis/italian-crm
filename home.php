@@ -993,10 +993,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="flex-item-three">
-              <h4>GRAPHS</h4>                    
+              <canvas id="myChart" style="width:100%;max-width:600px">                    
             </div>
         </div>
       </div>
+      <script>
+        var xValues = ["A", "B", "C", "D", "E","F","G","H","I","J","K"];
+        var yValues = [55, 49, 44, 24, 15, 49, 44, 24, 15, 49, 44];
+        var barColors = [
+          "#8F2D56",
+          "#4B0082",
+          "#00FF7F",
+          "#FFD700",
+          "#FF8C00",
+          "#DC143C",
+          "#00CED1",
+          "#008080",
+          "#FF1493",
+          "#FF69B4",
+          "#9400D3"
+        ];
+
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Order Status"
+            }
+          }
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('select').selectize({
