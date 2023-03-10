@@ -229,9 +229,9 @@ if(isset($_POST['order_update'])){
                 <select class="modal-select" name="updatestatus" id="updatestatus">
                     <option value="lastupdate" class="activeorder">Last Update</option>
                     <option value="Customer Order">Customer Order</option>
-                    <option value="GRUPPOCASA->FACTORY ORD">GRUPPOCASA->FACTORY</option>
-                    <option value="FACTORY->CUSTOMER PF">FACTORY->CUSTOMER (PROFORMA)</option>
-                    <option value="GRUPPOCASA->CUSTOMER PF">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY</option>
+                    <option value="FACTORY->CUSTOMER">FACTORY->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->CUSTOMER">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
                     <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
                     <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
                     <option value="Advance payment 1">Advance payment 1</option>
