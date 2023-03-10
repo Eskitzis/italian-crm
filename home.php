@@ -201,7 +201,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           while($row = $result->fetch_assoc()) {
                             // Create divs based on the data
                             echo '<article class="leaderboard__profile" onclick="cust(\''.$row['name'].'\')">';
-                            echo '<img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">';
+                            echo '<img src="" alt="" class="leaderboard__picture">';
                             echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
                             echo '<span class="leaderboard__value">' . $row['first_status'] .'<span style="color: black;">B</span></span>';
                             echo '</article>';
@@ -284,11 +284,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div id="customerdiv" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;" id="customername" name="customername"></span>
+                  <span style="font-size: medium;" id="customername" name="customername"></span>
                 </div>
 
                 <div id="orderdiv1" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Customer Order</span>
+                  <?php
+
+                  ?>
                 </div>
 
                 <div id="orderdiv2" class="flex-item-three" style="display:none;">
@@ -296,39 +299,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div id="orderdiv3" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span>
+                  <span style="font-size: medium;">FACTORY->CUSTOMER (PROFORMA)</span>
                 </div>
 
                 <div id="orderdiv4" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
+                  <span style="font-size: medium;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
                 </div>
 
                 <div id="orderdiv5" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
+                  <span style="font-size: medium;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
                 </div>
 
                 <div id="orderdiv6" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
+                  <span style="font-size: medium;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
                 </div>
 
                 <div id="orderdiv7" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Advance payment 1</span>
+                  <span style="font-size: medium;">Advance payment 1</span>
                 </div>
 
                 <div id="orderdiv8" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Advance payment 2</span>
+                  <span style="font-size: medium;">Advance payment 2</span>
                 </div>
 
                 <div id="orderdiv9" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Invoices</span>
+                  <span style="font-size: medium;">Invoices</span>
                 </div>
 
                 <div id="orderdiv10" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Final payment</span>
+                  <span style="font-size: medium;">Final payment</span>
                 </div>
 
                 <div id="orderdiv11" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Order Shipped</span>
+                  <span style="font-size: medium;">Order Shipped</span>
                 </div>
             </div>
         </div>
