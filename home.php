@@ -1025,7 +1025,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           options: {
             plugins: {
               legend: {
-                position: 'right'
+                position: 'left'
               }
             },
             title: {
