@@ -654,21 +654,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div id="orderdiv1" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Customer Order</span>
                   <?php
-                      //DIV FOR EACH CUSTOMER
-                      //END DIV FOR EACH CUSTOMER
-                      $sql = 'SELECT * FROM order_status WHERE order_status = "Customer Order"';
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0) {
-                        // Output data of each row
-                          while($row = $result->fetch_assoc()) {
-                            // Create divs based on the data
-                            echo '<article class="leaderboard__profile">';
-                            echo '<img src="" alt="" class="leaderboard__picture">';
-                            echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
-                            echo '<span class="leaderboard__value">' . $row[''] .'<span style="color: black;">' . $row[''] .'</span></span>';
-                            echo '</article>';
-                          }
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Customer Order"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<img src="" alt="" class="leaderboard__picture">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname']+" "+$customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
                         }
+                      }
                     ?>
                 </div>
 
