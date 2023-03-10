@@ -663,7 +663,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         while($row = $result->fetch_assoc()) {
                           // Create divs based on the data
                           echo '<article class="leaderboard__profile">';
-                          echo '<img src="" alt="" class="leaderboard__picture">';
                           echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
                           echo '<span class="leaderboard__value">';
                             $customer_id = $row['customer_id'];
