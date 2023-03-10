@@ -251,7 +251,7 @@ if(isset($_POST['order_submit'])){
                 while($row = $result->fetch_assoc()) {
                   // Create divs based on the data
                   echo '<div class="products-row" id="urlbutton" onclick="cartela(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')">';
-                  echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
+                  echo '<button id="menupopup" class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\', \''.$row['representative'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                   echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['firstname'] .' '. $row['lastname'] . '</span></div>';
                   echo '<div class="product-cell category"><span class="cell-label">Company:</span>' . $row['company'] .'</div>';
                   echo '<div class="product-cell sales"><span class="cell-label">Address:</span><span style="text-align: right;">' . $row['addr'] .','. $row['zip'] . ','. $row['city'] .' '. $row['country'] .'</span></div>';
@@ -361,10 +361,11 @@ if(isset($_POST['order_submit'])){
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        function moreoptions(id,fname,lname) {
+        function moreoptions(id,fname,lname,representative) {
           event.stopPropagation();
           modal.style.display = "block";
           document.getElementById('customerid').value = id;
+          document.getElementById('representative').value = representative;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela(id,fname,lname) {
