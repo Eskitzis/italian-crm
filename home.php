@@ -644,11 +644,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </span>
                             </article>
                         </div>
-                        <div class="flex-item-right">
-                          <h4>GRAPHS</h4>                    
-                        </div>
                     </div>
                 </div>
+
                 <div id="customerdiv" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;" id="customername" name="customername"></span>
                 </div>
@@ -992,6 +990,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         }
                       }
                     ?>
+                </div>
+                <div class="flex-item-three">
+                  <h4>GRAPHS</h4>                    
                 </div>
             </div>
         </div>
