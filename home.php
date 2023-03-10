@@ -991,9 +991,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       }
                     ?>
                 </div>
-                <div class="flex-item-three">
-                  <h4>GRAPHS</h4>                    
-                </div>
+            </div>
+            <div class="flex-item-three">
+              <h4>GRAPHS</h4>                    
             </div>
         </div>
       </div>
