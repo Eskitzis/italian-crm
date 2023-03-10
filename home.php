@@ -245,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>
                                   <span style="color: black;">
                                     A
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span1">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Customer Order'";
                                         $result = mysqli_query($conn, $sql);
@@ -283,7 +283,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>
                                   <span style="color: black;">
                                     B
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span2">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY'";
                                         $result = mysqli_query($conn, $sql);
@@ -321,7 +321,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     C
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span3">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'FACTORY->CUSTOMER (PROFORMA)'";
                                         $result = mysqli_query($conn, $sql);
@@ -359,7 +359,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     D
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span4">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'GRUPPOCASA->CUSTOMER (PROFORMA)'";
                                         $result = mysqli_query($conn, $sql);
@@ -397,7 +397,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     E
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span5">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)'";
                                         $result = mysqli_query($conn, $sql);
@@ -435,7 +435,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     F
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span6">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY (CONFIRMATION)'";
                                         $result = mysqli_query($conn, $sql);
@@ -474,7 +474,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     G
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span7">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Advance payment 1'";
                                         $result = mysqli_query($conn, $sql);
@@ -512,7 +512,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     H
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span8">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Advance payment 2'";
                                         $result = mysqli_query($conn, $sql);
@@ -550,7 +550,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     I
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span9">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Invoices'";
                                         $result = mysqli_query($conn, $sql);
@@ -588,7 +588,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>                                  
                                   <span style="color: black;">
                                     J
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span10">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Final payment'";
                                         $result = mysqli_query($conn, $sql);
@@ -626,7 +626,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   ?>
                                   <span style="color: black;">
                                     K
-                                    <span style="color: red;">
+                                    <span style="color: red;" id="span11">
                                       <?php
                                         $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Order Shipped'";
                                         $result = mysqli_query($conn, $sql);
@@ -999,7 +999,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <script>
         var xValues = ["A", "B", "C", "D", "E","F","G","H","I","J","K"];
-        var yValues = [55, 49, 44, 24, 15, 49, 44, 24, 15, 49, 44];
+        var yValues = [];
+        for (var i = 1; i <= 11; i++) {
+          var span = document.getElementById("span" + i);
+          var text = span.textContent;
+          yValues.push(parseInt(text));
+        }
         var barColors = [
           "#8F2D56",
           "#4B0082",
