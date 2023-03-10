@@ -248,57 +248,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="column right">
-                <!DOCTYPE html>
-<html>
-<head>
-	<title>Table with two columns</title>
-	<style>
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			border: 1px solid lightgray;
-      font-size: 14px;
-      
-		}
-		td {
-			padding: 10px;
-			vertical-align: middle;
-			border: 1px solid lightgray;
-		}
-		.col1 {
-			width: 80%;
-		}
-		.col2 {
-			width: 20%;
-      text-align: right;
-		}
-		tr:nth-child(odd) {
-			background-color: #101827;
-      color: white;
-		}
-		tr:nth-child(even) {
-			background-color: white;
-      color: black;
-		}
-		tr {
-			height: 5px;
-			margin: 5px 0;
-		}
-    .label-customer{
-    vertical-align: middle;
-    }
-	</style>
-</head>
-<body>
-	<table>
+<div class="leftdiv">
+<h3>Detailed Order Status</h3>
+</div>
+<table>
 		<tr>
 			<td class="col1">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
         <label for="" class="label-customer">Customer Order</label>
       </td>
 			<td class="col2">
-          <span>20.02.2022</span>
+        <?php
+          $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          echo '<span class="span-customer">'.$row['order_update'].'</span>';
+        ?>
       </td>
 		</tr>
 		<tr>
@@ -392,12 +357,7 @@
       </td>
 		</tr>
 	</table>
-</body>
-</html>
 <div>
-	<div class="leftdiv">
-	  <h3>Detailed Order Status</h3>
-	</div>
 	<div style="float:right;">
 	  <?php
 		$id = $_GET['id'];
@@ -423,12 +383,7 @@
 	<div>
 	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
 	  <label for="" class="label-customer">Customer Order</label>
-	  <?php
-		$sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_assoc($result);
-		echo '<span class="span-customer">'.$row['order_update'].'</span>';
-	  ?>
+
 	</div>
   </div>
   <div class="detailed-order">
