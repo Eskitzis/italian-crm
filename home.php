@@ -1013,7 +1013,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "#FF69B4",
           "#9400D3"
         ];
-
         new Chart("myChart", {
           type: "doughnut",
           data: {
@@ -1024,42 +1023,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }]
           },
           options: {
-          title: {
-            display: true,
-            text: "Order Status"
-          },
-          legend: {
-            display: false
-          },
-          layout: {
-            padding: {
-              left: 0,
-              right: 0,
-              top: 50,
-              bottom: 0
-            }
-          },
-          scales: {
-            xAxes: [{
-              ticks: {
-                beginAtZero: true,
-                padding: 10,
-                callback: function(value, index, values) {
-                  return value.toUpperCase();
-                }
-              },
-              gridLines: {
-                display: false
-              }
-            }],
-            yAxes: [{
-              ticks: {
-                display: false
-              },
-              gridLines: {
-                display: false
-                }
-              }]
+            legend: {
+              position: 'right'
+            },
+            title: {
+              display: true,
+              text: "Order Status"
             }
           }
         });
