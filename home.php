@@ -228,7 +228,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <article class="leaderboard__profile" onclick="ord1()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
                                 <span class="leaderboard__name">Customer Order</span>
-                                <span class="leaderboard__value">20.01.2023<span style="color: black;">A<span style="color: red;">34</span></span></span>
+                                <span class="leaderboard__value">
+                                  <?php
+                                    $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' ORDER BY primary_key DESC LIMIT 1";
+                                    $result = mysqli_query($conn, $sql);
+                                    // Check if the query returned any results
+                                    if (mysqli_num_rows($result) > 0) {
+                                      // Get the row as an associative array
+                                      $row = mysqli_fetch_assoc($result);
+                                      // Access the cell from the last row
+                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      echo $date_only;
+                                    } else {
+                                      echo "No rows found";
+                                    }
+                                  ?>
+                                  <span style="color: black;">A<span style="color: red;">34</span></span></span>
                             </article>
 
                             <article class="leaderboard__profile" onclick="ord2()">
