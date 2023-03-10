@@ -243,7 +243,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       echo "-";
                                     }
                                   ?>
-                                  <span style="color: black;">A<span style="color: red;">34</span></span>
+                                  <span style="color: black;">A
+                                    <span style="color: red;">
+                                      <?php
+                                        $sql = "SELECT COUNT(*) as count FROM order_status WHERE order_status = 'Customer Order'";
+                                        $result = mysqli_query($conn, $sql);
+                                        // Get the count of rows and print it
+                                        if (mysqli_num_rows($result) > 0) {
+                                          $row = mysqli_fetch_assoc($result);
+                                          $count = $row["count"];
+                                          echo $count;
+                                        } else {
+                                          echo "0";
+                                        }
+                                      ?>
+                                    </span>
+                                  </span>
                                 </span>
                             </article>
 
