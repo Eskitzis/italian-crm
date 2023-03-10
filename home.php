@@ -230,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="leaderboard__name">Customer Order</span>
                                 <span class="leaderboard__value">
                                   <?php
-                                    $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' ORDER BY primary_key DESC LIMIT 1";
+                                    $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' ORDER BY id DESC LIMIT 1";
                                     $result = mysqli_query($conn, $sql);
                                     // Check if the query returned any results
                                     if (mysqli_num_rows($result) > 0) {
