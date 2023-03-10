@@ -240,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       $date_only = date("d-m-Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
-                                      echo "No rows found";
+                                      echo "No Orders";
                                     }
                                   ?>
                                   <span style="color: black;">A<span style="color: red;">34</span></span></span>
