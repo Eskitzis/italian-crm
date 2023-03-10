@@ -361,11 +361,11 @@ if(isset($_POST['order_submit'])){
         //MENU MODAL
         const modal = document.getElementById("menumodal");
         const span = document.getElementsByClassName("close")[0];
-        function moreoptions(id,fname,lname,representative) {
+        function moreoptions(id,fname,lname,rep) {
           event.stopPropagation();
           modal.style.display = "block";
           document.getElementById('customerid').value = id;
-          document.getElementById('representative').value = representative;
+          document.getElementById('representative').value = rep;
           document.getElementById('customerlastname').value = fname +' '+ lname;
         }
         function cartela(id,fname,lname) {
