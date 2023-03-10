@@ -994,7 +994,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="flex-item-three">
               <canvas id="orderstatuschart" style="width:100%;max-width:400px">
-              <canvas id="ordersfullfilled" style="width:100%;max-width:400px">                  
+              <canvas id="ordersFulfilled" style="width:100%;max-width:400px">                  
             </div>
         </div>
       </div>
@@ -1040,15 +1040,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
           }
         });
-    </script>
-          <script>
+      </script>
+      <script>
         var xValues = ["FULLFILED", "ACTIVE"];
         var yValues = ["50", "50"];
         var barColors = [
           "#8F2D56",
           "#4B0082"
         ];
-        new Chart("ordersfullfilled", {
+        new Chart("ordersFulfilled", {
           type: "doughnut",
           data: {
             labels: xValues,
@@ -1065,13 +1065,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             },
             title: {
               display: true,
-              text: "Order Status"
+              text: "Order Fulfilled"
             }
           }
         });
-    </script>
-
-    <script>
+      </script>
+      <script>
         $(document).ready(function () {
             $('select').selectize({
              sortField: 'text'
@@ -1306,6 +1305,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           document.getElementById("customerdiv").style.display = "none";
         }
-    </script>
+      </script>
 </body>
 </html>
