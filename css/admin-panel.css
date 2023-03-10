@@ -756,13 +756,13 @@ body {
 .leaderboard__value {
   color: #35d8ac;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   text-align: right;
 }
 .leaderboard__value > span {
   opacity: 0.8;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 10px;
   margin-left: 3px;
 }
 .customer-menu {
