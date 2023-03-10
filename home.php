@@ -1026,6 +1026,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           options: {
             title: {
               display: true,
+              xAlign: 'left',
               text: "Order Status"
             }
           }
