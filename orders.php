@@ -230,10 +230,10 @@ if(isset($_POST['order_update'])){
                     <option value="lastupdate" class="activeorder">Last Update</option>
                     <option value="Customer Order">Customer Order</option>
                     <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY</option>
-                    <option value="FACTORY->CUSTOMER">FACTORY->CUSTOMER (PROFORMA)</option>
-                    <option value="GRUPPOCASA->CUSTOMER">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
-                    <option value="CUSTOMER->GRUPPOCASA">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
-                    <option value="GRUPPOCASA->FACTORY">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
+                    <option value="FACTORY->CUSTOMER (PROFORMA)">FACTORY->CUSTOMER (PROFORMA)</option>
+                    <option value="GRUPPOCASA->CUSTOMER (PROFORMA)">GRUPPOCASA->CUSTOMER (PROFORMA)</option>
+                    <option value="CUSTOMER->GRUPPOCASA (CONFIRMATION)">CUSTOMER->GRUPPOCASA (CONFIRMATION)</option>
+                    <option value="GRUPPOCASA->FACTORY (CONFIRMATION)">GRUPPOCASA->FACTORY (CONFIRMATION)</option>
                     <option value="Advance payment 1">Advance payment 1</option>
                     <option value="Advance payment 2">Advance payment 2</option>
                     <option value="Invoices">Invoices</option>
