@@ -283,7 +283,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
-                <div id="extradiv" style="display:block;">
+                <div id="extradiv" style="display:none;">
                   <div id="customerdiv" class="flex-item-three" style="display:none;">
                     <span style="font-size: large;" id="customername" name="customername"></span>
                     <span class="close">&times;</span>
@@ -406,6 +406,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
+          document.getElementById("extradiv").style.display = "block"; 
           document.getElementById('customername').innerHTML = name;
           
           document.getElementById("orderdiv1").style.display = "none";
@@ -435,6 +436,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord2() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -449,7 +451,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv10").style.display = "none";
           document.getElementById("orderdiv11").style.display = "none";
 
-          document.getElementById("customerdiv").style.display = "none";         
+          document.getElementById("customerdiv").style.display = "none";     
+          document.getElementById("extradiv").style.display = "block";     
         }
         function ord3() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -465,6 +468,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord4() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -480,6 +484,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord5() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -495,6 +500,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord6() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -510,6 +516,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord7() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -525,6 +532,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord8() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -540,6 +548,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord9() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -555,6 +564,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord10() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -570,6 +580,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord11() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -585,6 +596,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "block";
 
           document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("extradiv").style.display = "block"; 
         }
     </script>
 </body>
