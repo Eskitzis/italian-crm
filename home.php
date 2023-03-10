@@ -654,8 +654,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div id="orderdiv1" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Customer Order</span>
                   <?php
-
-                  ?>
+                      //DIV FOR EACH CUSTOMER
+                      //END DIV FOR EACH CUSTOMER
+                      $sql = 'SELECT * FROM order_status WHERE order_status = "Customer Order"';
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                        // Output data of each row
+                          while($row = $result->fetch_assoc()) {
+                            // Create divs based on the data
+                            echo '<article class="leaderboard__profile">';
+                            echo '<img src="" alt="" class="leaderboard__picture">';
+                            echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                            echo '<span class="leaderboard__value">' . $row[''] .'<span style="color: black;">' . $row[''] .'</span></span>';
+                            echo '</article>';
+                          }
+                        }
+                    ?>
                 </div>
 
                 <div id="orderdiv2" class="flex-item-three" style="display:none;">
