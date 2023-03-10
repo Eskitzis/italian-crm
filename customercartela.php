@@ -140,166 +140,6 @@
               <br>
               <div class="row">
                 <div class="column left">
-                  <div>
-                    <div class="leftdiv">
-                      <h3>Detailed Order Status</h3>
-                    </div>
-                    <div style="float:right;">
-                      <?php
-                        $id = $_GET['id'];
-                        $sql = "SELECT * FROM orders WHERE customer_id = '$id'";
-                        $result = $conn->query($sql);
-                        $orders = array();
-                        while ($row = mysqli_fetch_assoc($result)){
-                            $orders[] = $row;
-                        }
-                      ?>
-                      <select class="select-order" name="orders">
-                        <?php foreach ($orders as $order) { ?>
-                        <option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
-                        <?php } ?>
-                      </select>
-                    </div>
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                      <label for="" class="label-customer">Customer Order</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>
-                    </div>
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                      <label for="" class="label-customer">GRUPPOCASA->FACTORY</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>
-                    </div>
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                      <label for="" class="label-customer">FACTORY->CUSTOMER (PROFORMA)</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'FACTORY->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>     
-                    </div>           
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                      <label for="" class="label-customer">GRUPPOCASA->CUSTOMER (PROFORMA)</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>    
-                    </div>            
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                      <label for="" class="label-customer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>    
-                    </div>            
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                      <label for="" class="label-customer">GRUPPOCASA->FACTORY (CONFIRMATION)</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY (CONFIRMATION)' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>     
-                    </div>           
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                      <label for="" class="label-customer">Advance payment 1</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 1' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>  
-                    </div>             
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                      <label for="" class="label-customer">Advance payment 2</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 2' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>   
-                    </div>            
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                      <label for="" class="label-customer">Invoices</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Invoices' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>     
-                    </div>           
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                      <label for="" class="label-customer">Final payment</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Final payment' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>      
-                    </div>          
-                  </div>
-                  <div class="detailed-order">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                      <label for="" class="label-customer">Order Shipped</label>
-                      <?php
-                        $sql = "SELECT * FROM order_status WHERE order_status = 'Order Shipped' AND customer_id = '$id'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-                        echo '<span class="span-customer">'.$row['order_update'].'</span>';
-                      ?>
-                    </div>
-                  </div>  
-                    <!--END DETAILED ORDER-->
-                </div>
-                <div class="column right">
                 <!--DATA ARCHIVE-->
                 <div id="main-content" class="file_manager">
                   <div class="container">
@@ -407,6 +247,311 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="column right">
+                <!DOCTYPE html>
+<html>
+<head>
+	<title>Table with two columns</title>
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border: 1px solid lightgray;
+      font-size: 14px;
+      
+		}
+		td {
+			padding: 10px;
+			vertical-align: middle;
+			border: 1px solid lightgray;
+		}
+		.col1 {
+			width: 80%;
+		}
+		.col2 {
+			width: 20%;
+      text-align: right;
+		}
+		tr:nth-child(odd) {
+			background-color: #101827;
+      color: white;
+		}
+		tr:nth-child(even) {
+			background-color: white;
+      color: black;
+		}
+		tr {
+			height: 5px;
+			margin: 5px 0;
+		}
+    .label-customer{
+    vertical-align: middle;
+    }
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+        <label for="" class="label-customer">Customer Order</label>
+      </td>
+			<td class="col2">
+          <span>20.02.2022</span>
+      </td>
+		</tr>
+		<tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        <label for="" class="label-customer">GRUPPOCASA->FACTORY</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+		<tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <label for="" class="label-customer">FACTORY->CUSTOMER (PROFORMA)</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+		<tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <label for="" class="label-customer">GRUPPOCASA->CUSTOMER (PROFORMA)</label>
+      </td>
+			<td class="col2">
+ 
+      </td>
+		</tr>
+		<tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <label for="" class="label-customer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</label>
+      </td>
+			<td class="col2">
+ 
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <label for="" class="label-customer">GRUPPOCASA->FACTORY (CONFIRMATION)</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        <label for="" class="label-customer">Advance payment 1</label>
+      </td>
+			<td class="col2">
+ 
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        <label for="" class="label-customer">Advance payment 2</label>
+      </td>
+			<td class="col2">
+  
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        <label for="" class="label-customer">Invoices</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        <label for="" class="label-customer">Final payment</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+    <tr>
+			<td class="col1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <label for="" class="label-customer">Order Shipped</label>
+      </td>
+			<td class="col2">
+
+      </td>
+		</tr>
+	</table>
+</body>
+</html>
+<div>
+	<div class="leftdiv">
+	  <h3>Detailed Order Status</h3>
+	</div>
+	<div style="float:right;">
+	  <?php
+		$id = $_GET['id'];
+		$sql = "SELECT * FROM orders WHERE customer_id = '$id'";
+		$result = $conn->query($sql);
+		$orders = array();
+		while ($row = mysqli_fetch_assoc($result)){
+			$orders[] = $row;
+		}
+	  ?>
+	  <select class="select-order" name="orders">
+		<?php foreach ($orders as $order) { ?>
+		<option value="<?php echo $order['id']; ?>"><?php echo $order['first_update']; ?></option>
+		<?php } ?>
+	  </select>
+	</div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <!--DETAILED ORDER STATUS OF LAST ORDER / BIT CAN SELECT ORDER FROM DROPDOWN MENU-->
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+	  <label for="" class="label-customer">Customer Order</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Customer Order' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>
+	</div>
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+	  <label for="" class="label-customer">GRUPPOCASA->FACTORY</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>
+	</div>
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+	  <label for="" class="label-customer">FACTORY->CUSTOMER (PROFORMA)</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'FACTORY->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>     
+	</div>           
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+	  <label for="" class="label-customer">GRUPPOCASA->CUSTOMER (PROFORMA)</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->CUSTOMER (PROFORMA)' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>    
+	</div>            
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+	  <label for="" class="label-customer">CUSTOMER->GRUPPOCASA (CONFIRMATION)</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'CUSTOMER->GRUPPOCASA (CONFIRMATION)' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>    
+	</div>            
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+	  <label for="" class="label-customer">GRUPPOCASA->FACTORY (CONFIRMATION)</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'GRUPPOCASA->FACTORY (CONFIRMATION)' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>     
+	</div>           
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+	  <label for="" class="label-customer">Advance payment 1</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 1' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>  
+	</div>             
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+	  <label for="" class="label-customer">Advance payment 2</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Advance payment 2' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>   
+	</div>            
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+	  <label for="" class="label-customer">Invoices</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Invoices' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>     
+	</div>           
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+	  <label for="" class="label-customer">Final payment</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Final payment' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>      
+	</div>          
+  </div>
+  <div class="detailed-order">
+	<div>
+	  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+	  <label for="" class="label-customer">Order Shipped</label>
+	  <?php
+		$sql = "SELECT * FROM order_status WHERE order_status = 'Order Shipped' AND customer_id = '$id'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		echo '<span class="span-customer">'.$row['order_update'].'</span>';
+	  ?>
+	</div>
+  </div>  
+	<!--END DETAILED ORDER-->
               </div>
             </div>        
         </div>
