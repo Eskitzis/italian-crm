@@ -288,11 +288,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div id="orderdiv1" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">Customer Order</span>
+                  <span style="font-size: medium;">Customer Order</span>
                 </div>
 
                 <div id="orderdiv2" class="flex-item-three" style="display:none;">
-                  <span style="font-size: large;">GRUPPOCASA->FACTORY</span>
+                  <span style="font-size: medium;">GRUPPOCASA->FACTORY</span>
                 </div>
 
                 <div id="orderdiv3" class="flex-item-three" style="display:none;">
