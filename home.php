@@ -237,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -281,7 +281,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -303,7 +303,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -325,7 +325,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -347,7 +347,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -370,7 +370,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -392,7 +392,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -414,7 +414,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -436,7 +436,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
@@ -458,7 +458,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                       // Get the row as an associative array
                                       $row = mysqli_fetch_assoc($result);
                                       // Access the cell from the last row
-                                      $date_only = date("d-m-Y", strtotime($row["order_update"]));
+                                      $date_only = date("d.m.Y", strtotime($row["order_update"]));
                                       echo $date_only;
                                     } else {
                                       echo "-";
