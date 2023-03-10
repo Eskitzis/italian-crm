@@ -283,7 +283,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
-                <div id="extradiv" style="display:none;">
+                <div id="extradiv" style="display:block;">
                   <div id="customerdiv" class="flex-item-three" style="display:none;">
                     <span style="font-size: large;" id="customername" name="customername"></span>
                     <span class="close">&times;</span>
