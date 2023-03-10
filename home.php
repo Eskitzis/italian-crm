@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="flex-container">
                         <div class="flex-item-left">
                             <article class="leaderboard__profile" onclick="ord1()">
-                                <img src="assets/detailed_order/pre-order.png" alt="Customer Order" class="leaderboard__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-left: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
                                 <span class="leaderboard__name">Customer Order</span>
                                 <span class="leaderboard__value">20.01.2023<span style="color: black;">A<span style="color: red;">34</span></span></span>
                             </article>
@@ -236,7 +236,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="leaderboard__name">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
                                 <span class="leaderboard__value">23.01.2023<span style="color: black;">D<span style="color: red;">24</span></span></span>
                             </article>  
-                            
+
                             <article class="leaderboard__profile" onclick="ord5()">
                                 <img src="assets/detailed_order/manufacturing.png" alt="CUSTOMER->GRUPPOCASA (CONFIRMATION)" class="leaderboard__icon">
                                 <span class="leaderboard__name">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
