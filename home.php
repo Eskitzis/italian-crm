@@ -1023,8 +1023,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }]
           },
           options: {
-            legend: {
-              position: 'right'
+            plugins: {
+              legend: {
+                position: 'right'
+              }
             },
             title: {
               display: true,
