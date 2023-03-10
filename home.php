@@ -203,7 +203,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo '<article class="leaderboard__profile" onclick="cust(\''.$row['name'].'\')">';
                             echo '<img src="" alt="" class="leaderboard__picture">';
                             echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
-                            echo '<span class="leaderboard__value">' . $row['first_status'] .'<span style="color: black;">';if ($row['first_status'] == "Customer Order"){echo 'A';}'</span></span>';
+                            echo '<span class="leaderboard__value">' . $row['first_status'] .'<span style="color: black;">';
+                              if ($row['first_status'] == "Customer Order"){echo 'A';}
+                              if ($row['first_status'] == "GRUPPOCASA->FACTORY"){echo 'B';}
+                              if ($row['first_status'] == "FACTORY->CUSTOMER (PROFORMA)"){echo 'C';}
+                              if ($row['first_status'] == "GRUPPOCASA->CUSTOMER (PROFORMA)"){echo 'D';}
+                              if ($row['first_status'] == "CUSTOMER->GRUPPOCASA (CONFIRMATION)"){echo 'E';}
+                              if ($row['first_status'] == "GRUPPOCASA->FACTORY (CONFIRMATION)"){echo 'F';}
+                              if ($row['first_status'] == "Advance payment 1"){echo 'G';}
+                              if ($row['first_status'] == "Advance payment 2"){echo 'H';}
+                              if ($row['first_status'] == "Invoices"){echo 'I';}
+                              if ($row['first_status'] == "Final payment"){echo 'J';}
+                              if ($row['first_status'] == "Order Shipped"){echo 'K';}
+
+                              '</span></span>';
                             echo '</article>';
                           }
                         }
