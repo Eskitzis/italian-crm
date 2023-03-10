@@ -1024,9 +1024,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }]
           },
           options: {
+            tooltips : {
+              xAlign: 'center'
+            },
             title: {
               display: true,
-              xAlign: 'start',
               text: "Order Status"
             }
           }
