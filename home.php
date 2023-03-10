@@ -643,7 +643,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                   </span>
                                 </span>
                             </article>
-        
+                        </div>
+                        <div class="flex-item-right">
+                          <h4>GRAPHS</h4>                    
                         </div>
                     </div>
                 </div>
