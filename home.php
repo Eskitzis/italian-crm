@@ -286,14 +286,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                   <div id="customerdiv" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername" name="customername"></span></div>
 
-                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Pre-Order</span></div>
-                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">Offer to Customer</span></div>
-                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">Payment Received</span></div>
-                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order to Factory</span></div>
-                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Received</span></div>
-                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">Complete</span></div>
-                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order to Customer</span></div>
-                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Arrived</span></div>
+                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Order</span></div>
+                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY</span></div>
+                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span></div>
+                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span></div>
+                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span></div>
+                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span></div>
+                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 1</span></div>
+                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 2</span></div>
+                  <div id="orderdiv9" class="flex-item-three" style="display:none;"><span style="font-size: large;">Invoices</span></div>
+                  <div id="orderdiv10" class="flex-item-three" style="display:none;"><span style="font-size: large;">Final payment</span></div>
+                  <div id="orderdiv11" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Shipped</span></div>
 
             </div>
         </div>
@@ -363,6 +366,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
@@ -373,6 +379,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           
           document.getElementById("customerdiv").style.display = "none";
@@ -386,6 +395,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";         
         }
@@ -398,6 +410,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
         }
@@ -410,6 +425,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
         }
@@ -422,6 +440,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
         }
@@ -434,6 +455,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "block";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
         }
@@ -446,6 +470,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "block";
           document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
         }
@@ -458,6 +485,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv6").style.display = "none";
           document.getElementById("orderdiv7").style.display = "none";
           document.getElementById("orderdiv8").style.display = "block";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
+
+          document.getElementById("customerdiv").style.display = "none";
+        }
+        function ord9() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "block";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
+
+          document.getElementById("customerdiv").style.display = "none";
+        }
+        function ord10() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "block";
+          document.getElementById("orderdiv11").style.display = "none";
+
+          document.getElementById("customerdiv").style.display = "none";
+        }
+        function ord11() {
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "block";
 
           document.getElementById("customerdiv").style.display = "none";
         }
