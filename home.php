@@ -767,6 +767,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv8").style.display = "none";
           document.getElementById("orderdiv9").style.display = "none";
           document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
