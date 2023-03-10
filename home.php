@@ -284,19 +284,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-                  <div id="customerdiv" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername" name="customername"></span></div>
+                  <div id="customerdiv" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername" name="customername"></span><span class="close">&times;</span></div>
 
-                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Order</span></div>
-                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY</span></div>
-                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span></div>
-                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span></div>
-                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span></div>
-                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span></div>
-                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 1</span></div>
-                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 2</span></div>
-                  <div id="orderdiv9" class="flex-item-three" style="display:none;"><span style="font-size: large;">Invoices</span></div>
-                  <div id="orderdiv10" class="flex-item-three" style="display:none;"><span style="font-size: large;">Final payment</span></div>
-                  <div id="orderdiv11" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Shipped</span></div>
+                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Order</span><span class="close">&times;</span></div>
+                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY</span><span class="close">&times;</span></div>
+                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span><span class="close">&times;</span></div>
+                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span><span class="close">&times;</span></div>
+                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span><span class="close">&times;</span></div>
+                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span><span class="close">&times;</span></div>
+                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 1</span><span class="close">&times;</span></div>
+                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 2</span><span class="close">&times;</span></div>
+                  <div id="orderdiv9" class="flex-item-three" style="display:none;"><span style="font-size: large;">Invoices</span><span class="close">&times;</span></div>
+                  <div id="orderdiv10" class="flex-item-three" style="display:none;"><span style="font-size: large;">Final payment</span><span class="close">&times;</span></div>
+                  <div id="orderdiv11" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Shipped</span><span class="close">&times;</span></div>
 
             </div>
         </div>
