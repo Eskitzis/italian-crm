@@ -684,42 +684,312 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div id="orderdiv2" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">GRUPPOCASA->FACTORY</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "GRUPPOCASA->FACTORY"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv3" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">FACTORY->CUSTOMER (PROFORMA)</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "FACTORY->CUSTOMER (PROFORMA)"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv4" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "GRUPPOCASA->CUSTOMER (PROFORMA)"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv5" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "CUSTOMER->GRUPPOCASA (CONFIRMATION)"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv6" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "GRUPPOCASA->FACTORY (CONFIRMATION)"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv7" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Advance payment 1</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Advance payment 1"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv8" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Advance payment 2</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Advance payment 2"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv9" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Invoices</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Invoices"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv10" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Final payment</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Final payment"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
 
                 <div id="orderdiv11" class="flex-item-three" style="display:none;">
                   <span style="font-size: medium;">Order Shipped</span>
+                  <?php
+                    //DIV FOR EACH CUSTOMER
+                    //END DIV FOR EACH CUSTOMER
+                    $sql = 'SELECT * FROM order_status WHERE order_status = "Order Shipped"';
+                      $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      // Output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          // Create divs based on the data
+                          echo '<article class="leaderboard__profile">';
+                          echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
+                          echo '<span class="leaderboard__value">';
+                            $customer_id = $row['customer_id'];
+                            $sql = "SELECT * FROM customers WHERE id = '$customer_id'";
+                            $customer_result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($customer_result) > 0) {
+                              // Loop through each row in the customers table (there should only be one)
+                              while ($customer_row = mysqli_fetch_assoc($customer_result)) {
+                                  // Do something with the customer data, for example:
+                                  echo $customer_row['firstname'] . " " . $customer_row['lastname'];
+                              }
+                            }
+                            '<span style="color: black;">' . $row[''] .'</span></span>';
+                          echo '</article>';
+                        }
+                      }
+                    ?>
                 </div>
             </div>
         </div>
