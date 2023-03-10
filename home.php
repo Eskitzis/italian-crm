@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo '<article class="leaderboard__profile" onclick="cust(\''.$row['name'].'\')">';
                             echo '<img src="https://randomuser.me/api/portraits/men/37.jpg" alt="Evan Spiegel" class="leaderboard__picture">';
                             echo '<span class="leaderboard__name">' . $row['name'] .'</span>';
-                            echo '<span class="leaderboard__value">' . $row['lastupdate'] .'<span style="color: black;">B</span></span>';
+                            echo '<span class="leaderboard__value">' . $row['first_status'] .'<span style="color: black;">B</span></span>';
                             echo '</article>';
                           }
                         }
