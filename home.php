@@ -283,66 +283,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
-                <div id="extradiv" style="display:none;">
-                  <div id="customerdiv" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;" id="customername" name="customername"></span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="customerdiv" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;" id="customername" name="customername"></span>
+                </div>
 
-                  <div id="orderdiv1" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Customer Order</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv1" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Customer Order</span>
+                </div>
 
-                  <div id="orderdiv2" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">GRUPPOCASA->FACTORY</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv2" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">GRUPPOCASA->FACTORY</span>
+                </div>
 
-                  <div id="orderdiv3" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv3" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span>
+                </div>
 
-                  <div id="orderdiv4" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv4" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
+                </div>
 
-                  <div id="orderdiv5" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv5" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
+                </div>
 
-                  <div id="orderdiv6" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv6" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
+                </div>
 
-                  <div id="orderdiv7" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Advance payment 1</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv7" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Advance payment 1</span>
+                </div>
 
-                  <div id="orderdiv8" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Advance payment 2</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv8" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Advance payment 2</span>
+                </div>
 
-                  <div id="orderdiv9" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Invoices</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv9" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Invoices</span>
+                </div>
 
-                  <div id="orderdiv10" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Final payment</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv10" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Final payment</span>
+                </div>
 
-                  <div id="orderdiv11" class="flex-item-three" style="display:none;">
-                    <span style="font-size: large;">Order Shipped</span>
-                    <span class="close">&times;</span>
-                  </div>
+                <div id="orderdiv11" class="flex-item-three" style="display:none;">
+                  <span style="font-size: large;">Order Shipped</span>
                 </div>
             </div>
         </div>
@@ -400,13 +386,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////////
-        const span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-          document.getElementById("extradiv").style.display = "none"; 
-        }
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
-          document.getElementById("extradiv").style.display = "block"; 
           document.getElementById('customername').innerHTML = name;
           
           document.getElementById("orderdiv1").style.display = "none";
@@ -419,7 +400,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv8").style.display = "none";
           document.getElementById("orderdiv9").style.display = "none";
           document.getElementById("orderdiv10").style.display = "none";
-          document.getElementById("orderdiv11").style.display = "none";
         }
         function ord1() {
           document.getElementById("orderdiv1").style.display = "block";
@@ -436,7 +416,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord2() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -452,7 +431,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";     
-          document.getElementById("extradiv").style.display = "block";     
         }
         function ord3() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -468,7 +446,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord4() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -484,7 +461,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord5() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -500,7 +476,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord6() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -516,7 +491,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord7() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -532,7 +506,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord8() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -548,7 +521,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord9() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -564,7 +536,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord10() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -580,7 +551,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "none";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
         function ord11() {
           document.getElementById("orderdiv1").style.display = "none";
@@ -596,7 +566,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("orderdiv11").style.display = "block";
 
           document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("extradiv").style.display = "block"; 
         }
     </script>
 </body>
