@@ -1025,7 +1025,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           },
           options: {
             tooltips : {
-              xAlign: 'center'
+              xAlign: 'start'
             },
             title: {
               display: true,
