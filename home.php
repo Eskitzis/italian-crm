@@ -214,56 +214,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="flex-container">
                         <div class="flex-item-left">
                             <article class="leaderboard__profile" onclick="ord1()">
-                                <img src="assets/detailed_order/pre-order.png" alt="Pre-Order" class="leaderboard__icon">
-                                <span class="leaderboard__name">Pre-Order</span>
+                                <img src="assets/detailed_order/pre-order.png" alt="Customer Order" class="leaderboard__icon">
+                                <span class="leaderboard__name">Customer Order</span>
                                 <span class="leaderboard__value">20.01.2023<span style="color: black;">A<span style="color: red;">34</span></span></span>
-                  
                             </article>
-        
-                            <article class="leaderboard__profile" onclick="ord2()">
-                                <img src="assets/detailed_order/offering-customer.jpg" alt="Offer to Customer" class="leaderboard__icon">
-                                <span class="leaderboard__name">Offer to Customer</span>
-                                <span class="leaderboard__value">21.01.2023<span style="color: black;">B<span style="color: red;">12</span></span></span>
 
+                            <article class="leaderboard__profile" onclick="ord2()">
+                                <img src="assets/detailed_order/offering-customer.jpg" alt="GRUPPOCASA->FACTORY" class="leaderboard__icon">
+                                <span class="leaderboard__name">GRUPPOCASA->FACTORY</span>
+                                <span class="leaderboard__value">21.01.2023<span style="color: black;">B<span style="color: red;">12</span></span></span>
                             </article>
         
                             <article class="leaderboard__profile" onclick="ord3()">
-                                <img src="assets/detailed_order/cost.png" alt="Payment Received" class="leaderboard__icon">
-                                <span class="leaderboard__name">Payment Received</span>
+                                <img src="assets/detailed_order/cost.png" alt="FACTORY->CUSTOMER (PROFORMA)" class="leaderboard__icon">
+                                <span class="leaderboard__name">FACTORY->CUSTOMER (PROFORMA)</span>
                                 <span class="leaderboard__value">22.01.2023<span style="color: black;">C<span style="color: red;">31</span></span></span>
-
                             </article>
         
                             <article class="leaderboard__profile" onclick="ord4()">
-                                <img src="assets/detailed_order/factory.png" alt="Order to Factory" class="leaderboard__icon">
-                                <span class="leaderboard__name">Order to Factory</span>
+                                <img src="assets/detailed_order/factory.png" alt="GRUPPOCASA->CUSTOMER (PROFORMA)" class="leaderboard__icon">
+                                <span class="leaderboard__name">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
                                 <span class="leaderboard__value">23.01.2023<span style="color: black;">D<span style="color: red;">24</span></span></span>
-                            </article>        
-                        </div>
-                        <div class="flex-item-right">
+                            </article>  
+                            
                             <article class="leaderboard__profile" onclick="ord5()">
-                                <img src="assets/detailed_order/manufacturing.png" alt="Order Received" class="leaderboard__icon">
-                                <span class="leaderboard__name">Order Received</span>
+                                <img src="assets/detailed_order/manufacturing.png" alt="CUSTOMER->GRUPPOCASA (CONFIRMATION)" class="leaderboard__icon">
+                                <span class="leaderboard__name">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
                                 <span class="leaderboard__value">24.01.2023<span style="color: black;">E<span style="color: red;">34</span></span></span>
-                              </article>
+                            </article>
         
                             <article class="leaderboard__profile" onclick="ord6()">
-                                <img src="assets/detailed_order/order-delivery.png" alt="Complete" class="leaderboard__icon">
-                                <span class="leaderboard__name">Complete</span>
+                                <img src="assets/detailed_order/order-delivery.png" alt="GRUPPOCASA->FACTORY (CONFIRMATION)" class="leaderboard__icon">
+                                <span class="leaderboard__name">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
                                 <span class="leaderboard__value">25.01.2023<span style="color: black;">F<span style="color: red;">0</span></span></span>
-                              </article>
-        
+                            </article>      
+                        </div>
+                        <div class="flex-item-right">
                             <article class="leaderboard__profile" onclick="ord7()">
-                                <img src="assets/detailed_order/fast.png" alt="Order to Customer" class="leaderboard__icon">
-                                <span class="leaderboard__name">Order to Customer</span>
+                                <img src="assets/detailed_order/fast.png" alt="Advance payment 1" class="leaderboard__icon">
+                                <span class="leaderboard__name">Advance payment 1</span>
                                 <span class="leaderboard__value">26.01.2023<span style="color: black;">G<span style="color: red;">23</span></span></span>
-                              </article>
+                            </article>
         
                             <article class="leaderboard__profile" onclick="ord8()">
-                                <img src="assets/detailed_order/order.png" alt="Arrived" class="leaderboard__icon">
-                                <span class="leaderboard__name">Arrived</span>
+                                <img src="assets/detailed_order/order.png" alt="Advance payment 2" class="leaderboard__icon">
+                                <span class="leaderboard__name">Advance payment 2</span>
                                 <span class="leaderboard__value">27.01.2023<span style="color: black;">H<span style="color: red;">12</span></span></span>
-                              </article>
+                            </article>
+
+                            <article class="leaderboard__profile" onclick="ord8()">
+                                <img src="assets/detailed_order/order.png" alt="Invoices" class="leaderboard__icon">
+                                <span class="leaderboard__name">Invoices</span>
+                                <span class="leaderboard__value">27.01.2023<span style="color: black;">H<span style="color: red;">12</span></span></span>
+                            </article>
+
+                            <article class="leaderboard__profile" onclick="ord8()">
+                                <img src="assets/detailed_order/order.png" alt="Final payment" class="leaderboard__icon">
+                                <span class="leaderboard__name">Final payment</span>
+                                <span class="leaderboard__value">27.01.2023<span style="color: black;">H<span style="color: red;">12</span></span></span>
+                            </article>
+
+                            <article class="leaderboard__profile" onclick="ord8()">
+                                <img src="assets/detailed_order/order.png" alt="Order Shipped" class="leaderboard__icon">
+                                <span class="leaderboard__name">Order Shipped</span>
+                                <span class="leaderboard__value">27.01.2023<span style="color: black;">H<span style="color: red;">12</span></span></span>
+                            </article>
         
                         </div>
                     </div>
