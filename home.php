@@ -283,21 +283,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
+                <div id="extradiv" style="display:none;">
+                  <div id="customerdiv" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;" id="customername" name="customername"></span>
+                    <span class="close">&times;</span>
+                  </div>
 
-                  <div id="customerdiv" class="flex-item-three" style="display:none;"><span style="font-size: large;" id="customername" name="customername"></span><span class="close">&times;</span></div>
+                  <div id="orderdiv1" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Customer Order</span>
+                    <span class="close">&times;</span>
+                  </div>
 
-                  <div id="orderdiv1" class="flex-item-three" style="display:none;"><span style="font-size: large;">Customer Order</span><span class="close">&times;</span></div>
-                  <div id="orderdiv2" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY</span><span class="close">&times;</span></div>
-                  <div id="orderdiv3" class="flex-item-three" style="display:none;"><span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span><span class="close">&times;</span></div>
-                  <div id="orderdiv4" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span><span class="close">&times;</span></div>
-                  <div id="orderdiv5" class="flex-item-three" style="display:none;"><span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span><span class="close">&times;</span></div>
-                  <div id="orderdiv6" class="flex-item-three" style="display:none;"><span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span><span class="close">&times;</span></div>
-                  <div id="orderdiv7" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 1</span><span class="close">&times;</span></div>
-                  <div id="orderdiv8" class="flex-item-three" style="display:none;"><span style="font-size: large;">Advance payment 2</span><span class="close">&times;</span></div>
-                  <div id="orderdiv9" class="flex-item-three" style="display:none;"><span style="font-size: large;">Invoices</span><span class="close">&times;</span></div>
-                  <div id="orderdiv10" class="flex-item-three" style="display:none;"><span style="font-size: large;">Final payment</span><span class="close">&times;</span></div>
-                  <div id="orderdiv11" class="flex-item-three" style="display:none;"><span style="font-size: large;">Order Shipped</span><span class="close">&times;</span></div>
+                  <div id="orderdiv2" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">GRUPPOCASA->FACTORY</span>
+                    <span class="close">&times;</span>
+                  </div>
 
+                  <div id="orderdiv3" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">FACTORY->CUSTOMER (PROFORMA)</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv4" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">GRUPPOCASA->CUSTOMER (PROFORMA)</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv5" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">CUSTOMER->GRUPPOCASA (CONFIRMATION)</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv6" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">GRUPPOCASA->FACTORY (CONFIRMATION)</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv7" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Advance payment 1</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv8" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Advance payment 2</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv9" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Invoices</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv10" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Final payment</span>
+                    <span class="close">&times;</span>
+                  </div>
+
+                  <div id="orderdiv11" class="flex-item-three" style="display:none;">
+                    <span style="font-size: large;">Order Shipped</span>
+                    <span class="close">&times;</span>
+                  </div>
+                </div>
             </div>
         </div>
       </div>
@@ -356,18 +402,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /////////////////////////////////////////////////////////////////////////////////////
         const span = document.getElementsByClassName("close")[0];
         span.onclick = function() {
-          document.getElementById("customerdiv").style.display = "none";
-          document.getElementById("orderdiv1").style.display = "none";
-          document.getElementById("orderdiv2").style.display = "none";
-          document.getElementById("orderdiv3").style.display = "none";
-          document.getElementById("orderdiv4").style.display = "none";
-          document.getElementById("orderdiv5").style.display = "none";
-          document.getElementById("orderdiv6").style.display = "none";
-          document.getElementById("orderdiv7").style.display = "none";
-          document.getElementById("orderdiv8").style.display = "none";
-          document.getElementById("orderdiv9").style.display = "none";
-          document.getElementById("orderdiv10").style.display = "none";
-          document.getElementById("orderdiv11").style.display = "none";  
+          document.getElementById("extradiv").style.display = "none"; 
         }
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
