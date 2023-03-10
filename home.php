@@ -354,6 +354,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         gridcontent(x) // Call listener function at run time
         x.addListener(gridcontent) // Attach listener function on state changes
         /////////////////////////////////////////////////////////////////////////////////////
+        const span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+          document.getElementById("customerdiv").style.display = "none";
+          document.getElementById("orderdiv1").style.display = "none";
+          document.getElementById("orderdiv2").style.display = "none";
+          document.getElementById("orderdiv3").style.display = "none";
+          document.getElementById("orderdiv4").style.display = "none";
+          document.getElementById("orderdiv5").style.display = "none";
+          document.getElementById("orderdiv6").style.display = "none";
+          document.getElementById("orderdiv7").style.display = "none";
+          document.getElementById("orderdiv8").style.display = "none";
+          document.getElementById("orderdiv9").style.display = "none";
+          document.getElementById("orderdiv10").style.display = "none";
+          document.getElementById("orderdiv11").style.display = "none";  
+        }
         function cust(name) {
           document.getElementById("customerdiv").style.display = "block";
           document.getElementById('customername').innerHTML = name;
