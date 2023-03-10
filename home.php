@@ -215,7 +215,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               if ($row['first_status'] == "Invoices"){echo 'I';}
                               if ($row['first_status'] == "Final payment"){echo 'J';}
                               if ($row['first_status'] == "Order Shipped"){echo 'K';}
-
                               '</span></span>';
                             echo '</article>';
                           }
