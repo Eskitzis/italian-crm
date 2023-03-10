@@ -993,7 +993,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="flex-item-three">
-              <canvas id="orderstatuschart" style="width:100%;max-width:400px">                    
+              <canvas id="orderstatuschart" style="width:100%;max-width:400px">
+              <canvas id="ordersfullfilled" style="width:100%;max-width:400px">                  
             </div>
         </div>
       </div>
@@ -1040,6 +1041,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           }
         });
     </script>
+          <script>
+        var xValues = ["FULLFILED", "ACTIVE"];
+        var yValues = ["50", "50"];
+        var barColors = [
+          "#8F2D56",
+          "#4B0082"
+        ];
+        new Chart("ordersfullfilled", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                position: 'left'
+              }
+            },
+            title: {
+              display: true,
+              text: "Order Status"
+            }
+          }
+        });
+    </script>
+
     <script>
         $(document).ready(function () {
             $('select').selectize({
