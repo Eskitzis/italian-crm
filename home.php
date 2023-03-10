@@ -994,7 +994,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="flex-item-three">
               <canvas id="orderstatuschart" style="width:100%;max-width:400px">
-              <canvas id="ordersFulfilled" style="width:100%;max-width:400px">                  
+              <canvas id="ordersfulfilled" style="width:100%;max-width:400px">                  
             </div>
         </div>
       </div>
@@ -1048,7 +1048,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "#8F2D56",
           "#4B0082"
         ];
-        new Chart("ordersFulfilled", {
+        new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
             labels: xValues,
