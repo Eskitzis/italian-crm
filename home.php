@@ -1005,32 +1005,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
       <script>
-        var xValues = ["A", "B", "C", "D", "E","F","G","H","I","J","K"];
         var yValues = [];
         for (var i = 1; i <= 11; i++) {
           var span = document.getElementById("span" + i);
           var text = span.textContent;
           yValues.push(parseInt(text));
         }
-        var barColors = [
-          "#8F2D56",
-          "#4B0082",
-          "#00FF7F",
-          "#FFD700",
-          "#FF8C00",
-          "#DC143C",
-          "#00CED1",
-          "#008080",
-          "#FF1493",
-          "#FF69B4",
-          "#9400D3"
-        ];
         new Chart("orderstatuschart", {
           type: "doughnut",
           data: {
-            labels: xValues,
+            labels: ["A", "B", "C", "D", "E","F","G","H","I","J","K"],
             datasets: [{
-              backgroundColor: barColors,
+              backgroundColor: ["#8F2D56", "#4B0082", "#00FF7F", "#FFD700", "#FF8C00", "#DC143C", "#00CED1", "#008080", "#FF1493", "#FF69B4", "#9400D3"],
               data: yValues
             }]
           },
@@ -1041,21 +1027,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
           }
         });
-      </script>
-      <script>
-        var xValues = ["FULLFILED", "ACTIVE"];
-        var yValues = ["50", "50"];
-        var barColors = [
-          "#8F2D56",
-          "#4B0082"
-        ];
         new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
-            labels: xValues,
+            labels: ["FULLFILED", "ACTIVE"],
             datasets: [{
-              backgroundColor: barColors,
-              data: yValues
+              backgroundColor: ["#8F2D56", "#4B0082"],
+              data: ["50", "50"]
             }]
           },
           options: {
