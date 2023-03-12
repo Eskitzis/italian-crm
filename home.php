@@ -994,7 +994,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="flex-item-three">
               <canvas id="orderstatuschart" style="width:100%;max-width:400px">
-              <canvas id="orderstatuschart" style="width:100%;max-width:400px">                  
+              <canvas id="ordersfulfilled" style="width:100%;max-width:400px">                  
             </div>
         </div>
       </div>
@@ -1042,19 +1042,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
       </script>
       <script>
-        var xValues = ["FULLFILED", "ACTIVE"];
-        var yValues = ["50", "50"];
-        var barColors = [
+        var x = ["FULLFILED", "ACTIVE"];
+        var yV = ["50", "50"];
+        var bar = [
           "#8F2D56",
           "#4B0082"
         ];
         new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
-            labels: xValues,
+            labels: x,
             datasets: [{
-              backgroundColor: barColors,
-              data: yValues
+              backgroundColor: bar,
+              data: y
             }]
           },
           options: {
