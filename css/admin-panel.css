@@ -1084,7 +1084,7 @@ body {
   color: #2ba972;
 }
 .canvas-div{
-  display: flex;
+  display: inline-block;
   flex-wrap: wrap;               
 }
 .box {
