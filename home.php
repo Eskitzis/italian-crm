@@ -1035,11 +1035,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }]
           },
           options: {
-            plugins: {
-              legend: {
-                position: 'left'
-              }
-            },
             title: {
               display: true,
               text: "Order Status"
@@ -1064,11 +1059,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }]
           },
           options: {
-            plugins: {
-              legend: {
-                position: 'left'
-              }
-            },
             title: {
               display: true,
               text: "Orders Fulfilled"
