@@ -1042,19 +1042,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
       </script>
       <script>
-        var x = ["FULLFILED", "ACTIVE"];
-        var yV = ["50", "50"];
-        var bar = [
+        var xValues = ["FULLFILED", "ACTIVE"];
+        var yValues = ["50", "50"];
+        var barColors = [
           "#8F2D56",
           "#4B0082"
         ];
         new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
-            labels: x,
+            labels: xValues,
             datasets: [{
-              backgroundColor: bar,
-              data: y
+              backgroundColor: barColors,
+              data: yValues
             }]
           },
           options: {
