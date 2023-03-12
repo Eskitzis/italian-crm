@@ -993,11 +993,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="flex-item-three">
-              <div class="canvas-style">
-                <canvas id="orderstatuschart" style="width:100%;max-width:400px">              
-              </div>
-              <div class="canvas-style">
-                <canvas id="ordersfulfilled" style="width:100%;max-width:400px">                  
+              <div class="canvas-div">
+                <div class="canvas-boxe">
+                  <canvas id="orderstatuschart" style="width:100%;max-width:400px">              
+                </div>
+                <div class="canvas-box">
+                  <canvas id="ordersfulfilled" style="width:100%;max-width:400px">                  
+                </div>              
               </div>
             </div>
         </div>
@@ -1069,7 +1071,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             },
             title: {
               display: true,
-              text: "Order Fulfilled"
+              text: "Orders Fulfilled"
             }
           }
         });

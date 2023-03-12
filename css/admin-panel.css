@@ -1084,6 +1084,10 @@ body {
 .activeorder{
   color: #2ba972;
 }
-.canvas-style{
+.canvas-div{
   display: flex;                 
 }
+.canvas-box{
+  flex: 1;
+}
+
