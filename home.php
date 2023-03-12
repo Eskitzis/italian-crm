@@ -995,10 +995,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="flex-item-three">
               <div class="canvas-div">
                 <div class="canvas-box">
-                  <canvas id="orderstatuschart" style="width:100%;max-width:400px">              
+                  <canvas id="orderstatuschart" style="width:100%;max-width:300px">              
                 </div>
                 <div class="canvas-box">
-                  <canvas id="ordersfulfilled" style="width:100%;max-width:400px">                  
+                  <canvas id="ordersfulfilled" style="width:100%;max-width:300px">                  
                 </div>              
               </div>
             </div>
