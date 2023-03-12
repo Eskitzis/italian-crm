@@ -1091,7 +1091,7 @@ body {
 canvas {
   flex: 1;
   max-width: 33%;
-  height: auto;
+  height: 33%;
   margin: 5px;
 }
 
