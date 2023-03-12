@@ -1085,9 +1085,13 @@ body {
   color: #2ba972;
 }
 .canvas-div{
-  display: flex;                 
+  display: flex;
+  flex-wrap: wrap;               
 }
-.canvas-box{
+canvas {
   flex: 1;
+  max-width: 33%;
+  height: auto;
+  margin: 5px;
 }
 
