@@ -1086,7 +1086,7 @@ body {
 }
 .canvas-div{
   display: flex;
-  flex-wrap: wrap;               
+  justify-content: space-around;              
 }
 .box {
   flex-basis: calc(33.33% - 20px);
