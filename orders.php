@@ -242,6 +242,10 @@ if(isset($_POST['order_update'])){
                     <option value="Order Shipped">Order Shipped</option>
                 </select>             
   		        </div>
+              <div class="total-group">
+    		        <label class="total-label">File:</label>
+                <input type="file" class="modal-input" name="file" id="file">
+  		        </div>
               <br>
               <div class="buttons-center">
                 <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
