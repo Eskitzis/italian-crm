@@ -717,7 +717,7 @@ body {
 @media (max-width: 800px) {
   .flex-item-one, .flex-item-two, .flex-item-three, .flex-item-left, .flex-item-right {
     flex: 100%;
-    margin-right: 10px;
+    margin-right: 0;
   }
 }
 .leaderboard__profile {
