@@ -1050,6 +1050,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
           }
         });
+        i=0;
         var yValues2 = [];
         for (var i = 1; i <= 11; i++) {
           var span = document.getElementById("sp" + i);
