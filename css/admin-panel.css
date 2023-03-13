@@ -755,8 +755,6 @@ body {
 }
 .svg-container {
   position: absolute;
-  top: 0;
-  right: 0;
 }
 .leaderboard__value {
   color: #35d8ac;
