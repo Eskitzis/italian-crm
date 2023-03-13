@@ -1086,10 +1086,14 @@ body {
 }
 .canvas-div{
   display: flex;
-  justify-content: space-around;              
+  flex-wrap: wrap;              
+}
+.box{
+  flex: 1 0 25%;
 }
 @media (max-width: 768px) {
-  .canvas-div {
-    grid-template-columns: 1fr;
+  .box {
+    flex-basis: 50%;
   }
 }
+

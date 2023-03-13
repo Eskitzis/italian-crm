@@ -1,59 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  </head>
-  <body>
-    <div style="display: flex; align-items: center; justify-content: center;">
-      <div>
-        <canvas id="myChart"></canvas>
-        <div style="display: flex; justify-content: space-between;">
-          <span>A</span>
-          <span>B</span>
-          <span>C</span>
-          <span>D</span>
-          <span>E</span>
-          <span>F</span>
-          <span>G</span>
-          <span>H</span>
-          <span>I</span>
-          <span>J</span>
-          <span>K</span>
-        </div>
-      </div>
-    </div>
-    <script>
-      var xValues = ["A", "B", "C", "D", "E","F","G","H","I","J","K"];
-      var yValues = [55, 49, 44, 24, 15, 49, 44, 24, 15, 49, 44];
-      var barColors = [
-        "#8F2D56",
-        "#4B0082",
-        "#00FF7F",
-        "#FFD700",
-        "#FF8C00",
-        "#DC143C",
-        "#00CED1",
-        "#008080",
-        "#FF1493",
-        "#FF69B4",
-        "#9400D3"
-      ];
-      new Chart("myChart", {
-        type: "doughnut",
-        data: {
-          labels: xValues,
-          datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-          }]
-        },
-        options: {
-          title: {
-            display: true,
-            text: "Order Status"
-          }
-        }
-      });
-    </script>
-  </body>
-</html>
+.canvas-div{
+    display: flex;
+    justify-content: space-around;              
+  }
+  @media (max-width: 768px) {
+    .canvas-div {
+      grid-template-columns: 1fr;
+    }
+  }
