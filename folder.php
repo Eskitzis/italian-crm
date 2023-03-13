@@ -18,11 +18,7 @@
     echo $id;
     $sql = "SELECT * FROM customers WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
-    // Get the count of rows and print it
-    if (mysqli_num_rows($result) > 0) {
-    } else {
-      echo "0";
-    }
+    $row = mysqli_fetch_assoc($result);
     echo $row['firstname'];
     echo $row['lastname'];
 ?>
