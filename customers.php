@@ -38,12 +38,13 @@ if(isset($_POST['order_submit'])){
   $customer_id = mysqli_real_escape_string($conn, $_POST["customerid"]);
 	$lastname = mysqli_real_escape_string($conn, $_POST["customerlastname"]);
   $category = mysqli_real_escape_string($conn, $_POST["category"]);
+  $reference = mysqli_real_escape_string($conn, $_POST["reference"]);
 	$first_status = mysqli_real_escape_string($conn, $_POST["addstatus"]);
   $current_timestamp = time();
   $first_update = date('d-m-Y H:i:s', $current_timestamp);
 	$representative = mysqli_real_escape_string($conn, $_POST["representative"]);
   
-  $sql = "INSERT INTO orders (customer_id, name, category, first_status, first_update, representative) VALUES ('$customer_id', '$lastname', '$category', '$first_status', '$first_update', '$representative')";
+  $sql = "INSERT INTO orders (customer_id, name, category, first_status, first_update, representative) VALUES ('$customer_id', '$lastname', '$category', '$reference', '$first_status', '$first_update', '$representative')";
   if ($conn->query($sql) === TRUE) {
     $inserted_id = mysqli_insert_id($conn);
     //echo "New record created successfully";
@@ -283,6 +284,10 @@ if(isset($_POST['order_submit'])){
               <div class="total-group">
     		        <label class="total-label">Category:</label>
     		        <input class="modal-input" type="text" name="category" id="category">
+  		        </div>
+              <div class="total-group">
+    		        <label class="total-label">Order Reference:</label>
+    		        <input class="modal-input" type="text" name="reference" id="reference">
   		        </div>
               <div class="total-group">
     		        <label class="total-label">Status:</label>
