@@ -1089,12 +1089,12 @@ body {
 }
 canvas {
   width: 33.33%;
+  max-width: 33.33%;
 }
 @media (max-width: 768px) {
   .canvas-div {
     flex-direction: column;
   }
-
   canvas {
     width: 100%;
   }
