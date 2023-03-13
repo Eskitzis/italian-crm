@@ -1059,9 +1059,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
-            labels: ["FULLFILED", "ACTIVE"],
+            labels: ["ACTIVE","FULLFILED"],
             datasets: [{
-              backgroundColor: ["#5FDBA7", "#BC1B22"],
+              backgroundColor: ["#BC1B22","#5FDBA7"],
               data: yValues2
             }]
           },
