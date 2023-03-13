@@ -716,7 +716,7 @@ body {
 }
 @media (max-width: 800px) {
   .flex-item-one, .flex-item-two, .flex-item-three, .flex-item-left, .flex-item-right {
-    flex: 100%;
+    flex: 90%;
     margin-right: 0;
   }
 }
