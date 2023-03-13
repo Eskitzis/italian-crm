@@ -16,6 +16,13 @@
     $lname = $_GET['lastname'];
     echo '<h1>This would be the folder of the Customer:</h1>';
     echo $id;
-    echo $fname;
-    echo $lname;
+    $sql = "SELECT * FROM customers WHERE id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    // Get the count of rows and print it
+    if (mysqli_num_rows($result) > 0) {
+    } else {
+      echo "0";
+    }
+    echo $row['firstname'];
+    echo $row['lastname'];
 ?>
