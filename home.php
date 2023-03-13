@@ -1061,7 +1061,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           data: {
             labels: ["FULLFILED", "ACTIVE"],
             datasets: [{
-              backgroundColor: ["#8F2D56", "#4B0082"],
+              backgroundColor: ["#5FDBA7", "#BC1B22"],
               data: yValues2
             }]
           },
