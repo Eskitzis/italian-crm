@@ -973,7 +973,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         while($row = $result->fetch_assoc()) {
                           // Create divs based on the data
                           echo '<article class="leaderboard__profile">';
-                          echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>';
+                          echo '<svg onclick="folder(\''.$row['id'].'\', \''.$row['firstname'].'\', \''.$row['lastname'].'\')" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>';
                           echo '<span class="leaderboard__name">' . $row['order_update'] .'</span>';
                           echo '<span class="leaderboard__value">';
                             $customer_id = $row['customer_id'];
@@ -1040,11 +1040,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
       </script>
       <script>
-        $(document).ready(function () {
-            $('select').selectize({
-             sortField: 'text'
-            });
-        });
+        function folder(id,fname,lname) {
+          // Construct the URL with the data as parameters
+			    var url = 'folder.php?id='+id+'&firstname='+fname+'&lastname='+lname;
+          // Open the new tab with the URL
+          window.open(url, '_self');
+          
+        }
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
