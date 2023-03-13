@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
    <span id="sp1">
    <?php
-      $sql = "SELECT COUNT(*) as total FROM orders";
+      $sql = "SELECT COUNT(*) as total FROM orders WHERE first_status != 'Order Shipped'";
       $result = mysqli_query($conn, $sql);
       // Get the count of rows and print it
       if (mysqli_num_rows($result) > 0) {
