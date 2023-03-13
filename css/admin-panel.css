@@ -1085,15 +1085,18 @@ body {
   color: #2ba972;
 }
 .canvas-div{
-  display: flex;
-  flex-wrap: wrap;              
+  display: flex;            
 }
-.box{
-  flex: 1 0 25%;
+canvas {
+  width: 33.33%;
 }
 @media (max-width: 768px) {
-  .box {
-    flex-basis: 100%;
+  .canvas-div {
+    flex-direction: column;
+  }
+
+  canvas {
+    width: 100%;
   }
 }
 
