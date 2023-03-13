@@ -49,6 +49,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Home</title>
 </head>
 <body>
+   <span id="sp1">
+   <?php
+      $sql = "SELECT COUNT(*) as total FROM orders";
+      $result = mysqli_query($conn, $sql);
+      // Get the count of rows and print it
+      if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $count = $row["total"];
+        echo $count;
+      } else {
+        echo "0";
+      }
+    ?>
+   </span>
+   <span id="sp2">
+   <?php
+      $sql = "SELECT COUNT(*) as total_finished FROM orders WHERE first_status = 'Order Shipped'";
+      $result = mysqli_query($conn, $sql);
+      // Get the count of rows and print it
+      if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $count_finished = $row["total_finished"];
+        echo $count_finished;
+      } else {
+        echo "0";
+      }
+    ?>
+   </span>
     <div class="app-container">
         <div class="sidebar">
           <div class="sidebar-header">
@@ -1022,13 +1050,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
           }
         });
+        var yValues2 = [];
+        for (var i = 1; i <= 11; i++) {
+          var span = document.getElementById("sp" + i);
+          var text = span.textContent;
+          yValues2.push(parseInt(text));
+        }
         new Chart("ordersfulfilled", {
           type: "doughnut",
           data: {
             labels: ["FULLFILED", "ACTIVE"],
             datasets: [{
               backgroundColor: ["#8F2D56", "#4B0082"],
-              data: ["50", "50"]
+              data: yValues2
             }]
           },
           options: {
