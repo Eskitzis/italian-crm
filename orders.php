@@ -196,6 +196,7 @@ if(isset($_POST['order_update'])){
                     echo '<button class="cell-more-button" onclick="moreoptions(\''.$row['id'].'\', \''.$row['customer_id'].'\', \''.$row['representative'].'\', \''.$row['first_status'].'\')";><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>';
                     echo '<div class="product-cell image"><!--IMAGE GOES HERE--><span>' . $row['name'] .'</span></div>';
                     echo '<div class="product-cell category"><span class="cell-label">Category:</span>' . $row['category'] .'</div>';
+                    echo '<div class="product-cell category"><span class="cell-label">Reference:</span>' . $row['reference'] .'</div>';
                     echo '<div class="product-cell status-cell"><span class="cell-label">Status:</span><span class="status active">' . $row['first_status'] .'</span></div>';
                     echo '<div class="product-cell sales"><span class="cell-label">Last Update:</span>' . $row['first_update'] .'</div>';
                     echo '<div class="product-cell stock"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
