@@ -1093,7 +1093,7 @@ body {
 }
 @media (max-width: 768px) {
   .box {
-    flex-basis: 50%;
+    flex-basis: 100%;
   }
 }
 
