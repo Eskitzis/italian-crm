@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Home</title>
 </head>
 <body>
-   <span id="sp1">
+   <span id="sp1" hidden>
     <?php
         $sql = "SELECT COUNT(*) as total FROM orders WHERE first_status != 'Order Shipped'";
         $result = mysqli_query($conn, $sql);
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       ?>
    </span>
-   <span id="sp2">
+   <span id="sp2" hidden>
     <?php
         $sql = "SELECT COUNT(*) as total_finished FROM orders WHERE first_status = 'Order Shipped'";
         $result = mysqli_query($conn, $sql);
