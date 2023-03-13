@@ -753,9 +753,6 @@ body {
   letter-spacing: 0.64px;
   margin-left: 12px;
 }
-.leaderboard__folder{
-  margin-left: 24px;
-}
 .leaderboard__value {
   color: #35d8ac;
   font-weight: 700;
