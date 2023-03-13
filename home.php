@@ -986,7 +986,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               }
                             }
                             '<span style="color: black;">' . $row[''] .'</span></span>';
-                          echo '<span class="leaderboard__name">hi</span>'
+                          echo '<span class="leaderboard__name">hi</span>';
                           echo '</article>';
                         }
                       }
