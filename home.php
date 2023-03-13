@@ -992,12 +992,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     ?>
                 </div>
             </div>
-          </div>
-          <div class="canvas-container">
-            <canvas id="orderstatuschart" class="canvas-div" style="width:100%;max-width:400px">></canvas>
-            <canvas id="ordersfulfilled" class="canvas-div" style="width:100%;max-width:400px">></canvas>                                      
-          </div>
+            <div class="flex-item-three">
+              <canvas id="orderstatuschart" style="width:100%;max-width:400px"></canvas>
+              <canvas id="ordersfulfilled" style="width:100%;max-width:400px"></canvas>                                      
+            </div>
         </div>
+      </div>
       <script>
         var yValues = [];
         for (var i = 1; i <= 11; i++) {
