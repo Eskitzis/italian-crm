@@ -1050,10 +1050,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
           }
         });
-        i=0;
         var yValues2 = [];
-        for (var i = 1; i <= 11; i++) {
-          var span = document.getElementById("sp" + i);
+        for (var z = 1; z <= 2; z++) {
+          var span = document.getElementById("sp" + z);
           var text = span.textContent;
           yValues2.push(parseInt(text));
         }
