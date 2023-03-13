@@ -1093,7 +1093,7 @@ body {
   margin-bottom: 10px;
   border-radius: 10px;
 }
-canvas {
+.canvas-div {
   width: 33.33%;
   max-width: 33.33%;
 }
@@ -1102,7 +1102,7 @@ canvas {
     flex-direction: column;
   }
 
-  canvas {
+  .canvas-div {
     width: 100%;
   }
 }
