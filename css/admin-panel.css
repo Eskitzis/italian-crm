@@ -1084,4 +1084,8 @@ body {
 .activeorder{
   color: #2ba972;
 }
+.canvas-css{
+  width: 100%;
+  max-width: 400px;
+}
 
