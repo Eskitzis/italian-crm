@@ -244,7 +244,7 @@ if(isset($_POST['order_update'])){
   		        </div>
               <div class="total-group">
     		        <label class="total-label">File:</label>
-                <input type="file" class="modal-input" name="file" id="file">
+                <input type="file" class="modal-input" name="file" id="file" multiple>
   		        </div>
               <br>
               <div class="buttons-center">

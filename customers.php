@@ -309,6 +309,10 @@ if(isset($_POST['order_submit'])){
     		        <label class="total-label">Representative:</label>
     		        <input class="modal-input" type="text" name="representative" id="representative">
   		        </div>
+              <div class="total-group">
+    		        <label class="total-label">File:</label>
+                <input type="file" class="modal-input" name="file" id="file" multiple>
+  		        </div>
               <br>
               <div class="buttons-center">
                 <button class="modal-button-blue" type="button" onclick="customReset()">Reset</button>
