@@ -20,9 +20,6 @@
     $sql = "SELECT * FROM customers WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    echo $row['firstname'];
-    echo '<br>';
-    echo $row['lastname'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +40,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="icon" type="image/x-icon" href="assets/crm.png">
-  <title><?php echo $fname; echo ' '; echo $lname;?></title>
+  <title><?php echo $row['firstname'];; echo ' '; echo $row['lastname']?></title>
 </head>
 <body>
     <div class="app-container">
@@ -92,7 +89,8 @@
             </li>
             <li class="sidebar-list-item active">
               <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>                <span class="sidepar-span"><?php echo $fname; echo ' '; echo $lname;?></span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              <span class="sidepar-span"><?php echo $row['firstname']; echo ' '; echo $row['lastname'];?></span>
               </a>
             </li>
           </ul>           
@@ -108,7 +106,7 @@
         </div>
         <div class="app-content">
             <div class="app-content-header">
-                <h1 class="app-content-headerText"><?php echo $fname; echo ' '; echo $lname;?></h1>
+                <h1 class="app-content-headerText"><?php echo $row['firstname']; echo ' '; echo $row['lastname'];?></h1>
                 <button class="mode-switch" title="Switch Theme">
                     <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
                         <defs></defs>
@@ -129,7 +127,7 @@
                 </div>
             </div>
             <div class="products-area-wrapper tableView">
-                custum code goes here
+                <h1>Custom Folder Code Goes Here</h1>
             </div>
         </div>
     </div>
