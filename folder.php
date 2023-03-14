@@ -14,9 +14,6 @@
     $id = $_GET['id'];
     $fname = $_GET['firstname'];
     $lname = $_GET['lastname'];
-    echo '<h1>This would be the folder of the Customer:</h1>';
-    echo $id;
-    echo '<br>';
     $sql = "SELECT * FROM customers WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
