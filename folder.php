@@ -122,7 +122,7 @@
                 </div>
             </div>
             <div class="products-area-wrapper tableView">
-                <span>Custom Folder Code Goes Here</span>
+                <h1 class="app-content-headerText">Custom Folder Code Goes Here</h1>
             </div>
         </div>
     </div>
