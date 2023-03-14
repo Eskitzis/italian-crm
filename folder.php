@@ -12,8 +12,6 @@
     die('Connection failed: ' . $conn->connect_error);
     }
     $id = $_GET['id'];
-    $fname = $_GET['firstname'];
-    $lname = $_GET['lastname'];
     $sql = "SELECT * FROM customers WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -124,7 +122,7 @@
                 </div>
             </div>
             <div class="products-area-wrapper tableView">
-                <h1>Custom Folder Code Goes Here</h1>
+                <span>Custom Folder Code Goes Here</span>
             </div>
         </div>
     </div>
