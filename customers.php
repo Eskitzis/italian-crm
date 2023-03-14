@@ -263,7 +263,7 @@ if(isset($_POST['order_submit'])){
                   echo '<div class="product-cell sales"><span class="cell-label">E-Mail:</span>' . $row['email'] .'</div>';
                   echo '<div class="product-cell stock"><span class="cell-label">Telephone:</span>' . $row['telephone'] .'</div>';
                   echo '<div class="product-cell price"><span class="cell-label">Representative:</span>' . $row['representative'] .'</div>';
-                  echo '<div class="product-cell price"><span class="cell-label">Status Last Order:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
+                  echo '<div class="product-cell price"><span class="cell-label">User Last Update:</span><span class="status active">' . $row['lastupdate'] .'</span></div>';
                   echo '<div class="product-cell price"><span class="cell-label">Archive:</span>' . $row['archive'] .'</div>';
                   echo '</div>';
                 }
