@@ -100,9 +100,9 @@
           </div>
           <div class="products-area-wrapper tableView">
             <!---MY CODE GOES HERE-->
-            <h5 class="app-content-headerText">1. Update Rows Of Database(Catalogs,Customers,Employees,Factorys,Orders,Users)</h5>
-            <h5 class="app-content-headerText">2. Delete Rows Of Database(Catalogs,Customers,Employees,Factorys,Orders,Users)</h5>
-            <h5 class="app-content-headerText">3. Access Files(delete them, update them, change them) within GOOGLE DRIVE</h5>
+            <h6 class="app-content-headerText">1. Update Rows Of Database(Catalogs,Customers,Employees,Factorys,Orders,Users)</h6>
+            <h6 class="app-content-headerText">2. Delete Rows Of Database(Catalogs,Customers,Employees,Factorys,Orders,Users)</h6>
+            <h6 class="app-content-headerText">3. Access Files(delete them, update them, change them) within GOOGLE DRIVE</h6>
         </div>
       </div>
     <script>
